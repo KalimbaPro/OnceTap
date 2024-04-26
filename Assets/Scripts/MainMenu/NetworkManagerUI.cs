@@ -3,6 +3,7 @@ using TMPro;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NetworkManagerUI : MonoBehaviour
@@ -11,27 +12,27 @@ public class NetworkManagerUI : MonoBehaviour
     [SerializeField] private Button hostBtn;
     [SerializeField] private Button clientBtn;
     [SerializeField] private Button connectBtn;
-    [SerializeField] private Button leaveBtn;
+    [SerializeField] private GameObject joinServerPopin;
     [SerializeField] private TMP_InputField ipField;
 
     private void Awake()
     {
         serverBtn.onClick.AddListener(() =>
         {
-            DisableJoinButtons(true);
-
             NetworkManager.Singleton.StartServer();
+            NetworkManager.Singleton.SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
         });
         hostBtn.onClick.AddListener(() =>
         {
-            DisableJoinButtons(true);
-
             NetworkManager.Singleton.StartHost();
+            NetworkManager.Singleton.SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+        });
+        clientBtn.onClick.AddListener(() =>
+        {
+            joinServerPopin.gameObject.SetActive(true);
         });
         connectBtn.onClick.AddListener(() =>
         {
-            DisableJoinButtons(true);
-
             string ip = "127.0.0.1";
             ushort port = 7777;
 
@@ -50,22 +51,7 @@ public class NetworkManagerUI : MonoBehaviour
 
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(ip, port);
             NetworkManager.Singleton.StartClient();
+            NetworkManager.Singleton.SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
         });
-
-        leaveBtn.onClick.AddListener(() =>
-        {
-            DisableJoinButtons(false);
-
-            // Disconnect client or stop host/server
-        });
-    }
-
-    private void DisableJoinButtons(bool disabled)
-    {
-        serverBtn.gameObject.SetActive(!disabled);
-        hostBtn.gameObject.SetActive(!disabled);
-        clientBtn.gameObject.SetActive(!disabled);
-
-        leaveBtn.gameObject.SetActive(disabled);
     }
 }
