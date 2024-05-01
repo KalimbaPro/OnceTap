@@ -6,8 +6,10 @@ public class triggerRandomEvents : MonoBehaviour
 {
     private float nextActionTime = 0.0f;
     public float tickEventTime = 1f;
+    public bool eventInProgress = false;
     private int totalProbabilities = 0;
     private Dictionary<string, int> eventsProbabilities = new Dictionary<string, int>();
+    private lightsOutEvent Event;
 
     public void TriggerEventByRandomNum()
     {
@@ -18,7 +20,12 @@ public class triggerRandomEvents : MonoBehaviour
         {
             currentEventNum += entry.Value;
             if (currentEventNum >= randomNum) {
-                Debug.Log("Random event is " + entry.Key);
+                if (entry.Key == "LightsOut") {
+                    Event = GetComponent<lightsOutEvent>();
+                    Event.Start();
+                    Event.enabled = true;
+                    eventInProgress = true;
+                }
                 return;
             }
         }
@@ -41,7 +48,7 @@ public class triggerRandomEvents : MonoBehaviour
     void Update()
     {
 
-        if (Time.time > nextActionTime ) {
+        if (!eventInProgress && Time.time > nextActionTime ) {
             nextActionTime += tickEventTime;
             TriggerEventByRandomNum();
         }
