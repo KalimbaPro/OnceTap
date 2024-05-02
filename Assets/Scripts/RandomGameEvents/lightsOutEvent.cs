@@ -2,26 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class lightsOutEvent : MonoBehaviour
+public class lightsOutEvent : randomEvent
 {
-    public Light lightToDisable;
-    public float eventTime = 30f;
-    private float timer = 0f;
-    private triggerRandomEvents eventHandler;
+    public List<Light> lightsToDisable;
 
-    public void Start()
+    public void ToggleLights(bool alight)
     {
-        eventHandler = GetComponent<triggerRandomEvents>();
-        lightToDisable.enabled = false;
+        for (int i = 0; i < lightsToDisable.Count; i++) {
+            lightsToDisable[i].enabled = alight;
+        }
     }
+
+    protected override void CustomStartEvent()
+    {
+        ToggleLights(false);
+    }
+
+    protected override void CustomEndEvent()
+    {
+        ToggleLights(true);
+    }
+
 
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= eventTime) {
-            lightToDisable.enabled = true;
-            this.enabled = false;
-            eventHandler.eventInProgress = false;
-        }
+        HandleEventTime();
     }
 }

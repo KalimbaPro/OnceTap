@@ -9,7 +9,7 @@ public class triggerRandomEvents : MonoBehaviour
     public bool eventInProgress = false;
     private int totalProbabilities = 0;
     private Dictionary<string, int> eventsProbabilities = new Dictionary<string, int>();
-    private lightsOutEvent Event;
+    private randomEvent Event;
 
     public void TriggerEventByRandomNum()
     {
@@ -20,12 +20,15 @@ public class triggerRandomEvents : MonoBehaviour
         {
             currentEventNum += entry.Value;
             if (currentEventNum >= randomNum) {
-                if (entry.Key == "LightsOut") {
+                if (entry.Key == "TeamMode")
+                    Event = GetComponent<teamModeEvent>();
+                if (entry.Key == "LightsOut")
                     Event = GetComponent<lightsOutEvent>();
-                    Event.Start();
-                    Event.enabled = true;
-                    eventInProgress = true;
-                }
+                if (entry.Key == "GodMode")
+                    Event = GetComponent<godModeEvent>();
+                if (entry.Key == "Rhino")
+                    Event = GetComponent<rhinoEvent>();
+                Event.StartEvent();
                 return;
             }
         }
