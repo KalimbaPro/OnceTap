@@ -805,70 +805,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &665960911
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 665960912}
-  - component: {fileID: 665960913}
-  - component: {fileID: 665960914}
-  m_Layer: 0
-  m_Name: RandomGameEventsSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &665960912
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665960911}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &665960913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665960911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1e9b32b349bd6182bffa0707cc5be47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tickEventTime: 1
-  eventInProgress: 0
---- !u!114 &665960914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665960911}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34a84fbfc25f17938b76dee31c410b17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightsToDisable:
-  - {fileID: 1775462330}
-  - {fileID: 95710370}
-  - {fileID: 524355437}
-  eventTime: 5
 --- !u!1 &1183339508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,6 +1170,124 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &2736222686586931499
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1442366156614613541, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: m_Name
+      value: RandomGameEventsSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496313741056460413, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: tickEventTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529218857670532012, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529218857670532012, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529218857670532012, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529218857670532012, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529218857670532012, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529218857670532012, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529218857670532012, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529218857670532012, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529218857670532012, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529218857670532012, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703817967613734030, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: eventTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6358707940031702664, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: eventTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8353342751662044438, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: eventTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8353342751662044438, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8579383967276115894, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: eventTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8579383967276115894, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: lightsToDisable.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8579383967276115894, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: lightsToDisable.Array.data[0]
+      value: 
+      objectReference: {fileID: 1775462330}
+    - target: {fileID: 8579383967276115894, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: lightsToDisable.Array.data[1]
+      value: 
+      objectReference: {fileID: 95710370}
+    - target: {fileID: 8579383967276115894, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: lightsToDisable.Array.data[2]
+      value: 
+      objectReference: {fileID: 524355437}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e9ea5d72ff1ccf82c82927b8683f02ac, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1245,7 +1299,7 @@ SceneRoots:
   - {fileID: 165539331}
   - {fileID: 252191081}
   - {fileID: 1183339510}
-  - {fileID: 665960912}
+  - {fileID: 2736222686586931499}
   - {fileID: 589606633}
   - {fileID: 1481778020}
   - {fileID: 57431685}
