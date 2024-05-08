@@ -2443,6 +2443,7 @@ GameObject:
   - component: {fileID: 521038263015409175}
   - component: {fileID: 3467666074137364282}
   - component: {fileID: 4801395532094646990}
+  - component: {fileID: 7491947861729942294}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -2548,6 +2549,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLifeMode: 1
+  Lives: 5
+  HealthbarPrefab: {fileID: 5552005447517927635, guid: d417ac19f19c0d74eb21612c1b364ca5,
+    type: 3}
+  IsDead: 0
   MoveSpeed: 2
   SprintSpeed: 5.335
   RotationSmoothTime: 0.12
@@ -2760,3 +2766,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransitionStateInfoList: []
   m_Animator: {fileID: 1144251053171561644}
+--- !u!114 &7491947861729942294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9133545340053260162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60c14c914b53b64cbed192e761d58f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: -10
+  isLifeMode: 1
