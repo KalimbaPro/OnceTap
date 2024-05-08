@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -13,13 +12,14 @@ using Unity.Services.Lobbies.Models;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LobbyScript : MonoBehaviour
 {
-    private Lobby hostLobby;
-    private Lobby joinedLobby;
+    public Lobby hostLobby;
+    public Lobby joinedLobby;
 
-    private string playerName;
+    public string playerName;
 
     private float lobbyUpdateTimer;
 
@@ -81,8 +81,8 @@ public class LobbyScript : MonoBehaviour
 
                 joinedLobby = await LobbyService.Instance.GetLobbyAsync(joinedLobby.Id);
 
-                string relayCode = joinedLobby.Data["StartedGameCode"].Value;
-                if (relayCode != "")
+                string relayCode = joinedLobby.Data["StartGameCode"].Value;
+                if (relayCode != "0")
                 {
                     RelayScript.Instance.JoinRelay(relayCode);
                 }
@@ -90,10 +90,15 @@ public class LobbyScript : MonoBehaviour
         }
     }
 
-    private async void CreateLobby(string playerName, bool isPrivate = false, string lobbyName = "Lobby")
+    public async void CreateLobby(string playerName, bool isPrivate = false, string lobbyName = "Lobby")
     {
         try
         {
+            if (lobbyName == "")
+                lobbyName = "Lobby" + Random.Range(1, 10000);
+            if (playerName == "")
+                playerName = "Player" + Random.Range(1, 10000);
+
             this.playerName = playerName;
             CreateLobbyOptions options = new CreateLobbyOptions
             {
@@ -103,11 +108,13 @@ public class LobbyScript : MonoBehaviour
                 {
                     {"GameMode", new(DataObject.VisibilityOptions.Public, "Deathmatch") },
                     {"Map", new(DataObject.VisibilityOptions.Public, "Playground") },
-                    {"StartGameCode", new(DataObject.VisibilityOptions.Member, "") }
+                    {"StartGameCode", new(DataObject.VisibilityOptions.Member, "0") }
                 }
             };
-            hostLobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, RelayScript.Instance.maxPlayers);
+            hostLobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, RelayScript.Instance.maxPlayers, options);
             joinedLobby = hostLobby;
+
+            Debug.Log("Lobby created " + hostLobby.LobbyCode);
         }
         catch (LobbyServiceException ex)
         {
@@ -140,16 +147,21 @@ public class LobbyScript : MonoBehaviour
         }
     }
 
-    private async void JoinLobbyByCode(string code, string playerName)
+    public async void JoinLobbyByCode(string code, string playerName)
     {
         try
         {
+            if (playerName == "")
+                playerName = "Player" + Random.Range(1, 10000);
+
             this.playerName = playerName;
             JoinLobbyByCodeOptions options = new JoinLobbyByCodeOptions
             {
                 Player = GetNewPlayer(playerName),
             };
-            joinedLobby = await Lobbies.Instance.JoinLobbyByCodeAsync(code);
+            joinedLobby = await Lobbies.Instance.JoinLobbyByCodeAsync(code, options);
+
+            Debug.Log("Lobby joined");
         }
         catch (LobbyServiceException ex)
         {
@@ -232,7 +244,7 @@ public class LobbyScript : MonoBehaviour
         }
     }
 
-    private async void LeaveLobby()
+    public async void LeaveLobby()
     {
         try
         {
@@ -244,7 +256,7 @@ public class LobbyScript : MonoBehaviour
         }
     }
 
-    private async void KickPlayer(string playerId)
+    public async void KickPlayer(string playerId)
     {
         try
         {
@@ -256,7 +268,7 @@ public class LobbyScript : MonoBehaviour
         }
     }
 
-    private async void SetNewHost(string playerId)
+    public async void SetNewHost(string playerId)
     {
         try
         {

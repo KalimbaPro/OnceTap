@@ -13,6 +13,11 @@ public class Settings : MonoBehaviour
     public float soundVolume = 1.0f;
     public bool fullscreenMode = false;
 
+    //public bool preparedLobbyIsHost = true;
+    //public bool preparedLobbyIsPrivate = true;
+    //public string preparedLobbyPlayerName = "Player";
+    //public string preparedLobbyName = "Lobby";
+
     private void Awake()
     {
         if (_instance != null && _instance != this)

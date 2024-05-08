@@ -16,6 +16,10 @@ public class RelayScript : MonoBehaviour
 
     public static RelayScript Instance { get { return _instance; } }
 
+    private void Start()
+    {
+    }
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
