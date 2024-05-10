@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EventsScene.unity
     guid: 7423aec7d4fd2beb78e93bfa2e853c03
+  - enabled: 1
+    path: Assets/Scenes/PracticeArena.unity
+    guid: 264c34fae5a160445a5da47418a81e42
+  - enabled: 1
+    path: Assets/Scenes/Gamemode/ScoreMode.unity
+    guid: 4155ac079e306fa4796b6da62f637f27
+  - enabled: 1
+    path: Assets/Scenes/Gamemode/LifeMode.unity
+    guid: 74cc6495a5478df4892fd3b29e3016a3
   m_configObjects: {}

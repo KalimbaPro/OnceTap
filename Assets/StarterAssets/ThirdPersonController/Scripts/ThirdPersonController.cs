@@ -17,8 +17,6 @@ namespace StarterAssets
 #endif
     public class ThirdPersonController : NetworkBehaviour
     {
-        [Header("Gamemode")]
-        public bool isLifeMode = true;
         [Header("Player")]
         [Tooltip("Number of life of the player")]
         public int Lives = 5;
@@ -158,11 +156,6 @@ namespace StarterAssets
             Debug.LogError("Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
 
-            if (isLifeMode)
-            {
-                Healthbar = Instantiate(HealthbarPrefab, new Vector3(0, 0, 0), Quaternion.identity, GameObject.FindGameObjectWithTag("LifeModeUICanvas").transform);
-                Healthbar.GetComponent<RectTransform>().SetLocalPositionAndRotation(new Vector3(-382, -245, 0), Quaternion.identity);
-            }
             AssignAnimationIDs();
 
             // reset our timeouts on start
