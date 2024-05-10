@@ -2687,10 +2687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLifeMode: 0
-  Lives: 5
-  HealthbarPrefab: {fileID: 5552005447517927635, guid: d417ac19f19c0d74eb21612c1b364ca5,
-    type: 3}
   IsDead: 0
   MoveSpeed: 2
   SprintSpeed: 5.335
@@ -2720,10 +2716,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   CinemachineCameraTarget: {fileID: 7852826840276586841}
+  Camera: {fileID: 457103806187788763}
   TopClamp: 70
   BottomClamp: -30
   CameraAngleOverride: 0
-  LockCameraPosition: 0
+  LockCameraPosition: 1
 --- !u!114 &3988838175427417495
 MonoBehaviour:
   m_ObjectHideFlags: 0
