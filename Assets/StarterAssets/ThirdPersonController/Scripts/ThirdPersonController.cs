@@ -17,16 +17,7 @@ namespace StarterAssets
 #endif
     public class ThirdPersonController : NetworkBehaviour
     {
-        [Header("Gamemode")]
-        public bool isLifeMode = true;
         [Header("Player")]
-        [Tooltip("Number of life of the player")]
-        public int Lives = 5;
-        [Tooltip("Is the player dead?")]
-        public GameObject HealthbarPrefab;
-        [Tooltip("The health bar prefab")]
-        private GameObject Healthbar;
-        [Tooltip("The health bar of the player")]
         public bool IsDead = false;
         [Tooltip("The score of the player")]
         public float MoveSpeed = 2.0f;
@@ -158,11 +149,6 @@ namespace StarterAssets
             Debug.LogError("Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
 
-            if (isLifeMode)
-            {
-                Healthbar = Instantiate(HealthbarPrefab, new Vector3(0, 0, 0), Quaternion.identity, GameObject.FindGameObjectWithTag("LifeModeUICanvas").transform);
-                Healthbar.GetComponent<RectTransform>().SetLocalPositionAndRotation(new Vector3(-382, -245, 0), Quaternion.identity);
-            }
             AssignAnimationIDs();
 
             // reset our timeouts on start
@@ -415,17 +401,6 @@ namespace StarterAssets
         }
         public void LoseLife()
         {
-            if (Lives > 0)
-            {
-                Lives--;
-                Healthbar.GetComponent<HealthBarScript>().RemoveHeart();
-            }
-            if (Lives == 0)
-            {
-                IsDead = true;
-                Debug.Log("Game Over");
-                SceneManager.LoadScene("Gameover");
-            }
         }
     }
 }
