@@ -174,6 +174,11 @@ namespace StarterAssets
         {
             if (!IsOwner) return;
 
+            if (_mainCamera == null)
+            {
+                _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+            }
+
             _hasAnimator = TryGetComponent(out _animator);
 
             JumpAndGravity();
