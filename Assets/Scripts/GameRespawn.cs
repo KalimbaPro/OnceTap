@@ -25,11 +25,9 @@ public class GameRespawn : MonoBehaviour
         {
             if (isLifeMode)
             {
-                player.LoseLife();
             }
             else
             {
-                score.LoosePoint();
             }
             transform.position = new Vector3(0.0f, 0.0f, 0.0f);
             Debug.Log(player.Lives);

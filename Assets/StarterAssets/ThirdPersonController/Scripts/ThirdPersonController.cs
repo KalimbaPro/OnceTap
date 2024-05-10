@@ -18,13 +18,6 @@ namespace StarterAssets
     public class ThirdPersonController : NetworkBehaviour
     {
         [Header("Player")]
-        [Tooltip("Number of life of the player")]
-        public int Lives = 5;
-        [Tooltip("Is the player dead?")]
-        public GameObject HealthbarPrefab;
-        [Tooltip("The health bar prefab")]
-        private GameObject Healthbar;
-        [Tooltip("The health bar of the player")]
         public bool IsDead = false;
         [Tooltip("The score of the player")]
         public float MoveSpeed = 2.0f;
@@ -403,17 +396,6 @@ namespace StarterAssets
         }
         public void LoseLife()
         {
-            if (Lives > 0)
-            {
-                Lives--;
-                Healthbar.GetComponent<HealthBarScript>().RemoveHeart();
-            }
-            if (Lives == 0)
-            {
-                IsDead = true;
-                Debug.Log("Game Over");
-                SceneManager.LoadScene("Gameover");
-            }
         }
     }
 }
