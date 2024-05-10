@@ -1,5 +1,7 @@
 ﻿using Unity.Netcode;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -36,6 +38,9 @@ namespace StarterAssets
         [Space(10)]
         [Tooltip("The height the player can jump")]
         public float JumpHeight = 1.2f;
+
+        [Tooltip("The cooldown before being able to attack again")]
+        public float attackCooldown = 0.4f;
 
         [Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
         public float Gravity = -15.0f;
@@ -76,6 +81,9 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        [Tooltip("Weapon holder component")]
+        public WeaponHolder weaponHolder;
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -87,6 +95,7 @@ namespace StarterAssets
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
+        private bool _canAttack = true;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -98,6 +107,7 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private string _animIDMeleeAttack;
 
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
@@ -162,6 +172,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            Attack();
         }
 
         private void LateUpdate()
@@ -176,6 +187,7 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+
         }
 
         private void GroundedCheck()
@@ -282,6 +294,46 @@ namespace StarterAssets
             }
         }
 
+        private void MeleeAttack()
+        {
+            _animIDMeleeAttack = weaponHolder.GetMeleeWeaponStats().weaponType.ToString() + "Attack";
+            if (Grounded)
+            {
+                if (_hasAnimator && _input.attack && _canAttack)
+                {
+                    _canAttack = false;
+                    _animator.SetTrigger(_animIDMeleeAttack);
+                    StartCoroutine(AttackCooldown());
+                }
+            }
+            _input.attack = false;
+        }
+
+        private void DistanceAttack()
+        {
+            if (Grounded)
+            {
+                if (_hasAnimator && _input.attack)
+                {
+                    weaponHolder.GetDistanceWeaponStats().Fire();
+                }
+            }
+            _input.attack = false;
+        }
+        private void Attack()
+        {
+            if (weaponHolder.GetWeaponMode() == WeaponHolder.WeaponMode.Distance)
+                DistanceAttack();
+            else 
+                MeleeAttack();
+            
+        }
+
+        IEnumerator AttackCooldown()
+        {
+            yield return new WaitForSeconds(this.attackCooldown);
+            _canAttack = true;
+        }
         private void JumpAndGravity()
         {
             if (Grounded)
