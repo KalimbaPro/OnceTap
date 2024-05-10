@@ -59,8 +59,6 @@ public class RelayScript : MonoBehaviour
     {
         try
         {
-            NetworkManager.Singleton.SceneManager.LoadScene("GameScene", UnityEngine.SceneManagement.LoadSceneMode.Single);
-
             JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
 
             RelayServerData relayServerData = new RelayServerData(allocation, "dtls");

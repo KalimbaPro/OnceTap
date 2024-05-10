@@ -305,6 +305,8 @@ public class LobbyScript : MonoBehaviour
                     {"StartGameCode", new(DataObject.VisibilityOptions.Member, relayCode) }
                 }
             });
+
+            NetworkManager.Singleton.SceneManager.LoadScene("GameScene", UnityEngine.SceneManagement.LoadSceneMode.Single);
         }
         catch (LobbyServiceException ex)
         {
