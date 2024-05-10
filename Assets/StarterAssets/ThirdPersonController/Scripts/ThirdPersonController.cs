@@ -2,6 +2,8 @@
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 #endif
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
@@ -15,8 +17,18 @@ namespace StarterAssets
 #endif
     public class ThirdPersonController : NetworkBehaviour
     {
+        [Header("Gamemode")]
+        public bool isLifeMode = true;
         [Header("Player")]
-        [Tooltip("Move speed of the character in m/s")]
+        [Tooltip("Number of life of the player")]
+        public int Lives = 5;
+        [Tooltip("Is the player dead?")]
+        public GameObject HealthbarPrefab;
+        [Tooltip("The health bar prefab")]
+        private GameObject Healthbar;
+        [Tooltip("The health bar of the player")]
+        public bool IsDead = false;
+        [Tooltip("The score of the player")]
         public float MoveSpeed = 2.0f;
 
         [Tooltip("Sprint speed of the character in m/s")]
@@ -118,7 +130,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM
                 return _playerInput.currentControlScheme == "KeyboardMouse";
 #else
-				return false;
+                return false;
 #endif
             }
         }
@@ -136,16 +148,21 @@ namespace StarterAssets
         private void Start()
         {
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-            
+
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
-#if ENABLE_INPUT_SYSTEM 
+#if ENABLE_INPUT_SYSTEM
             _playerInput = GetComponent<PlayerInput>();
 #else
-			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
+            Debug.LogError("Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
 
+            if (isLifeMode)
+            {
+                Healthbar = Instantiate(HealthbarPrefab, new Vector3(0, 0, 0), Quaternion.identity, GameObject.FindGameObjectWithTag("LifeModeUICanvas").transform);
+                Healthbar.GetComponent<RectTransform>().SetLocalPositionAndRotation(new Vector3(-382, -245, 0), Quaternion.identity);
+            }
             AssignAnimationIDs();
 
             // reset our timeouts on start
@@ -389,6 +406,20 @@ namespace StarterAssets
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+            }
+        }
+        public void LoseLife()
+        {
+            if (Lives > 0)
+            {
+                Lives--;
+                Healthbar.GetComponent<HealthBarScript>().RemoveHeart();
+            }
+            if (Lives == 0)
+            {
+                IsDead = true;
+                Debug.Log("Game Over");
+                SceneManager.LoadScene("Gameover");
             }
         }
     }

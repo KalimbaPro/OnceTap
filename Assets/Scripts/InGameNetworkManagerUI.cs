@@ -14,6 +14,7 @@ public class InGameNetworkManagerUI : MonoBehaviour
     [SerializeField] private Button leaveBtn;
     [SerializeField] private TMP_InputField ipField;
 
+    public GameObject scoreUI = null;
     private void Awake()
     {
         serverBtn.onClick.AddListener(() =>
@@ -25,7 +26,10 @@ public class InGameNetworkManagerUI : MonoBehaviour
         hostBtn.onClick.AddListener(() =>
         {
             DisableJoinButtons(true);
-
+            if (scoreUI != null)
+            {
+                scoreUI.SetActive(true);
+            }
             NetworkManager.Singleton.StartHost();
         });
         connectBtn.onClick.AddListener(() =>
