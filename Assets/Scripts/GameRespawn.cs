@@ -30,7 +30,6 @@ public class GameRespawn : MonoBehaviour
             {
             }
             transform.position = new Vector3(0.0f, 0.0f, 0.0f);
-            Debug.Log(player.Lives);
         }
     }
 }
