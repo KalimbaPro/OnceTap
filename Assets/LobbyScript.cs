@@ -23,6 +23,8 @@ public class LobbyScript : MonoBehaviour
 
     private float lobbyUpdateTimer;
 
+    private bool joined = false;
+
     private static LobbyScript _instance;
 
     public static LobbyScript Instance { get { return _instance; } }
@@ -81,10 +83,16 @@ public class LobbyScript : MonoBehaviour
 
                 joinedLobby = await LobbyService.Instance.GetLobbyAsync(joinedLobby.Id);
 
-                string relayCode = joinedLobby.Data["StartGameCode"].Value;
-                if (relayCode != "0")
+                if (!joined)
                 {
-                    RelayScript.Instance.JoinRelay(relayCode);
+                    string relayCode = joinedLobby.Data["StartGameCode"].Value;
+                    if (relayCode != "0")
+                    {
+                        //SceneManager.LoadScene("GameScene");
+
+                        RelayScript.Instance.JoinRelay(relayCode);
+                        joined = true;
+                    }
                 }
             }
         }
