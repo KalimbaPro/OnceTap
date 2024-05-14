@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class triggerRandomEvents : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class triggerRandomEvents : MonoBehaviour
     private int totalProbabilities = 0;
     private Dictionary<string, int> eventsProbabilities = new Dictionary<string, int>();
     private randomEvent Event;
+    public TextMeshProUGUI eventAnnouncerText;
 
     public void TriggerEventByRandomNum()
     {

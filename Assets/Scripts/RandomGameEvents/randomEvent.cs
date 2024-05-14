@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public abstract class randomEvent : MonoBehaviour
 {
     private triggerRandomEvents eventHandler;
     private float timer = 0f;
     public float eventTime = 30f;
+    protected TextMeshProUGUI eventAnnouncerText;
+    public string eventTitle = "Event basic starting !";
     
     public void StartEvent()
     {
@@ -15,6 +18,7 @@ public abstract class randomEvent : MonoBehaviour
         timer = 0f;
         eventHandler = GetComponent<triggerRandomEvents>();
         eventHandler.eventInProgress = true;
+        eventHandler.eventAnnouncerText.text = eventTitle;
     }
 
     protected abstract void CustomStartEvent();

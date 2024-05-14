@@ -1170,6 +1170,18 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &1787103675 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1049308403417125216, guid: 187573d2f6d022f44b38a7de0dbc26fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 109072935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2736222686586931499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1260,8 +1272,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8579383967276115894, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
         type: 3}
+      propertyPath: TMPtext
+      value: 
+      objectReference: {fileID: 1787103675}
+    - target: {fileID: 8579383967276115894, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: eventText
+      value: Lights out event !
+      objectReference: {fileID: 0}
+    - target: {fileID: 8579383967276115894, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
       propertyPath: eventTime
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8579383967276115894, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: eventTitle
+      value: Lights out event !
       objectReference: {fileID: 0}
     - target: {fileID: 8579383967276115894, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
         type: 3}
