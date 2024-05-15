@@ -67,8 +67,8 @@ namespace StarterAssets
         [Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
         public GameObject CinemachineCameraTarget;
 
-        [Tooltip("The camera of the player")]
-        public Camera Camera;
+        //[Tooltip("The camera of the player")]
+        //public Camera Camera;
 
         [Tooltip("How far in degrees can you move the camera up")]
         public float TopClamp = 70.0f;
@@ -85,7 +85,7 @@ namespace StarterAssets
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
-        private Quaternion _cameraOriginalRotation;
+        //private Quaternion _cameraOriginalRotation;
 
         // player
         private float _speed;
@@ -112,6 +112,7 @@ namespace StarterAssets
         private Animator _animator;
         private CharacterController _controller;
         private StarterAssetsInputs _input;
+        private GameObject _mainCamera;
 
         private const float _threshold = 0.01f;
 
@@ -132,11 +133,17 @@ namespace StarterAssets
 
         private void Awake()
         {
+            if (!IsOwner) return;
+
+            if (_mainCamera == null)
+            {
+                _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+            }
         }
 
         private void Start()
         {
-            _cameraOriginalRotation = Camera.transform.rotation;
+            //_cameraOriginalRotation = Camera.transform.rotation;
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
 
             _hasAnimator = TryGetComponent(out _animator);
@@ -159,7 +166,12 @@ namespace StarterAssets
         {
             if (!IsOwner) return;
 
-            Camera.transform.rotation = _cameraOriginalRotation;
+            if (_mainCamera == null)
+            {
+                _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+            }
+
+            //Camera.transform.rotation = _cameraOriginalRotation;
 
             _hasAnimator = TryGetComponent(out _animator);
 
@@ -170,8 +182,8 @@ namespace StarterAssets
 
         private void LateUpdate()
         {
-            _cameraOriginalRotation.y = -transform.gameObject.transform.rotation.y;
-            Camera.transform.rotation = _cameraOriginalRotation;
+            //_cameraOriginalRotation.y = -transform.gameObject.transform.rotation.y;
+            //Camera.transform.rotation = _cameraOriginalRotation;
 
             //Camera.transform.rotation = _cameraOriginalRotation;
             //Camera.transform.rotation = new Quaternion(60, -transform.gameObject.transform.rotation.y, 0, 0);
@@ -269,7 +281,7 @@ namespace StarterAssets
             if (_input.move != Vector2.zero)
             {
                 _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
-                                  Camera.transform.eulerAngles.y;
+                                  _mainCamera.transform.eulerAngles.y;
                 float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
                     RotationSmoothTime);
 
