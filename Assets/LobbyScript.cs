@@ -115,7 +115,7 @@ public class LobbyScript : MonoBehaviour
                 Data = new Dictionary<string, DataObject>
                 {
                     {"GameMode", new(DataObject.VisibilityOptions.Public, "Deathmatch") },
-                    {"Map", new(DataObject.VisibilityOptions.Public, "Playground") },
+                    {"Map", new(DataObject.VisibilityOptions.Public, "GameScene") },
                     {"StartGameCode", new(DataObject.VisibilityOptions.Member, "0") }
                 }
             };
@@ -195,7 +195,7 @@ public class LobbyScript : MonoBehaviour
         }
     }
 
-    private async void UpdateLobbyGamemode(string gamemode)
+    public async void UpdateLobbyGamemode(string gamemode)
     {
         try
         {
@@ -214,7 +214,7 @@ public class LobbyScript : MonoBehaviour
         }
     }
 
-    private async void UpdateLobbyMap(string map)
+    public async void UpdateLobbyMap(string map)
     {
         try
         {
@@ -306,7 +306,7 @@ public class LobbyScript : MonoBehaviour
                 }
             });
 
-            NetworkManager.Singleton.SceneManager.LoadScene("GameScene", UnityEngine.SceneManagement.LoadSceneMode.Single);
+            NetworkManager.Singleton.SceneManager.LoadScene(hostLobby.Data["Map"].Value, UnityEngine.SceneManagement.LoadSceneMode.Single);
         }
         catch (LobbyServiceException ex)
         {

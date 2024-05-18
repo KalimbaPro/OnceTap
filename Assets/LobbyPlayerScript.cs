@@ -24,9 +24,9 @@ public class LobbyPlayerScript : MonoBehaviour
     {
         var hasPlayer = PlayerId.Length != 0;
 
-        MakeHostButton.gameObject.SetActive(hasPlayer);
+        //MakeHostButton.gameObject.SetActive(hasPlayer);
         KickButton.gameObject.SetActive(hasPlayer);
-        PlayerIcon.gameObject.SetActive(hasPlayer);
+        //PlayerIcon.gameObject.SetActive(hasPlayer);
         PlayerName.gameObject.SetActive(hasPlayer);
     }
 
