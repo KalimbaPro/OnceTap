@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 2259702943225960629}
   - component: {fileID: 7908397262242118214}
   m_Layer: 5
-  m_Name: MapSelect
+  m_Name: MenuItemSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Border: {fileID: 4433560872916515122}
-  Map: GameScene
+  MenuItem: GameScene
 --- !u!114 &7908397262242118214
 MonoBehaviour:
   m_ObjectHideFlags: 0

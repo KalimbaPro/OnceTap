@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapSelection : MonoBehaviour
+public class MenuItemSelection : MonoBehaviour
 {
     //public GameObject Grid;
     public GameObject Border;
-    public string Map;
+    public string MenuItem;
 
     // Start is called before the first frame update
     void Start()

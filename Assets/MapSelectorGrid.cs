@@ -29,10 +29,10 @@ public class MapSelectorGrid : MonoBehaviour
     {
         foreach (var item in Maps)
         {
-            item.GetComponent<MapSelection>().BorderSetActive(false);
+            item.GetComponent<MenuItemSelection>().BorderSetActive(false);
         }
-        map.GetComponent<MapSelection>().BorderSetActive(true);
+        map.GetComponent<MenuItemSelection>().BorderSetActive(true);
         ActiveMap = map;
-        LobbyScript.Instance.UpdateLobbyMap(ActiveMap.GetComponent<MapSelection>().Map);
+        LobbyScript.Instance.UpdateLobbyMap(ActiveMap.GetComponent<MenuItemSelection>().MenuItem);
     }
 }

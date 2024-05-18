@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: Map
       value: GameScene
       objectReference: {fileID: 0}
+    - target: {fileID: 2259702943225960629, guid: 7ae7ca6e610db614bb1158adc1df7c57,
+        type: 3}
+      propertyPath: MenuItem
+      value: GameScene
+      objectReference: {fileID: 0}
     - target: {fileID: 4497319594123391270, guid: 7ae7ca6e610db614bb1158adc1df7c57,
         type: 3}
       propertyPath: m_Name
