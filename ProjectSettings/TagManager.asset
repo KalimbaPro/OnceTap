@@ -6,6 +6,9 @@ TagManager:
   tags:
   - CinemachineTarget
   - FirePoint
+  - DeathZone
+  - LifeModeUICanvas
+  - Score
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,7 @@ using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NetworkManagerUI : MonoBehaviour
+public class InGameNetworkManagerUI : MonoBehaviour
 {
     [SerializeField] private Button serverBtn;
     [SerializeField] private Button hostBtn;
@@ -14,6 +14,7 @@ public class NetworkManagerUI : MonoBehaviour
     [SerializeField] private Button leaveBtn;
     [SerializeField] private TMP_InputField ipField;
 
+    public GameObject scoreUI = null;
     private void Awake()
     {
         serverBtn.onClick.AddListener(() =>
@@ -25,7 +26,10 @@ public class NetworkManagerUI : MonoBehaviour
         hostBtn.onClick.AddListener(() =>
         {
             DisableJoinButtons(true);
-
+            if (scoreUI != null)
+            {
+                scoreUI.SetActive(true);
+            }
             NetworkManager.Singleton.StartHost();
         });
         connectBtn.onClick.AddListener(() =>
