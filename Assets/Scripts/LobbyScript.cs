@@ -20,6 +20,7 @@ public class LobbyScript : MonoBehaviour
     public Lobby joinedLobby;
 
     public string playerName;
+    public string playerSkin;
 
     private float lobbyUpdateTimer;
 
@@ -114,7 +115,7 @@ public class LobbyScript : MonoBehaviour
                 Player = GetNewPlayer(playerName),
                 Data = new Dictionary<string, DataObject>
                 {
-                    {"GameMode", new(DataObject.VisibilityOptions.Public, "Lives") },
+                    {"GameMode", new(DataObject.VisibilityOptions.Public, "LifeMode") },
                     {"Map", new(DataObject.VisibilityOptions.Public, "GameScene") },
                     {"StartGameCode", new(DataObject.VisibilityOptions.Member, "0") }
                 }
@@ -183,7 +184,8 @@ public class LobbyScript : MonoBehaviour
         {
             Data = new Dictionary<string, PlayerDataObject>
                     {
-                        {"PlayerName", new PlayerDataObject(PlayerDataObject.VisibilityOptions.Member, playerName) }
+                        {"PlayerName", new PlayerDataObject(PlayerDataObject.VisibilityOptions.Member, playerName) },
+                        {"PlayerSkin", new(PlayerDataObject.VisibilityOptions.Member, "0") }
                     }
         };
     }
@@ -233,7 +235,7 @@ public class LobbyScript : MonoBehaviour
         }
     }
 
-    private async void UpdatePlayerName(string playerName)
+    public async void UpdatePlayerName(string playerName)
     {
         try
         {
@@ -242,7 +244,26 @@ public class LobbyScript : MonoBehaviour
             {
                 Data = new Dictionary<string, PlayerDataObject>
                 {
-                    {"PlayerName", new PlayerDataObject(PlayerDataObject.VisibilityOptions.Member, name)},
+                    {"PlayerName", new PlayerDataObject(PlayerDataObject.VisibilityOptions.Member, playerName)},
+                }
+            });
+        }
+        catch (LobbyServiceException ex)
+        {
+            Debug.Log(ex);
+        }
+    }
+
+    public async void UpdatePlayerSkin(string playerSkin)
+    {
+        try
+        {
+            this.playerSkin = playerSkin;
+            await LobbyService.Instance.UpdatePlayerAsync(joinedLobby.Id, AuthenticationService.Instance.PlayerId, new UpdatePlayerOptions
+            {
+                Data = new Dictionary<string, PlayerDataObject>
+                {
+                    {"PlayerSkin", new PlayerDataObject(PlayerDataObject.VisibilityOptions.Member, playerSkin)},
                 }
             });
         }
