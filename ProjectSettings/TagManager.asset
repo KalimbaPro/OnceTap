@@ -8,6 +8,7 @@ TagManager:
   - DeathZone
   - LifeModeUICanvas
   - Score
+  - Map
   layers:
   - Default
   - TransparentFX
