@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MeleeWeaponStats : MonoBehaviour
 {
+    public bool CanBreakFloor = false;
+    public bool CanBreakThings = false;
+
     public enum MeleeWeapons {
         Hammer,
         Sword,

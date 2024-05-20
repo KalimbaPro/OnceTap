@@ -24,19 +24,16 @@ public class Break : MonoBehaviour
         getPlayer();
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        BreakTheThing();
-    //    }
-    //}
-
     private void OnTriggerEnter(Collider other)
     {
-        if (/*Input.GetKeyDown(KeyCode.F) &&*/ other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Weapon") && other.gameObject.GetComponent<MeleeWeaponStats>().CanBreakThings)
         {
-            BreakTheThing();
+            if (!this.CompareTag("Floor"))
+            {
+                BreakTheThing();
+            }
+            else if (other.gameObject.GetComponent<MeleeWeaponStats>().CanBreakFloor)
+                BreakTheThing();
         }
     }
 

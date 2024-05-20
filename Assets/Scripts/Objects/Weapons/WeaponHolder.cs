@@ -61,7 +61,7 @@ public class WeaponHolder : MonoBehaviour
 
     public void OnTriggerEnter(Collider target)
     {
-        if (target.CompareTag("Weapon"))
+        if (target.CompareTag("Weapon") && target.GetType().Name == "SphereCollider")
         {
             pickUpController = target.GetComponent<PickUpController>();
         }
@@ -69,7 +69,7 @@ public class WeaponHolder : MonoBehaviour
 
     public void OnTriggerExit(Collider target)
     {
-        if (target.CompareTag("Weapon"))
+        if (target.CompareTag("Weapon") && target.GetType().Name == "SphereCollider")
         {
             pickUpController = null;
         }
