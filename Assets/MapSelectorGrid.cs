@@ -6,17 +6,18 @@ using UnityEngine.UI;
 
 public class MapSelectorGrid : MonoBehaviour
 {
-    public List<GameObject> Maps;
+    private List<Button> Maps;
     private GameObject ActiveMap;
 
     // Start is called before the first frame update
     void Awake()
     {
+        Maps = GetComponentsInChildren<Button>().ToList();
         Maps.ForEach(map =>
         {
-            map.GetComponent<Button>().onClick.AddListener(() => SelectMap(map));
+            map.GetComponent<Button>().onClick.AddListener(() => SelectMap(map.gameObject));
         });
-        SelectMap(Maps.First());
+        SelectMap(Maps.First().gameObject);
     }
 
     // Update is called once per frame
@@ -27,12 +28,15 @@ public class MapSelectorGrid : MonoBehaviour
 
     public void SelectMap(GameObject map)
     {
-        foreach (var item in Maps)
-        {
-            item.GetComponent<MenuItemSelection>().BorderSetActive(false);
-        }
-        map.GetComponent<MenuItemSelection>().BorderSetActive(true);
-        ActiveMap = map;
-        LobbyScript.Instance.UpdateLobbyMap(ActiveMap.GetComponent<MenuItemSelection>().MenuItem);
+        //if (NetworkManager.Singleton.IsHost)
+        //{
+            foreach (var item in Maps)
+            {
+                item.GetComponent<MenuItemSelection>().BorderSetActive(false);
+            }
+            map.GetComponent<MenuItemSelection>().BorderSetActive(true);
+            ActiveMap = map;
+            LobbyScript.Instance.UpdateLobbyMap(ActiveMap.GetComponent<MenuItemSelection>().MenuItem);
+        //}
     }
 }

@@ -1,38 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameModeSelectorGrid : MonoBehaviour
+public class GameModeSelectorGrid : NetworkBehaviour
 {
-    public List<GameObject> GameModes;
+    private List<Button> GameModes;
     private GameObject ActiveMap;
 
     // Start is called before the first frame update
     void Awake()
     {
+        GameModes = GetComponentsInChildren<Button>().ToList();
         GameModes.ForEach(map =>
         {
-            map.GetComponent<Button>().onClick.AddListener(() => SelectMap(map));
+            map.GetComponent<Button>().onClick.AddListener(() => SelectMap(map.gameObject, true));
         });
-        SelectMap(GameModes.First());
+        SelectMap(GameModes.First().gameObject, true);
+
+        StartCoroutine(UpdateMenuItem());
     }
 
     // Update is called once per frame
-    void Update()
+    private IEnumerator UpdateMenuItem()
     {
+        if (LobbyScript.Instance != null && LobbyScript.Instance.joinedLobby != null)
+        {
+            var newGameMode = GameModes.Find(map => map.GetComponent<MenuItemSelection>().MenuItem == LobbyScript.Instance.joinedLobby.Data["GameMode"].Value);
+            SelectMap(newGameMode.gameObject, false);
+        }
 
+        yield return new WaitForSeconds(1f);
+
+        StartCoroutine(UpdateMenuItem());
     }
 
-    public void SelectMap(GameObject gameMode)
+    public void SelectMap(GameObject gameMode, bool sendToNetwork)
     {
+        if (LobbyScript.Instance == null)
+        {
+            return;
+        }
+
         foreach (var item in GameModes)
         {
             item.GetComponent<MenuItemSelection>().BorderSetActive(false);
         }
         gameMode.GetComponent<MenuItemSelection>().BorderSetActive(true);
         ActiveMap = gameMode;
-        LobbyScript.Instance.UpdateLobbyGamemode(ActiveMap.GetComponent<MenuItemSelection>().MenuItem);
+
+        if (sendToNetwork)
+        {
+            LobbyScript.Instance.UpdateLobbyGamemode(ActiveMap.GetComponent<MenuItemSelection>().MenuItem);
+        }
     }
 }

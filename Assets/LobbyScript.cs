@@ -115,7 +115,7 @@ public class LobbyScript : MonoBehaviour
                 Player = GetNewPlayer(playerName),
                 Data = new Dictionary<string, DataObject>
                 {
-                    {"GameMode", new(DataObject.VisibilityOptions.Public, "Lives") },
+                    {"GameMode", new(DataObject.VisibilityOptions.Public, "LifeMode") },
                     {"Map", new(DataObject.VisibilityOptions.Public, "GameScene") },
                     {"StartGameCode", new(DataObject.VisibilityOptions.Member, "0") }
                 }

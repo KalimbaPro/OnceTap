@@ -1517,6 +1517,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cfd93cc6d1944645968c50c1d595839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 2191815560880617978, guid: 48dc11afc5e225746b0febf74c6b0dfb,
+    type: 3}
   playerName: {fileID: 8321368991939508506}
   lobbyName: {fileID: 8971203823256602725}
   isPrivate: {fileID: 314915699998592086}
