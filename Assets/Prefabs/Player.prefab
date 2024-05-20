@@ -2322,6 +2322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1194e482ce4e69b44aa8e79956f67dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpController: {fileID: 0}
   currentWeapon: {fileID: 0}
   weaponToPickup: {fileID: 0}
   weaponMode: 1
@@ -2680,6 +2681,7 @@ GameObject:
   - component: {fileID: 1876446744965258716}
   - component: {fileID: 521038263015409175}
   - component: {fileID: 4801395532094646990}
+  - component: {fileID: 2887783065309808673}
   - component: {fileID: 7491947861729942294}
   m_Layer: 8
   m_Name: Player
@@ -2988,6 +2990,37 @@ MonoBehaviour:
     TriggerNameHash: 2109124072
     TransitionIndex: 3
   m_Animator: {fileID: 1144251053171561644}
+--- !u!114 &2887783065309808673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9133545340053260162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 0
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 0
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!114 &7491947861729942294
 MonoBehaviour:
   m_ObjectHideFlags: 0
