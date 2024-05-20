@@ -9,6 +9,7 @@ TagManager:
   - DeathZone
   - LifeModeUICanvas
   - Score
+  - WeaponHolder
   layers:
   - Default
   - TransparentFX

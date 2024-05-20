@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponHolder : MonoBehaviour
 {
     private MeleeWeaponStats meleeWeaponStats;
     private DistanceWeaponStats distanceWeaponStats;
+
     private int previousChildCount;
+
+    public PickUpController pickUpController;
+
+    public GameObject currentWeapon;
+
+    public GameObject weaponToPickup;
     public enum WeaponMode {
         Distance,
         Melee,
@@ -16,7 +24,8 @@ public class WeaponHolder : MonoBehaviour
 
     void Start()
     {
-
+        currentWeapon = null;
+        pickUpController = null;
     }
 
     void Update()
@@ -48,5 +57,28 @@ public class WeaponHolder : MonoBehaviour
     public DistanceWeaponStats GetDistanceWeaponStats()
     {
         return distanceWeaponStats;
+    }
+
+    public void OnTriggerEnter(Collider target)
+    {
+        if (target.CompareTag("Weapon"))
+        {
+            pickUpController = target.GetComponent<PickUpController>();
+        }
+    }
+
+    public void OnTriggerExit(Collider target)
+    {
+        if (target.CompareTag("Weapon"))
+        {
+            pickUpController = null;
+        }
+    }
+    public void PickUp()
+    {
+        if (pickUpController)
+        {
+            pickUpController.Pickup(gameObject);
+        }
     }
 }

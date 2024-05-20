@@ -189,6 +189,7 @@ namespace StarterAssets
             GroundedCheck();
             Move();
             Attack();
+            PickUp();
         }
 
         private void LateUpdate()
@@ -344,11 +345,22 @@ namespace StarterAssets
         }
         private void Attack()
         {
-            if (weaponHolder.GetWeaponMode() == WeaponHolder.WeaponMode.Distance)
-                DistanceAttack();
-            else 
-                MeleeAttack();
+            if (weaponHolder.currentWeapon != null) {
+                if (weaponHolder.GetWeaponMode() == WeaponHolder.WeaponMode.Distance)
+                    DistanceAttack();
+                else 
+                    MeleeAttack();
+            }
             
+        }
+
+        private void PickUp()
+        {
+            if (_input.pickup)
+            {
+                _input.pickup = false;
+                weaponHolder.PickUp();
+            }
         }
 
         IEnumerator AttackCooldown()
