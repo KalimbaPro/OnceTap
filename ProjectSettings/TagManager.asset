@@ -10,6 +10,7 @@ TagManager:
   - LifeModeUICanvas
   - Score
   - WeaponHolder
+  - Map
   layers:
   - Default
   - TransparentFX
