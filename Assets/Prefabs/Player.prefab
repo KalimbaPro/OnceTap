@@ -1576,7 +1576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3479270629807937653
 Transform:
   m_ObjectHideFlags: 0
@@ -1586,7 +1586,7 @@ Transform:
   m_GameObject: {fileID: 5610518238388056501}
   serializedVersion: 2
   m_LocalRotation: {x: 0.52197284, y: -0, z: -0, w: 0.85296214}
-  m_LocalPosition: {x: 0, y: 7.8, z: -5.69}
+  m_LocalPosition: {x: 0, y: 7.5, z: -3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1599,7 +1599,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5610518238388056501}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -2683,6 +2683,7 @@ GameObject:
   - component: {fileID: 4801395532094646990}
   - component: {fileID: 2887783065309808673}
   - component: {fileID: 7491947861729942294}
+  - component: {fileID: 5072086720570002888}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -2769,8 +2770,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3425742128
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  GlobalObjectIdHash: 915723367
+  InScenePlacedSourceGlobalObjectIdHash: 2371916259
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -3035,3 +3036,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threshold: -10
   isLifeMode: 1
+--- !u!114 &5072086720570002888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9133545340053260162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c081299ffcd4b38429019e225d80ba5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeCamera: {fileID: 457103806187788763}
+  cameraOffset: {x: 0, y: 7.5, z: -3.5}
