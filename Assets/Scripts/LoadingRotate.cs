@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LoadingRotate : MonoBehaviour
 {
+    public float Speed = 10f;
+    public bool Invert = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,6 @@ public class LoadingRotate : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Rotate(new(0, 0, 10 * Time.deltaTime));
+        transform.Rotate(new(0, 0, Speed * Time.deltaTime * (Invert ? 1 : -1)));
     }
 }
