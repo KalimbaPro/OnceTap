@@ -14,8 +14,9 @@ namespace StarterAssets
 		public bool sprint;
 		public bool attack;
 		public bool pickup;
+		public bool launchDrone;
 
-		[Header("Movement Settings")]
+        [Header("Movement Settings")]
 		public bool analogMovement;
 
 		[Header("Mouse Cursor Settings")]
@@ -23,6 +24,16 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
 
 #if ENABLE_INPUT_SYSTEM
+		//public void Clear()
+		//{
+		//	move = Vector2.zero;
+		//	look = Vector2.zero;
+		//	sprint = false;
+		//	attack = false;
+		//	pickup = false;
+		//	launchDrone = false;
+		//}
+
 		public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
@@ -55,6 +66,11 @@ namespace StarterAssets
 		{
 			PickupInput(value.isPressed);
 		}
+
+		public void OnLaunchDrone(InputValue value)
+		{
+			LaunchDroneInput(value.isPressed);
+		}
 #endif
 
 
@@ -86,6 +102,11 @@ namespace StarterAssets
 		public void PickupInput(bool newPickupInput)
 		{
 			pickup = newPickupInput;
+		}
+
+		public void LaunchDroneInput(bool newLaunchDroneInput)
+		{
+			launchDrone = newLaunchDroneInput;
 		}
 
 		private void OnApplicationFocus(bool hasFocus)
