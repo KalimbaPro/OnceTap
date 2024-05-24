@@ -23,7 +23,7 @@ public class RGBFade : MonoBehaviour
         increaseB = false;
 
         // Initialize image color
-        image.color = new Color(r, g, b);
+        image.color = new Color(r, g, b, image.color.a);
     }
 
     void Update()
@@ -87,6 +87,6 @@ public class RGBFade : MonoBehaviour
         }
 
         // Update the color of the image
-        image.color = new Color(r, g, b);
+        image.color = new Color(r, g, b, image.color.a);
     }
 }

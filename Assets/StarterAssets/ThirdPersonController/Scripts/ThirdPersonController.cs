@@ -190,6 +190,7 @@ namespace StarterAssets
             Move();
             Attack();
             PickUp();
+            LaunchDrone();
         }
 
         private void LateUpdate()
@@ -360,6 +361,18 @@ namespace StarterAssets
             {
                 _input.pickup = false;
                 weaponHolder.PickUp();
+            }
+        }
+
+        private void LaunchDrone()
+        {
+            if (_input.launchDrone)
+            {
+                _input.attack = false;
+                _input.launchDrone = false;
+                GetComponent<DroneCamControl>().StartDroneCamera();
+                GetComponent<DroneMovement>().enabled = true;
+                GetComponent<ThirdPersonController>().enabled = false;
             }
         }
 
