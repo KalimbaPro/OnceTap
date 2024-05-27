@@ -735,7 +735,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -3220,7 +3220,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterCamera: {fileID: 457103806187788763}
   droneCamera: {fileID: 6118793386563048330}
-  droneHUDCanvas: {fileID: 123113077453966362}
+  droneHUDCanvas: {fileID: 5786631942042655177}
+  maxDroneSize: 10
+  droneUnzoomSpeed: 2
 --- !u!1001 &798224764574759562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3233,11 +3235,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OrbitalStrikeHUD
-      objectReference: {fileID: 0}
-    - target: {fileID: 767511345804129936, guid: bc405eef46eb52e44973cfc22ae83122,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1320767145728607261, guid: bc405eef46eb52e44973cfc22ae83122,
         type: 3}
@@ -3344,25 +3341,31 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 6118793386563048330}
-    - target: {fileID: 1678985213017249896, guid: bc405eef46eb52e44973cfc22ae83122,
+    - target: {fileID: 6583666883390890819, guid: bc405eef46eb52e44973cfc22ae83122,
         type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: camControl
+      value: 
+      objectReference: {fileID: 8357282776089406549}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc405eef46eb52e44973cfc22ae83122, type: 3}
---- !u!1 &123113077453966362 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 767511345804129936, guid: bc405eef46eb52e44973cfc22ae83122,
-    type: 3}
-  m_PrefabInstance: {fileID: 798224764574759562}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1821586791439597207 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1320767145728607261, guid: bc405eef46eb52e44973cfc22ae83122,
     type: 3}
   m_PrefabInstance: {fileID: 798224764574759562}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5786631942042655177 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6583666883390890819, guid: bc405eef46eb52e44973cfc22ae83122,
+    type: 3}
+  m_PrefabInstance: {fileID: 798224764574759562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8472c1e132967cb418146f7a8c5d6f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -9,28 +9,46 @@ public class DroneCamControl : MonoBehaviour
     [SerializeField]
     private Camera droneCamera;
     [SerializeField]
-    private GameObject droneHUDCanvas;
+    private DroneHUDCanvas droneHUDCanvas;
+    [SerializeField]
+    private float maxDroneSize = 10;
+    [SerializeField]
+    private float droneUnzoomSpeed = 1f;
+    private float initialDroneSize;
+
+    private void Start()
+    {
+        initialDroneSize = droneCamera.orthographicSize;
+    }
 
     // Start is called before the first frame update
     public void StartDroneCamera()
     {
+        droneCamera.orthographicSize = initialDroneSize;
         droneCamera.transform.position = characterCamera.transform.position;
         droneCamera.transform.rotation = characterCamera.transform.rotation;
+        droneHUDCanvas.StartHUD();
+    }
+
+    public void ChangeCamera()
+    {
         characterCamera.enabled = false;
         droneCamera.enabled = true;
-        droneHUDCanvas.SetActive(true);
     }
 
     public void StopDroneCamera()
     {
-        droneHUDCanvas.SetActive(false);
+        droneHUDCanvas.StopHUD();
         droneCamera.enabled = false;
         characterCamera.enabled = true;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (droneCamera.orthographicSize < maxDroneSize)
+        {
+            droneCamera.orthographicSize += droneUnzoomSpeed * Time.deltaTime;
+        }
     }
 }

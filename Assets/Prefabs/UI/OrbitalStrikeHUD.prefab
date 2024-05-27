@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 1678985213017249896}
   - component: {fileID: 7284411860084757677}
   - component: {fileID: 8494833403584444085}
+  - component: {fileID: 6583666883390890819}
   m_Layer: 5
   m_Name: OrbitalStrikeHUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1320767145728607261
 RectTransform:
   m_ObjectHideFlags: 0
@@ -102,6 +103,25 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6583666883390890819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767511345804129936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8472c1e132967cb418146f7a8c5d6f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  background: {fileID: 8198657061547365717}
+  uiObjects:
+  - {fileID: 4181334630012326489}
+  - {fileID: 6911871553467363766}
+  - {fileID: 2242211962587056531}
+  - {fileID: 8756924554861723975}
+  alphaSpeed: 2
 --- !u!1 &2242211962587056531
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,8 +408,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.98039216}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
