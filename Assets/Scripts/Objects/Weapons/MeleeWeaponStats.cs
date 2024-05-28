@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 public class MeleeWeaponStats : MonoBehaviour
@@ -10,6 +11,7 @@ public class MeleeWeaponStats : MonoBehaviour
     public enum MeleeWeapons {
         Hammer,
         Sword,
+        Mass,
         Fist,
     };
 

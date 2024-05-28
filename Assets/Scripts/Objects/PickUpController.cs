@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 using StarterAssets;
+using Unity.Netcode;
 
 public class PickUpController : MonoBehaviour
 {
@@ -31,6 +32,19 @@ public class PickUpController : MonoBehaviour
         if (other.CompareTag("WeaponHolder"))
         {
                 _canPickup = false;
+        }
+    }
+
+    public void Drop(GameObject target)
+    {
+        WeaponHolder weaponHolder = target.GetComponent<WeaponHolder>();
+        if (weaponHolder.currentWeapon != null)
+        {
+            transform.SetParent(null);
+            GetComponent<Rigidbody>().AddForce(target.transform.forward, ForceMode.Impulse);
+            GetComponent<Collider>().enabled = true;
+            GetComponent<Rigidbody>().isKinematic = false;
+            weaponHolder.currentWeapon = null;
         }
     }
 
