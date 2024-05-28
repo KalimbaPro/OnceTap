@@ -11,6 +11,8 @@ TagManager:
   - Score
   - WeaponHolder
   - Map
+  - Weapon
+  - WeaponMesh
   layers:
   - Default
   - TransparentFX
