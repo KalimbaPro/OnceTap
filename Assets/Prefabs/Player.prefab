@@ -2322,6 +2322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1194e482ce4e69b44aa8e79956f67dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpController: {fileID: 0}
   currentWeapon: {fileID: 0}
   weaponToPickup: {fileID: 0}
   weaponMode: 1
@@ -2987,6 +2988,13 @@ MonoBehaviour:
     TransitionDuration: 0.25
     TriggerNameHash: 2109124072
     TransitionIndex: 3
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -1071854972
+    DestinationState: -853039894
+    TransitionDuration: 0.25
+    TriggerNameHash: -853039894
+    TransitionIndex: 4
   m_Animator: {fileID: 1144251053171561644}
 --- !u!114 &7491947861729942294
 MonoBehaviour:
