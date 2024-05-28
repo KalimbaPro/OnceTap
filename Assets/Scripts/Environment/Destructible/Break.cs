@@ -37,6 +37,13 @@ public class Break : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Strike")) {
+            BreakTheThing();
+        }
+    }
+
     private void getPlayer()
     {
         if (!player)

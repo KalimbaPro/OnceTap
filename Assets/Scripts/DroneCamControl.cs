@@ -14,6 +14,9 @@ public class DroneCamControl : MonoBehaviour
     private float maxDroneSize = 10;
     [SerializeField]
     private float droneUnzoomSpeed = 1f;
+    //[SerializeField]
+    //private GameObject strikeCylinder;
+
     private float initialDroneSize;
 
     private void Start()
@@ -28,6 +31,7 @@ public class DroneCamControl : MonoBehaviour
         droneCamera.transform.position = characterCamera.transform.position;
         droneCamera.transform.rotation = characterCamera.transform.rotation;
         droneHUDCanvas.StartHUD();
+        //strikeCylinder.SetActive(true);
     }
 
     public void ChangeCamera()
