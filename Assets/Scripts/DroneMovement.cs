@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using StarterAssets;
 using System.Collections;
 using UnityEngine;
@@ -25,6 +26,9 @@ public class DroneMovement : MonoBehaviour
     [SerializeField]
     private GameObject orbitalStrikeHUD;
 
+    [SerializeField]
+    private MMF_Player strikeFeedback;
+
     private void Start()
     {
         //_controller = GetComponent<CharacterController>();
@@ -33,7 +37,8 @@ public class DroneMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        strikeCylinder.SetActive(true);
+        stopping = false;
+        strikeCylinder.GetComponent<MeshRenderer>().enabled = true;
         strikeCylinder.transform.position = transform.position;
         orbitalStrikeHUD.GetComponent<DroneHUDCanvas>().StartHUD();
     }
@@ -47,6 +52,7 @@ public class DroneMovement : MonoBehaviour
     {
         if (!stopping && _input.attack)
         {
+            stopping = true;
             StartCoroutine(LaunchStrike());
         }
         //_input.Clear();
@@ -77,11 +83,13 @@ public class DroneMovement : MonoBehaviour
     private IEnumerator LaunchStrike()
     {
         strikeCylinder.GetComponent<CapsuleCollider>().enabled = true;
+        orbitalStrikeHUD.GetComponent<DroneHUDCanvas>().StopHUD();
+        strikeFeedback.PlayFeedbacks();
 
         yield return new WaitForSeconds(1);
 
         strikeCylinder.GetComponent<CapsuleCollider>().enabled = false;
-        strikeCylinder.SetActive(false);
+        strikeCylinder.GetComponent<MeshRenderer>().enabled = false;
         _input.launchDrone = false;
         _input.attack = false;
         //GetComponent<DroneCamControl>().StopDroneCamera();
