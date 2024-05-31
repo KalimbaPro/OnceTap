@@ -15,12 +15,15 @@ public class DroneMovement : MonoBehaviour
     private StarterAssetsInputs _input;
     public float DroneSpeed = 1.0f;
 
-    [SerializeField]
-    private Camera droneCamera;
+    //[SerializeField]
+    //private Camera droneCamera;
     [SerializeField]
     private GameObject strikeCylinder;
 
     private bool stopping = false;
+
+    [SerializeField]
+    private GameObject orbitalStrikeHUD;
 
     private void Start()
     {
@@ -31,6 +34,13 @@ public class DroneMovement : MonoBehaviour
     private void OnEnable()
     {
         strikeCylinder.SetActive(true);
+        strikeCylinder.transform.position = transform.position;
+        orbitalStrikeHUD.GetComponent<DroneHUDCanvas>().StartHUD();
+    }
+
+    private void OnDisable()
+    {
+        orbitalStrikeHUD.GetComponent<DroneHUDCanvas>().StopHUD();
     }
 
     private void Update()
@@ -54,7 +64,7 @@ public class DroneMovement : MonoBehaviour
         movement.x = _input.move.x * deltaTime * DroneSpeed * (_input.sprint ? 2 : 1);
         movement.z = _input.move.y * deltaTime * DroneSpeed * (_input.sprint ? 2 : 1);
 
-        droneCamera.transform.position += movement;
+        strikeCylinder.transform.position += movement;
 
         //movement.x = _moveInput.action.ReadValue<Vector2>().x * deltaTime;
         //movement.z = _moveInput.action.ReadValue<Vector2>().y * deltaTime;
@@ -74,7 +84,7 @@ public class DroneMovement : MonoBehaviour
         strikeCylinder.SetActive(false);
         _input.launchDrone = false;
         _input.attack = false;
-        GetComponent<DroneCamControl>().StopDroneCamera();
+        //GetComponent<DroneCamControl>().StopDroneCamera();
         GetComponent<ThirdPersonController>().enabled = true;
         GetComponent<DroneMovement>().enabled = false;
     }

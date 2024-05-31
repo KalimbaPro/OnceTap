@@ -13,8 +13,8 @@ public class DroneHUDCanvas : MonoBehaviour
     private float fadeInSpeed = 5f;
     [SerializeField]
     private float fadeOutSpeed = 1f;
-    [SerializeField]
-    private DroneCamControl camControl;
+    //[SerializeField]
+    //private DroneCamControl camControl;
 
     private bool reverse = false;
 
@@ -35,7 +35,7 @@ public class DroneHUDCanvas : MonoBehaviour
         {
             if (background.color.a >= 1)
             {
-                camControl.ChangeCamera();
+                //camControl.ChangeCamera();
                 reverse = true;
             }
             background.color = new Color(background.color.r, background.color.g, background.color.b, background.color.a + (fadeInSpeed * dt));

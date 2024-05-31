@@ -17,7 +17,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM 
     [RequireComponent(typeof(PlayerInput))]
 #endif
-    public class ThirdPersonController : NetworkBehaviour
+    public class ThirdPersonController : MonoBehaviour
     {
         [Header("Player")]
         public bool IsDead = false;
@@ -143,7 +143,7 @@ namespace StarterAssets
 
         private void Awake()
         {
-            if (!IsOwner) return;
+            //if (!IsOwner) return;
 
             if (_mainCamera == null)
             {
@@ -174,7 +174,7 @@ namespace StarterAssets
 
         private void Update()
         {
-            if (!IsOwner) return;
+            //if (!IsOwner) return;
 
             if (_mainCamera == null)
             {
@@ -370,7 +370,7 @@ namespace StarterAssets
             {
                 _input.attack = false;
                 _input.launchDrone = false;
-                GetComponent<DroneCamControl>().StartDroneCamera();
+                //GetComponent<DroneCamControl>().StartDroneCamera();
                 GetComponent<DroneMovement>().enabled = true;
                 GetComponent<ThirdPersonController>().enabled = false;
             }
