@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6480c3a11ef13143b71f9c64c7da64c, type: 3}
   m_Name: FeedbacksSequence
   m_EditorClassIdentifier: 
-  Length: 5.3333335
+  Length: 6
   OriginalSequence:
     Line: []
-  EndSilenceDuration: 0.3
+  EndSilenceDuration: 0.375
   SequenceTracks:
   - ID: 0
     TrackColor: {r: 0.7529412, g: 0.7529412, b: 0.7529412, a: 1}
@@ -36,105 +36,105 @@ MonoBehaviour:
     State: 0
     Initialized: 1
   Quantized: 1
-  TargetBPM: 180
+  TargetBPM: 160
   QuantizedSequence:
   - Line:
     - Timestamp: 0
       ID: 0
-    - Timestamp: 0.33333334
+    - Timestamp: 0.375
       ID: -1
-    - Timestamp: 0.6666667
+    - Timestamp: 0.75
       ID: 0
-    - Timestamp: 1
+    - Timestamp: 1.125
       ID: -1
-    - Timestamp: 1.3333334
+    - Timestamp: 1.5
       ID: 0
-    - Timestamp: 1.6666667
+    - Timestamp: 1.875
       ID: -1
-    - Timestamp: 2
+    - Timestamp: 2.25
       ID: 0
-    - Timestamp: 2.3333335
+    - Timestamp: 2.625
       ID: -1
-    - Timestamp: 2.6666667
-      ID: 0
     - Timestamp: 3
-      ID: -1
-    - Timestamp: 3.3333335
       ID: 0
-    - Timestamp: 3.6666667
+    - Timestamp: 3.375
       ID: -1
-    - Timestamp: 4
+    - Timestamp: 3.75
       ID: 0
-    - Timestamp: 4.3333335
+    - Timestamp: 4.125
       ID: -1
-    - Timestamp: 4.666667
+    - Timestamp: 4.5
       ID: 0
-    - Timestamp: 5
+    - Timestamp: 4.875
+      ID: -1
+    - Timestamp: 5.25
+      ID: 0
+    - Timestamp: 5.625
       ID: -1
   - Line:
     - Timestamp: 0
       ID: 1
-    - Timestamp: 0.33333334
+    - Timestamp: 0.375
       ID: -1
-    - Timestamp: 0.6666667
+    - Timestamp: 0.75
       ID: 1
-    - Timestamp: 1
+    - Timestamp: 1.125
       ID: -1
-    - Timestamp: 1.3333334
+    - Timestamp: 1.5
       ID: 1
-    - Timestamp: 1.6666667
+    - Timestamp: 1.875
       ID: -1
-    - Timestamp: 2
+    - Timestamp: 2.25
       ID: 1
-    - Timestamp: 2.3333335
-      ID: 1
-    - Timestamp: 2.6666667
+    - Timestamp: 2.625
       ID: 1
     - Timestamp: 3
       ID: 1
-    - Timestamp: 3.3333335
-      ID: -1
-    - Timestamp: 3.6666667
-      ID: -1
-    - Timestamp: 4
+    - Timestamp: 3.375
       ID: 1
-    - Timestamp: 4.3333335
+    - Timestamp: 3.75
       ID: -1
-    - Timestamp: 4.666667
+    - Timestamp: 4.125
+      ID: -1
+    - Timestamp: 4.5
       ID: 1
-    - Timestamp: 5
+    - Timestamp: 4.875
+      ID: -1
+    - Timestamp: 5.25
+      ID: 1
+    - Timestamp: 5.625
       ID: -1
   - Line:
     - Timestamp: 0
       ID: 2
-    - Timestamp: 0.33333334
+    - Timestamp: 0.375
       ID: 2
-    - Timestamp: 0.6666667
+    - Timestamp: 0.75
       ID: -1
-    - Timestamp: 1
+    - Timestamp: 1.125
       ID: -1
-    - Timestamp: 1.3333334
+    - Timestamp: 1.5
       ID: 2
-    - Timestamp: 1.6666667
+    - Timestamp: 1.875
       ID: -1
-    - Timestamp: 2
+    - Timestamp: 2.25
       ID: -1
-    - Timestamp: 2.3333335
-      ID: 2
-    - Timestamp: 2.6666667
+    - Timestamp: 2.625
       ID: 2
     - Timestamp: 3
       ID: 2
-    - Timestamp: 3.3333335
-      ID: -1
-    - Timestamp: 3.6666667
-      ID: -1
-    - Timestamp: 4
+    - Timestamp: 3.375
       ID: 2
-    - Timestamp: 4.3333335
-      ID: 2
-    - Timestamp: 4.666667
+    - Timestamp: 3.75
       ID: -1
-    - Timestamp: 5
+    - Timestamp: 4.125
+      ID: -1
+    - Timestamp: 4.5
+      ID: 2
+    - Timestamp: 4.875
+      ID: 2
+    - Timestamp: 5.25
+      ID: -1
+    - Timestamp: 5.625
       ID: 2
   RandomizeTrackColorsButton: 0

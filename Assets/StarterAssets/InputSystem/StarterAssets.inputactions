@@ -414,16 +414,6 @@
                     "isOR": false
                 }
             ]
-        },
-        {
-            "name": "Xbox Controller",
-            "bindingGroup": "Xbox Controller",
-            "devices": []
-        },
-        {
-            "name": "PS4 Controller",
-            "bindingGroup": "PS4 Controller",
-            "devices": []
         }
     ]
 }

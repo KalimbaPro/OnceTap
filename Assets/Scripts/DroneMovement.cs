@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using StarterAssets;
 using System.Collections;
 using UnityEngine;
@@ -15,12 +16,18 @@ public class DroneMovement : MonoBehaviour
     private StarterAssetsInputs _input;
     public float DroneSpeed = 1.0f;
 
-    [SerializeField]
-    private Camera droneCamera;
+    //[SerializeField]
+    //private Camera droneCamera;
     [SerializeField]
     private GameObject strikeCylinder;
 
     private bool stopping = false;
+
+    [SerializeField]
+    private GameObject orbitalStrikeHUD;
+
+    [SerializeField]
+    private MMF_Player strikeFeedback;
 
     private void Start()
     {
@@ -30,13 +37,22 @@ public class DroneMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        strikeCylinder.SetActive(true);
+        stopping = false;
+        strikeCylinder.GetComponent<MeshRenderer>().enabled = true;
+        strikeCylinder.transform.position = transform.position;
+        orbitalStrikeHUD.GetComponent<DroneHUDCanvas>().StartHUD();
+    }
+
+    private void OnDisable()
+    {
+        orbitalStrikeHUD.GetComponent<DroneHUDCanvas>().StopHUD();
     }
 
     private void Update()
     {
         if (!stopping && _input.attack)
         {
+            stopping = true;
             StartCoroutine(LaunchStrike());
         }
         //_input.Clear();
@@ -54,7 +70,7 @@ public class DroneMovement : MonoBehaviour
         movement.x = _input.move.x * deltaTime * DroneSpeed * (_input.sprint ? 2 : 1);
         movement.z = _input.move.y * deltaTime * DroneSpeed * (_input.sprint ? 2 : 1);
 
-        droneCamera.transform.position += movement;
+        strikeCylinder.transform.position += movement;
 
         //movement.x = _moveInput.action.ReadValue<Vector2>().x * deltaTime;
         //movement.z = _moveInput.action.ReadValue<Vector2>().y * deltaTime;
@@ -67,14 +83,16 @@ public class DroneMovement : MonoBehaviour
     private IEnumerator LaunchStrike()
     {
         strikeCylinder.GetComponent<CapsuleCollider>().enabled = true;
+        orbitalStrikeHUD.GetComponent<DroneHUDCanvas>().StopHUD();
+        strikeFeedback.PlayFeedbacks();
 
         yield return new WaitForSeconds(1);
 
         strikeCylinder.GetComponent<CapsuleCollider>().enabled = false;
-        strikeCylinder.SetActive(false);
+        strikeCylinder.GetComponent<MeshRenderer>().enabled = false;
         _input.launchDrone = false;
         _input.attack = false;
-        GetComponent<DroneCamControl>().StopDroneCamera();
+        //GetComponent<DroneCamControl>().StopDroneCamera();
         GetComponent<ThirdPersonController>().enabled = true;
         GetComponent<DroneMovement>().enabled = false;
     }
