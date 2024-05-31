@@ -136,6 +136,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkManager
       objectReference: {fileID: 0}
+    - target: {fileID: 760312203983929003, guid: 3795be18afcf3a54c89f0dc62c77cc2f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1330664291943582617, guid: 3795be18afcf3a54c89f0dc62c77cc2f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -449,6 +454,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Relay
       objectReference: {fileID: 0}
+    - target: {fileID: 7301350097607750375, guid: 99a165d4481a89e45bd13ee364d7bf93,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7327065611843970911, guid: 99a165d4481a89e45bd13ee364d7bf93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -572,6 +582,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314274771599977382, guid: bc72e5057579fdd4e8d903ff5515f365,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1300,6 +1315,52 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 660414749}
+    - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 102900000, guid: a2513a8e1c6ca0446a4e7d95a228beb1,
+        type: 3}
+    - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4703880711700544658, guid: 6a6adaedee168b04498c2323145bedcc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
