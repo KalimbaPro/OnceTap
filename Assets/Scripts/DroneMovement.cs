@@ -1,4 +1,5 @@
 using StarterAssets;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,10 @@ public class DroneMovement : MonoBehaviour
 
     [SerializeField]
     private Camera droneCamera;
+    [SerializeField]
+    private GameObject strikeCylinder;
+
+    private bool stopping = false;
 
     private void Start()
     {
@@ -23,15 +28,16 @@ public class DroneMovement : MonoBehaviour
         _input = GetComponent<StarterAssetsInputs>();
     }
 
+    private void OnEnable()
+    {
+        strikeCylinder.SetActive(true);
+    }
+
     private void Update()
     {
-        if (_input.attack)
+        if (!stopping && _input.attack)
         {
-            _input.launchDrone = false;
-            _input.attack = false;
-            GetComponent<DroneCamControl>().StopDroneCamera();
-            GetComponent<ThirdPersonController>().enabled = true;
-            GetComponent<DroneMovement>().enabled = false;
+            StartCoroutine(LaunchStrike());
         }
         //_input.Clear();
         //if (_fireInput.action.IsPressed())
@@ -54,8 +60,22 @@ public class DroneMovement : MonoBehaviour
         //movement.z = _moveInput.action.ReadValue<Vector2>().y * deltaTime;
     }
 
-    private void FireStrike()
-    {
+    //private void FireStrike()
+    //{
+    //}
 
+    private IEnumerator LaunchStrike()
+    {
+        strikeCylinder.GetComponent<CapsuleCollider>().enabled = true;
+
+        yield return new WaitForSeconds(1);
+
+        strikeCylinder.GetComponent<CapsuleCollider>().enabled = false;
+        strikeCylinder.SetActive(false);
+        _input.launchDrone = false;
+        _input.attack = false;
+        GetComponent<DroneCamControl>().StopDroneCamera();
+        GetComponent<ThirdPersonController>().enabled = true;
+        GetComponent<DroneMovement>().enabled = false;
     }
 }
