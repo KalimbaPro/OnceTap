@@ -35,19 +35,6 @@ public class PickUpController : MonoBehaviour
         }
     }
 
-    public void Drop(GameObject target)
-    {
-        WeaponHolder weaponHolder = target.GetComponent<WeaponHolder>();
-        if (weaponHolder.currentWeapon != null)
-        {
-            transform.SetParent(null);
-            GetComponent<Rigidbody>().AddForce(target.transform.forward, ForceMode.Impulse);
-            GetComponent<Collider>().enabled = true;
-            GetComponent<Rigidbody>().isKinematic = false;
-            weaponHolder.currentWeapon = null;
-        }
-    }
-
     public void Pickup(GameObject target)
     {
         if (target.GetComponent<WeaponHolder>().pickUpController) {
@@ -55,9 +42,10 @@ public class PickUpController : MonoBehaviour
             transform.SetParent(target.transform);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
-            GetComponent<SphereCollider>().enabled = false; // Désactiver le collider pour éviter d'autres triggers
-            GetComponent<BoxCollider>().enabled = true;
-            GetComponent<Rigidbody>().isKinematic = true; // Désactiver la physique
+            GetComponent<SphereCollider>().enabled = false;
+            if (target.GetComponent<WeaponHolder>().weaponMode == WeaponHolder.WeaponMode.Melee)
+                GetComponent<MeleeWeaponStats>().SetphysicHitBox(false);
+            GetComponent<Rigidbody>().isKinematic = true;
             WeaponHolder weaponHolder = target.GetComponent<WeaponHolder>();
             if (weaponHolder.currentWeapon == null)
             {

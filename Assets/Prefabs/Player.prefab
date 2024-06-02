@@ -1860,6 +1860,37 @@ Transform:
   - {fileID: 1722249531407494900}
   m_Father: {fileID: 630814501804354325}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6051069393741559007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2908189647153878113}
+  m_Layer: 0
+  m_Name: DropPoint
+  m_TagString: FirePoint
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2908189647153878113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6051069393741559007}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.625, z: 0.379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5618501868731833270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6162658248155869731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2324,7 +2355,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpController: {fileID: 0}
   currentWeapon: {fileID: 0}
-  weaponToPickup: {fileID: 0}
+  dropForce: 12
+  dropPoint: {fileID: 2908189647153878113}
   weaponMode: 1
 --- !u!65 &2559806834583118405
 BoxCollider:
@@ -2707,6 +2739,7 @@ Transform:
   - {fileID: 4549282998696754395}
   - {fileID: 4140760765570867345}
   - {fileID: 7374493187049349986}
+  - {fileID: 2908189647153878113}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1144251053171561644
@@ -2859,6 +2892,7 @@ MonoBehaviour:
   sprint: 0
   attack: 0
   pickup: 0
+  drop: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1

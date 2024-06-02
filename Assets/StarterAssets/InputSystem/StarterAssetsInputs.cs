@@ -14,6 +14,8 @@ namespace StarterAssets
 		public bool sprint;
 		public bool attack;
 		public bool pickup;
+		public bool drop;
+
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -55,6 +57,11 @@ namespace StarterAssets
 		{
 			PickupInput(value.isPressed);
 		}
+
+		public void OnDrop(InputValue value)
+		{
+			DropInput(value.isPressed);
+		}
 #endif
 
 
@@ -86,6 +93,11 @@ namespace StarterAssets
 		public void PickupInput(bool newPickupInput)
 		{
 			pickup = newPickupInput;
+		}
+
+		public void DropInput(bool newPickupInput)
+		{
+			drop = newPickupInput;
 		}
 
 		private void OnApplicationFocus(bool hasFocus)

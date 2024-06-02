@@ -170,6 +170,7 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+            _input.attack = false;
         }
 
         private void Update()
@@ -190,6 +191,7 @@ namespace StarterAssets
             Move();
             Attack();
             PickUp();
+            Drop();
         }
 
         private void LateUpdate()
@@ -319,17 +321,27 @@ namespace StarterAssets
 
         private void MeleeAttack()
         {
-            _animIDMeleeAttack = weaponHolder.GetMeleeWeaponStats().weaponType.ToString() + "Attack";
             if (Grounded)
             {
                 if (_hasAnimator && _input.attack && _canAttack)
                 {
+                    _animIDMeleeAttack = weaponHolder.GetMeleeWeaponStats().weaponType.ToString() + "Attack";
                     _canAttack = false;
                     _animator.SetTrigger(_animIDMeleeAttack);
+                    weaponHolder.GetMeleeWeaponStats().SetHitBox(true);
                     StartCoroutine(AttackCooldown());
                 }
             }
             _input.attack = false;
+        }
+
+        private void Drop()
+        {
+            if (_input.drop && weaponHolder.currentWeapon != null)
+            {
+                _input.drop = false;
+                weaponHolder.Drop();
+            }
         }
 
         private void DistanceAttack()
@@ -359,6 +371,8 @@ namespace StarterAssets
             if (_input.pickup)
             {
                 _input.pickup = false;
+                print(_input.attack);
+                _input.attack = false;
                 weaponHolder.PickUp();
             }
         }
@@ -367,6 +381,7 @@ namespace StarterAssets
         {
             yield return new WaitForSeconds(this.attackCooldown);
             _canAttack = true;
+            weaponHolder.GetMeleeWeaponStats().SetHitBox(false);
         }
         private void JumpAndGravity()
         {
