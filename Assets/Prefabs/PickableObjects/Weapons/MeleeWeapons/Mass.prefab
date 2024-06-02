@@ -26,12 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4029206055591775074}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
+  m_LocalPosition: {x: 0, y: 1.8, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7944445747343404483}
+  m_Father: {fileID: 4092323407670286732}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4104291458094724345
 BoxCollider:
@@ -100,12 +100,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4650109255338160921}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
+  m_LocalPosition: {x: 0, y: 1.8, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7944445747343404483}
+  m_Father: {fileID: 4092323407670286732}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6537581571861182647
 BoxCollider:
@@ -162,6 +162,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7944445747343404483}
+  - {fileID: 9122403760876286942}
+  - {fileID: 3663712468746721122}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &6103351512655612653
@@ -209,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e008529caf1456448a250df79ddb0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanBreakFloor: 0
+  CanBreakFloor: 1
   CanBreakThings: 0
   hitBox: {fileID: 4650109255338160921}
   physicHitBox: {fileID: 4029206055591775074}
@@ -326,15 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0b956ed3ed269ed4488a260d2a94647b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9122403760876286942}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0b956ed3ed269ed4488a260d2a94647b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3663712468746721122}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b956ed3ed269ed4488a260d2a94647b, type: 3}
 --- !u!4 &7944445747343404483 stripped

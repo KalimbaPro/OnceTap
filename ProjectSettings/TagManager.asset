@@ -15,6 +15,7 @@ TagManager:
   - WeaponMesh
   - Floor
   - Strike
+  - WeaponHitbox
   layers:
   - Default
   - TransparentFX

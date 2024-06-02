@@ -34,6 +34,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 98973095453784904}
+  - {fileID: 4318633490298368156}
+  - {fileID: 3832758641568284485}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &33061507991826933
@@ -49,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanBreakFloor: 0
-  CanBreakThings: 0
+  CanBreakThings: 1
   hitBox: {fileID: 6073113346455847860}
   physicHitBox: {fileID: 2697651130028009239}
   weaponType: 0
@@ -139,12 +141,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2697651130028009239}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
+  m_LocalPosition: {x: 0, y: 1.0410001, z: 0}
+  m_LocalScale: {x: 55, y: 55, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 98973095453784904}
+  m_Father: {fileID: 7489963772997665886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3823208134483862416
 BoxCollider:
@@ -200,7 +202,7 @@ GameObject:
   - component: {fileID: 6807825603454612980}
   m_Layer: 0
   m_Name: Hitbox
-  m_TagString: Untagged
+  m_TagString: WeaponHitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,12 +215,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6073113346455847860}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
+  m_LocalPosition: {x: 0, y: 1.0410001, z: 0}
+  m_LocalScale: {x: 55, y: 55, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 98973095453784904}
+  m_Father: {fileID: 7489963772997665886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6807825603454612980
 BoxCollider:
@@ -316,15 +318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: acba7bdeb1e24db48b16ac3cbc5e801d,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4318633490298368156}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: acba7bdeb1e24db48b16ac3cbc5e801d,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3832758641568284485}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acba7bdeb1e24db48b16ac3cbc5e801d, type: 3}
 --- !u!4 &98973095453784904 stripped

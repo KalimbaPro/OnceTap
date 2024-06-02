@@ -32,7 +32,7 @@ public class Break : MonoBehaviour
             BreakTheThing();
         }
 
-        if (other.gameObject.CompareTag("Weapon") && other.gameObject.GetComponent<MeleeWeaponStats>().CanBreakThings)
+        if (other.GetComponentInParent<MeleeWeaponStats>().CanBreakThings)
         {
             if (!this.CompareTag("Floor"))
             {
