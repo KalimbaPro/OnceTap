@@ -26,7 +26,6 @@ public class Break : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger with " + other.gameObject.name);
         if (other.gameObject.CompareTag("Strike"))
         {
             BreakTheThing();
@@ -45,7 +44,6 @@ public class Break : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Trigger with " + other.gameObject.name);
         if (other.gameObject.CompareTag("Strike")) {
             BreakTheThing();
         }
@@ -53,7 +51,6 @@ public class Break : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        Debug.Log("Collision with " + other.gameObject.name);
         if (other.gameObject.CompareTag("Strike"))
         {
             BreakTheThing();

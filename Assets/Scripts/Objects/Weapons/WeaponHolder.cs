@@ -64,6 +64,7 @@ public class WeaponHolder : MonoBehaviour
 
     public void OnTriggerEnter(Collider target)
     {
+        print("SUUUUUUUUUUUUUU");
         if (target.CompareTag("Weapon") && target.GetType().Name == "SphereCollider")
         {
             pickUpController = target.GetComponent<PickUpController>();

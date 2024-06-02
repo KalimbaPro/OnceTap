@@ -36,7 +36,7 @@ public class RagdollTrigger : MonoBehaviour
                 break;
         }
     }
-    void DisableRagdoll()
+    public void DisableRagdoll()
     {
         foreach (var rigidbody in _ragdollRigidbodies)
         {
@@ -46,7 +46,7 @@ public class RagdollTrigger : MonoBehaviour
         _characterController.enabled = true;
     }
 
-    void EnableRagdoll()
+    public void EnableRagdoll()
     {
         foreach (var rigidbody in _ragdollRigidbodies)
         {

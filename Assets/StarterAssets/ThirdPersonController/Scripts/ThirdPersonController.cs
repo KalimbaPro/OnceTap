@@ -372,7 +372,6 @@ namespace StarterAssets
             if (_input.pickup)
             {
                 _input.pickup = false;
-                print(_input.attack);
                 _input.attack = false;
                 weaponHolder.PickUp();
             }

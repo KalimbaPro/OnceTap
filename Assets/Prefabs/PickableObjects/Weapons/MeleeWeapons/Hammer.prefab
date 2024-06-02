@@ -36,6 +36,7 @@ Transform:
   - {fileID: 98973095453784904}
   - {fileID: 4318633490298368156}
   - {fileID: 3832758641568284485}
+  - {fileID: 6821305592864171854}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &33061507991826933
@@ -54,6 +55,7 @@ MonoBehaviour:
   CanBreakThings: 1
   hitBox: {fileID: 6073113346455847860}
   physicHitBox: {fileID: 2697651130028009239}
+  projectionForce: 0
   weaponType: 0
 --- !u!135 &6217545107034584294
 SphereCollider:
@@ -190,6 +192,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.053894904, y: 0.071909145, z: 1.012373}
   m_Center: {x: -0.012686532, y: -0.007084454, z: -0.6026763}
+--- !u!1 &5021529329898677140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6821305592864171854}
+  m_Layer: 0
+  m_Name: ProjectionOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6821305592864171854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5021529329898677140}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.3, y: 1.114, z: -1.1}
+  m_LocalScale: {x: 22.011084, y: 0.50606567, z: 23.752512}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7489963772997665886}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6073113346455847860
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4318633490298368156}
   - component: {fileID: 6807825603454612980}
+  - component: {fileID: 4172057510142845842}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: WeaponHitbox
@@ -243,6 +277,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.4781938, y: 0.24965474, z: 0.30844238}
   m_Center: {x: -0.0008978835, y: 0.005784196, z: 0.06880665}
+--- !u!114 &4172057510142845842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6073113346455847860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aef2094c595b7a4fbb62b1485829fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectionOrigin: {fileID: 6821305592864171854}
 --- !u!1001 &492342602241842339
 PrefabInstance:
   m_ObjectHideFlags: 0

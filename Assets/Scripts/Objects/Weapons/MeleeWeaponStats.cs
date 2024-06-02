@@ -7,11 +7,9 @@ public class MeleeWeaponStats : MonoBehaviour
 {
     public bool CanBreakFloor = false;
     public bool CanBreakThings = false;
-    private BoxCollider meshCollider;
-
     public GameObject hitBox;
-
     public GameObject physicHitBox;
+    public float projectionForce;
 
     public enum MeleeWeapons {
         Hammer,
