@@ -13,6 +13,8 @@ TagManager:
   - Map
   - Weapon
   - WeaponMesh
+  - Floor
+  - Strike
   layers:
   - Default
   - TransparentFX

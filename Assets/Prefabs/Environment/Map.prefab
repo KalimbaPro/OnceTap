@@ -343,7 +343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1243373937868007598
 Transform:
   m_ObjectHideFlags: 0
@@ -2567,6 +2567,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2898,6 +2903,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (81)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2981,6 +2991,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -3303,6 +3318,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3466,6 +3486,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (74)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3549,6 +3574,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -3713,6 +3743,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (70)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3796,6 +3831,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -3959,6 +3999,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -4207,6 +4252,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -4290,6 +4340,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -4464,6 +4519,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -4547,6 +4607,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -4710,6 +4775,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -4953,6 +5023,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -5036,6 +5111,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (71)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -5121,6 +5201,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (67)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -5204,6 +5289,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -5862,6 +5952,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -6029,6 +6124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -6351,6 +6451,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (75)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -6434,6 +6539,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -6914,6 +7024,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -7155,6 +7270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -7403,6 +7523,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -7486,6 +7611,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (80)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -7812,6 +7942,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -8455,6 +8590,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (72)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -8538,6 +8678,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -8875,6 +9020,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (87)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -9116,6 +9266,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (86)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -9379,6 +9534,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -9462,6 +9622,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (83)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -9547,6 +9712,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -9631,6 +9801,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -9714,6 +9889,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -10140,6 +10320,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -10224,6 +10409,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -10307,6 +10497,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -10550,6 +10745,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -10717,6 +10917,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -11202,6 +11407,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (76)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -11622,6 +11832,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (69)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -11785,6 +12000,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -11868,6 +12088,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -12126,6 +12351,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (73)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -12289,6 +12519,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -12451,6 +12686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (85)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -12857,6 +13097,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -13024,6 +13269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (78)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -13266,6 +13516,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -13598,6 +13853,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -13681,6 +13941,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -13845,6 +14110,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -13929,6 +14199,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (68)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -14012,6 +14287,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -14175,6 +14455,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -14359,6 +14644,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -14527,6 +14817,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -14611,6 +14906,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (82)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -14694,6 +14994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -14956,6 +15261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -15278,6 +15588,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -15440,6 +15755,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -15777,6 +16097,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -16029,6 +16354,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -16196,6 +16526,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -16523,6 +16858,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -16685,6 +17025,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -16948,6 +17293,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -17031,6 +17381,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (77)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -17294,6 +17649,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -17546,6 +17906,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -17797,6 +18162,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -18059,6 +18429,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -18791,6 +19166,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -18874,6 +19254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (84)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -19116,6 +19501,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -19364,6 +19754,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -19537,6 +19932,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (62)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -19620,6 +20020,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -19705,6 +20110,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -19788,6 +20198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -19951,6 +20366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
@@ -20273,6 +20693,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -20441,6 +20866,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -20604,6 +21034,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (79)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -20687,6 +21122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650256761809671116, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4346834431471033735, guid: 24ceb9c8d85cdf04c839d7f06daa42a7,
         type: 3}

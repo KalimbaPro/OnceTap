@@ -60,9 +60,36 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "LaunchDrone",
+                    "type": "Button",
+                    "id": "4d648ad5-65a9-40e5-9a9f-84ae3f1e1f03",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RollLeft",
+                    "type": "Button",
+                    "id": "c5ecd617-dd8d-4bed-b158-27b66aad89a3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RollRight",
+                    "type": "Button",
+                    "id": "80bdc11f-2f61-49c2-a1c0-d7082c2f40d6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Drop",
                     "type": "Button",
-                    "id": "2b4202eb-3ebc-4cf7-a43e-9a83f23bceea",
+                    "id": "0aa3dee9-75ac-4e49-9b1f-ccc439683bd1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -260,7 +287,7 @@
                 {
                     "name": "",
                     "id": "45877975-58d7-4e76-8764-16ee66764cc2",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -281,8 +308,8 @@
                 },
                 {
                     "name": "",
-                    "id": "a1650677-67d3-4bd5-9c92-1877aa19fd32",
-                    "path": "<Gamepad>/buttonNorth",
+                    "id": "c86ccd13-03b4-4e7a-8b1a-1ea09e7db32d",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -292,18 +319,73 @@
                 },
                 {
                     "name": "",
-                    "id": "752985c4-2140-4d27-aab1-3d6fa91d2264",
-                    "path": "<XInputController>/buttonNorth",
+                    "id": "81ca10f0-a77f-4531-9a36-36747f658c8c",
+                    "path": "<Keyboard>/o",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox Controller",
-                    "action": "Pickup",
+                    "groups": "KeyboardMouse",
+                    "action": "LaunchDrone",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "6004aa98-be8d-4c2d-8f45-fa43fca86016",
+                    "id": "461058f4-6eb5-4d11-a374-65bfe04bc145",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "LaunchDrone",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4929e7a6-c65d-4df3-bb02-0306af7e1709",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "RollLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b7bb2665-b66a-4418-8be2-b8884f0c0465",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "RollLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eec385b1-796c-48be-8e1e-6e76a92aced2",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "RollRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6db72e90-dd52-4194-a0bd-7a443a204bf0",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "RollRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "99f90ac3-0ef7-4def-9d3d-ba68eb7f4ea6",
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
@@ -314,18 +396,7 @@
                 },
                 {
                     "name": "",
-                    "id": "089d9e15-8e32-497e-acab-46087ef66b1b",
-                    "path": "<XInputController>/rightStickPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Xbox Controller",
-                    "action": "Drop",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c0206b09-d19b-4ab2-ac0c-f6458135a56b",
+                    "id": "844aa57b-c1d9-4be9-8852-aa78f2a777f8",
                     "path": "<Gamepad>/rightStickPress",
                     "interactions": "",
                     "processors": "",
@@ -374,16 +445,6 @@
                     "isOR": false
                 }
             ]
-        },
-        {
-            "name": "Xbox Controller",
-            "bindingGroup": "Xbox Controller",
-            "devices": []
-        },
-        {
-            "name": "PS4 Controller",
-            "bindingGroup": "PS4 Controller",
-            "devices": []
         }
     ]
 }
