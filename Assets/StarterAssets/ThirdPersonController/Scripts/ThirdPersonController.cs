@@ -393,6 +393,12 @@ namespace StarterAssets
         {
             yield return new WaitForSeconds(this.attackCooldown);
             _canAttack = true;
+            DisableWeaponHitBox();
+            
+        }
+
+        void DisableWeaponHitBox()
+        {
             weaponHolder.GetMeleeWeaponStats().SetHitBox(false);
         }
         private void JumpAndGravity()

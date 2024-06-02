@@ -27,8 +27,10 @@ public class ClassicHammer : MonoBehaviour
 
     void HitPlayer(Collider player)
     {
-        float projectionForce = this.GetComponent<MeleeWeaponStats>().projectionForce;
-        player.GetComponent<RagdollTrigger>().EnableRagdoll();
-        player.GetComponent<Rigidbody>().AddForce(projectionOrigin.transform.forward * projectionForce, ForceMode.Impulse);
+        RagdollTrigger ragdollTrigger = player.GetComponent<RagdollTrigger>();
+        float projectionForce = this.GetComponentInParent<MeleeWeaponStats>().projectionForce;
+        ragdollTrigger.EnableRagdoll();
+        ragdollTrigger.ApplyForce(projectionForce, projectionOrigin.transform.right, ForceMode.Impulse);
+        ragdollTrigger.StartRecoveryTime();
     }
 }

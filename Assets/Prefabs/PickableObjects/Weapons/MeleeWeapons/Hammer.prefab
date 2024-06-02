@@ -55,7 +55,7 @@ MonoBehaviour:
   CanBreakThings: 1
   hitBox: {fileID: 6073113346455847860}
   physicHitBox: {fileID: 2697651130028009239}
-  projectionForce: 0
+  projectionForce: 75
   weaponType: 0
 --- !u!135 &6217545107034584294
 SphereCollider:
@@ -76,8 +76,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.9007258
-  m_Center: {x: 0, y: 0.26924628, z: 1.2949616}
+  m_Radius: 1.19
+  m_Center: {x: -0.67, y: 0.61, z: 1.2949616}
 --- !u!114 &2743095164521399620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +98,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381154865043278472}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 35.05
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -216,13 +216,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5021529329898677140}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 1.114, z: -1.1}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalPosition: {x: -10.6, y: 1.114, z: -1.1}
   m_LocalScale: {x: 22.011084, y: 0.50606567, z: 23.752512}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7489963772997665886}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!1 &6073113346455847860
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4318633490298368156}
   - component: {fileID: 6807825603454612980}
+  - component: {fileID: 3856255840076583711}
   - component: {fileID: 4172057510142845842}
   m_Layer: 0
   m_Name: Hitbox
@@ -275,8 +276,29 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.4781938, y: 0.24965474, z: 0.30844238}
-  m_Center: {x: -0.0008978835, y: 0.005784196, z: 0.06880665}
+  m_Size: {x: 0.4781938, y: 0.24965474, z: 0.3024948}
+  m_Center: {x: -0.0008978835, y: 0.005784196, z: 0.07178059}
+--- !u!65 &3856255840076583711
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6073113346455847860}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.113964975, y: 0.17418566, z: 0.5178607}
+  m_Center: {x: -0.0066167177, y: -0.0035334567, z: -0.35651705}
 --- !u!114 &4172057510142845842
 MonoBehaviour:
   m_ObjectHideFlags: 0
