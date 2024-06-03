@@ -1,7 +1,11 @@
 ﻿using Unity.Netcode;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 #endif
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
@@ -13,10 +17,11 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM 
     [RequireComponent(typeof(PlayerInput))]
 #endif
-    public class ThirdPersonController : NetworkBehaviour
+    public class ThirdPersonController : MonoBehaviour
     {
         [Header("Player")]
-        [Tooltip("Move speed of the character in m/s")]
+        public bool IsDead = false;
+        [Tooltip("The score of the player")]
         public float MoveSpeed = 2.0f;
 
         [Tooltip("Sprint speed of the character in m/s")]
@@ -36,6 +41,9 @@ namespace StarterAssets
         [Space(10)]
         [Tooltip("The height the player can jump")]
         public float JumpHeight = 1.2f;
+
+        [Tooltip("The cooldown before being able to attack again")]
+        public float attackCooldown = 0.4f;
 
         [Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
         public float Gravity = -15.0f;
@@ -64,6 +72,9 @@ namespace StarterAssets
         [Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
         public GameObject CinemachineCameraTarget;
 
+        //[Tooltip("The camera of the player")]
+        //public Camera Camera;
+
         [Tooltip("How far in degrees can you move the camera up")]
         public float TopClamp = 70.0f;
 
@@ -76,9 +87,13 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        [Tooltip("Weapon holder component")]
+        public WeaponHolder weaponHolder;
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
+        //private Quaternion _cameraOriginalRotation;
 
         // player
         private float _speed;
@@ -87,6 +102,7 @@ namespace StarterAssets
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
+        private bool _canAttack = true;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -98,6 +114,7 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private string _animIDMeleeAttack;
 
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
@@ -118,7 +135,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM
                 return _playerInput.currentControlScheme == "KeyboardMouse";
 #else
-				return false;
+                return false;
 #endif
             }
         }
@@ -126,7 +143,8 @@ namespace StarterAssets
 
         private void Awake()
         {
-            // get a reference to our main camera
+            //if (!IsOwner) return;
+
             if (_mainCamera == null)
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
@@ -135,15 +153,16 @@ namespace StarterAssets
 
         private void Start()
         {
+            //_cameraOriginalRotation = Camera.transform.rotation;
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-            
+
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
-#if ENABLE_INPUT_SYSTEM 
+#if ENABLE_INPUT_SYSTEM
             _playerInput = GetComponent<PlayerInput>();
 #else
-			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
+            Debug.LogError("Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
 
             AssignAnimationIDs();
@@ -155,17 +174,33 @@ namespace StarterAssets
 
         private void Update()
         {
-            if (!IsOwner) return;
+            //if (!IsOwner) return;
+
+            if (_mainCamera == null)
+            {
+                _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+            }
+
+            //Camera.transform.rotation = _cameraOriginalRotation;
 
             _hasAnimator = TryGetComponent(out _animator);
 
             JumpAndGravity();
             GroundedCheck();
             Move();
+            Attack();
+            PickUp();
+            LaunchDrone();
         }
 
         private void LateUpdate()
         {
+            //_cameraOriginalRotation.y = -transform.gameObject.transform.rotation.y;
+            //Camera.transform.rotation = _cameraOriginalRotation;
+
+            //Camera.transform.rotation = _cameraOriginalRotation;
+            //Camera.transform.rotation = new Quaternion(60, -transform.gameObject.transform.rotation.y, 0, 0);
+
             CameraRotation();
         }
 
@@ -176,6 +211,7 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+
         }
 
         private void GroundedCheck()
@@ -282,6 +318,69 @@ namespace StarterAssets
             }
         }
 
+        private void MeleeAttack()
+        {
+            _animIDMeleeAttack = weaponHolder.GetMeleeWeaponStats().weaponType.ToString() + "Attack";
+            if (Grounded)
+            {
+                if (_hasAnimator && _input.attack && _canAttack)
+                {
+                    _canAttack = false;
+                    _animator.SetTrigger(_animIDMeleeAttack);
+                    StartCoroutine(AttackCooldown());
+                }
+            }
+            _input.attack = false;
+        }
+
+        private void DistanceAttack()
+        {
+            if (Grounded)
+            {
+                if (_hasAnimator && _input.attack)
+                {
+                    weaponHolder.GetDistanceWeaponStats().Fire();
+                }
+            }
+            _input.attack = false;
+        }
+        private void Attack()
+        {
+            if (weaponHolder.currentWeapon != null) {
+                if (weaponHolder.GetWeaponMode() == WeaponHolder.WeaponMode.Distance)
+                    DistanceAttack();
+                else 
+                    MeleeAttack();
+            }
+            
+        }
+
+        private void PickUp()
+        {
+            if (_input.pickup)
+            {
+                _input.pickup = false;
+                weaponHolder.PickUp();
+            }
+        }
+
+        private void LaunchDrone()
+        {
+            if (_input.launchDrone)
+            {
+                _input.attack = false;
+                _input.launchDrone = false;
+                //GetComponent<DroneCamControl>().StartDroneCamera();
+                GetComponent<DroneMovement>().enabled = true;
+                GetComponent<ThirdPersonController>().enabled = false;
+            }
+        }
+
+        IEnumerator AttackCooldown()
+        {
+            yield return new WaitForSeconds(this.attackCooldown);
+            _canAttack = true;
+        }
         private void JumpAndGravity()
         {
             if (Grounded)
@@ -390,6 +489,9 @@ namespace StarterAssets
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
+        }
+        public void LoseLife()
+        {
         }
     }
 }
