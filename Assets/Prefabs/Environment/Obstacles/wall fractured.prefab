@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2635498569066305232}
   - component: {fileID: 3881602200694245164}
   - component: {fileID: 4712988787249356437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube_cell.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 8164476185060994075}
   - component: {fileID: 1307941695498707781}
   - component: {fileID: 2985331427803768211}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube_cell.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 2682596589340551648}
   - component: {fileID: 129055889252515941}
   - component: {fileID: 673992480104129126}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube_cell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 3092132245746398808}
   - component: {fileID: 1847670633420920671}
   - component: {fileID: 281171510826438391}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube_cell.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 4367264787328906979}
   - component: {fileID: 7779447799563618240}
   - component: {fileID: 8034443854592413103}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube_cell.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 9137249680991273010}
   - component: {fileID: 2624453727782923400}
   - component: {fileID: 1196401427388477195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube_cell.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +817,7 @@ GameObject:
   - component: {fileID: 4980176925319135746}
   - component: {fileID: 6223465686278305236}
   - component: {fileID: 5315010917708440530}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube_cell.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1003,7 @@ GameObject:
   - component: {fileID: 4056797074551146784}
   - component: {fileID: 757192559234260943}
   - component: {fileID: 3778032803568368317}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube_cell.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
