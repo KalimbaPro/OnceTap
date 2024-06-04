@@ -613,6 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a766e82715c0c43b6a6b26dd45182a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 710483832}
   lobbyScene: GameScene
 --- !u!1 &1825428100
 GameObject:

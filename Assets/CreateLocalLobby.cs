@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class CreateLocalLobby : MonoBehaviour
 {
     [SerializeField]
+    private GameObject loadingScreen;
+    [SerializeField]
     private string lobbyScene = "GameScene";
 
     // Start is called before the first frame update
@@ -22,6 +24,7 @@ public class CreateLocalLobby : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(lobbyScene, LoadSceneMode.Single);
+        loadingScreen.SetActive(true);
+        SceneManager.LoadSceneAsync(lobbyScene, LoadSceneMode.Single);
     }
 }
