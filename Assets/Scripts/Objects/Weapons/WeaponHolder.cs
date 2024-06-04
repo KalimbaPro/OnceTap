@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,8 +14,10 @@ public class WeaponHolder : MonoBehaviour
     public PickUpController pickUpController;
 
     public GameObject currentWeapon;
+    public float dropForce;
 
-    public GameObject weaponToPickup;
+    public Transform dropPoint;
+
     public enum WeaponMode {
         Distance,
         Melee,
@@ -79,6 +82,24 @@ public class WeaponHolder : MonoBehaviour
         if (pickUpController)
         {
             pickUpController.Pickup(gameObject);
+        }
+    }
+
+    public void Drop()
+    {
+        if (currentWeapon)
+        {
+            currentWeapon.transform.SetParent(null);
+            currentWeapon.GetComponent<SphereCollider>().enabled = true;
+            currentWeapon.GetComponent<Rigidbody>().isKinematic = false;
+            if (weaponMode == WeaponMode.Melee) {
+                currentWeapon.GetComponent<MeleeWeaponStats>().SetphysicHitBox(true);
+            }
+            currentWeapon.GetComponent<Rigidbody>().AddForce(dropPoint.transform.forward * dropForce, ForceMode.Impulse);
+            currentWeapon = null;
+            //TODO: distance weapon
+            //else
+                //currentWeapon.GetComponent<MeleeWeaponStats>().SetphysicHitBox(true);
         }
     }
 }

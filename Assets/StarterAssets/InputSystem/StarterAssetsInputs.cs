@@ -14,6 +14,8 @@ namespace StarterAssets
 		public bool sprint;
 		public bool attack;
 		public bool pickup;
+		public bool drop;
+
 		public bool launchDrone;
 
         [Header("Movement Settings")]
@@ -67,6 +69,10 @@ namespace StarterAssets
 			PickupInput(value.isPressed);
 		}
 
+		public void OnDrop(InputValue value)
+		{
+			DropInput(value.isPressed);
+		}
 		public void OnLaunchDrone(InputValue value)
 		{
 			LaunchDroneInput(value.isPressed);
@@ -104,6 +110,10 @@ namespace StarterAssets
 			pickup = newPickupInput;
 		}
 
+		public void DropInput(bool newPickupInput)
+		{
+			drop = newPickupInput;
+		}
 		public void LaunchDroneInput(bool newLaunchDroneInput)
 		{
 			launchDrone = newLaunchDroneInput;
