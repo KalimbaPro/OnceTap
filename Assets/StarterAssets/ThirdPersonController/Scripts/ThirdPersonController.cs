@@ -17,7 +17,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM 
     [RequireComponent(typeof(PlayerInput))]
 #endif
-    public class ThirdPersonController : NetworkBehaviour
+    public class ThirdPersonController : MonoBehaviour
     {
         [Header("Player")]
         public bool IsDead = false;
@@ -123,6 +123,7 @@ namespace StarterAssets
         private CharacterController _controller;
         private StarterAssetsInputs _input;
         private GameObject _mainCamera;
+        private PlayerStats _playerStats;
 
         private const float _threshold = 0.01f;
 
@@ -143,7 +144,7 @@ namespace StarterAssets
 
         private void Awake()
         {
-            if (!IsOwner) return;
+            //if (!IsOwner) return;
 
             if (_mainCamera == null)
             {
@@ -153,6 +154,7 @@ namespace StarterAssets
 
         private void Start()
         {
+            _playerStats = GetComponent<PlayerStats>();
             //_cameraOriginalRotation = Camera.transform.rotation;
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
 
@@ -170,11 +172,12 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+            _input.attack = false;
         }
 
         private void Update()
         {
-            if (!IsOwner) return;
+            //if (!IsOwner) return;
 
             if (_mainCamera == null)
             {
@@ -190,6 +193,8 @@ namespace StarterAssets
             Move();
             Attack();
             PickUp();
+            Drop();
+            LaunchDrone();
         }
 
         private void LateUpdate()
@@ -319,17 +324,27 @@ namespace StarterAssets
 
         private void MeleeAttack()
         {
-            _animIDMeleeAttack = weaponHolder.GetMeleeWeaponStats().weaponType.ToString() + "Attack";
             if (Grounded)
             {
                 if (_hasAnimator && _input.attack && _canAttack)
                 {
+                    _animIDMeleeAttack = weaponHolder.GetMeleeWeaponStats().weaponType.ToString() + "Attack";
                     _canAttack = false;
                     _animator.SetTrigger(_animIDMeleeAttack);
+                    weaponHolder.GetMeleeWeaponStats().SetHitBox(true);
                     StartCoroutine(AttackCooldown());
                 }
             }
             _input.attack = false;
+        }
+
+        private void Drop()
+        {
+            if (_input.drop && weaponHolder.currentWeapon != null)
+            {
+                _input.drop = false;
+                weaponHolder.Drop();
+            }
         }
 
         private void DistanceAttack()
@@ -359,14 +374,55 @@ namespace StarterAssets
             if (_input.pickup)
             {
                 _input.pickup = false;
+                _input.attack = false;
                 weaponHolder.PickUp();
+            }
+        }
+
+        private void LaunchDrone()
+        {
+            if (_input.launchDrone)
+            {
+                _input.launchDrone = false;
+
+                if (!_playerStats.IsStrikeReady)
+                {
+                    _playerStats.IsStrikeReady = true;
+                    return;
+                }
+
+                _input.attack = false;
+                //GetComponent<DroneCamControl>().StartDroneCamera();
+                GetComponent<DroneMovement>().enabled = true;
+                GetComponent<ThirdPersonController>().enabled = false;
             }
         }
 
         IEnumerator AttackCooldown()
         {
-            yield return new WaitForSeconds(this.attackCooldown);
+            //print("EHHHHHH" + _animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+            yield return new WaitForSeconds(1);
             _canAttack = true;
+            DisableWeaponHitBox();
+            
+        }
+
+        float GetCurrentAnimationTime(string animName)
+        {
+            AnimationClip[] clips = _animator.runtimeAnimatorController.animationClips;
+            foreach (AnimationClip clip in clips)
+            {
+                if (clip.name == animName)
+                {
+                    return clip.length;
+                }
+            }
+            return 0;
+        }
+
+        void DisableWeaponHitBox()
+        {
+            weaponHolder.GetMeleeWeaponStats().SetHitBox(false);
         }
         private void JumpAndGravity()
         {

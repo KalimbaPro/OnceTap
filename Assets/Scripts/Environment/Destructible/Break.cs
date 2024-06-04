@@ -22,14 +22,37 @@ public class Break : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Weapon") && other.gameObject.GetComponent<MeleeWeaponStats>().CanBreakThings)
+        if (other.gameObject.CompareTag("Strike"))
         {
-            if (!this.CompareTag("Floor"))
+            BreakTheThing();
+        }
+
+        if (other.CompareTag("WeaponHitbox"))
+        {
+            if (other.GetComponentInParent<MeleeWeaponStats>().CanBreakThings)
             {
-                BreakTheThing();
+                if (!this.CompareTag("Floor"))
+                {
+                    BreakTheThing();
+                }
             }
-            else if (other.gameObject.GetComponent<MeleeWeaponStats>().CanBreakFloor)
+            if (this.CompareTag("Floor") && other.GetComponentInParent<MeleeWeaponStats>().CanBreakFloor)
                 BreakTheThing();
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Strike")) {
+            BreakTheThing();
+        }
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.CompareTag("Strike"))
+        {
+            BreakTheThing();
         }
     }
 

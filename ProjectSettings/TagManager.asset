@@ -14,6 +14,10 @@ TagManager:
   - Weapon
   - WeaponMesh
   - Floor
+  - Strike
+  - WeaponHitbox
+  - PlayerCardsHUD
+  - TrackedByCamera
   layers:
   - Default
   - TransparentFX
