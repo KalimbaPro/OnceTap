@@ -422,7 +422,8 @@ namespace StarterAssets
 
         void DisableWeaponHitBox()
         {
-            weaponHolder.GetMeleeWeaponStats().SetHitBox(false);
+            if (weaponHolder.GetMeleeWeaponStats())
+                weaponHolder.GetMeleeWeaponStats().SetHitBox(false);
         }
         private void JumpAndGravity()
         {

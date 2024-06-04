@@ -55,7 +55,7 @@ MonoBehaviour:
   CanBreakThings: 1
   hitBox: {fileID: 6073113346455847860}
   physicHitBox: {fileID: 2697651130028009239}
-  projectionForce: 75
+  projectionForce: 85
   weaponType: 0
 --- !u!135 &6217545107034584294
 SphereCollider:
@@ -98,7 +98,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381154865043278472}
   serializedVersion: 4
-  m_Mass: 35.05
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
