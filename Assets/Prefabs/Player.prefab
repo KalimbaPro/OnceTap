@@ -4377,6 +4377,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recoveryTime: 2
+  Username: Username
+  Lives: 3
+  Kills: 0
+  Score: 0
 --- !u!114 &7567405006138591409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4389,8 +4393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9465a4596a04a454492d7c4cf0ad5536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hudCardGroup: {fileID: 3216296492052209068, guid: 6a9b132786053c64890cf9089cca77ed,
-    type: 3}
 --- !u!1001 &798224764574759562
 PrefabInstance:
   m_ObjectHideFlags: 0
