@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour
     public int Lives = 3;
     public int Kills = 0;
     public int Score = 0;
+    public bool IsStrikeReady = true;
     // Start is called before the first frame update
     void Start()
     {
