@@ -16,6 +16,7 @@ TagManager:
   - Floor
   - Strike
   - WeaponHitbox
+  - PlayerCardsHUD
   layers:
   - Default
   - TransparentFX
