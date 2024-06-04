@@ -97,8 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: e67580c7aea79974e90c46fd474f5f4c,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 3b3f7400d3526e9429c39d03afb714b3,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -593,6 +595,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc72e5057579fdd4e8d903ff5515f365, type: 3}
+--- !u!1 &1561833237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2212272843710523762, guid: 6a6adaedee168b04498c2323145bedcc,
+    type: 3}
+  m_PrefabInstance: {fileID: 4928753236596083778}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1561833239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561833237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a766e82715c0c43b6a6b26dd45182a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lobbyScene: GameScene
 --- !u!1 &1825428100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1328,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1699929981986938201, guid: 6a6adaedee168b04498c2323145bedcc,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699929981986938201, guid: 6a6adaedee168b04498c2323145bedcc,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4631771676499543042}
@@ -1318,7 +1344,7 @@ PrefabInstance:
     - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
         type: 3}
@@ -1334,8 +1360,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 102900000, guid: a2513a8e1c6ca0446a4e7d95a228beb1,
-        type: 3}
+      objectReference: {fileID: 1561833239}
     - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -1344,12 +1369,12 @@ PrefabInstance:
     - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: LoadGame
       objectReference: {fileID: 0}
     - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: 
+      value: CreateLocalLobby, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
         type: 3}
@@ -1359,7 +1384,12 @@ PrefabInstance:
     - target: {fileID: 3880393966879882671, guid: 6a6adaedee168b04498c2323145bedcc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703880711700544658, guid: 6a6adaedee168b04498c2323145bedcc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4703880711700544658, guid: 6a6adaedee168b04498c2323145bedcc,
         type: 3}
@@ -1479,7 +1509,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2212272843710523762, guid: 6a6adaedee168b04498c2323145bedcc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1561833239}
   m_SourcePrefab: {fileID: 100100000, guid: 6a6adaedee168b04498c2323145bedcc, type: 3}
 --- !u!1001 &6300577642184299903
 PrefabInstance:
