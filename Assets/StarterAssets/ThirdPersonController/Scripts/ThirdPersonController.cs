@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-#if ENABLE_INPUT_SYSTEM 
+#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
@@ -391,8 +391,8 @@ namespace StarterAssets
 
         IEnumerator AttackCooldown()
         {
-            //print("EHHHHHH" + _animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
-            yield return new WaitForSeconds(1);
+            //print("Current animation Time = " + GetCurrentAnimationTime(_animIDMeleeAttack));
+            yield return new WaitForSeconds(GetCurrentAnimationTime(_animIDMeleeAttack));
             _canAttack = true;
             DisableWeaponHitBox();
             
@@ -400,15 +400,18 @@ namespace StarterAssets
 
         float GetCurrentAnimationTime(string animName)
         {
+            AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
             AnimationClip[] clips = _animator.runtimeAnimatorController.animationClips;
+            
             foreach (AnimationClip clip in clips)
             {
                 if (clip.name == animName)
                 {
-                    return clip.length;
+                    float animationSpeed = _animator.speed * stateInfo.speed;
+                    return clip.length / animationSpeed;
                 }
             }
-            return 0;
+            return 0f;
         }
 
         void DisableWeaponHitBox()
@@ -417,6 +420,7 @@ namespace StarterAssets
         }
         private void JumpAndGravity()
         {
+            //print("is Grounded" + Grounded);
             if (Grounded)
             {
                 // reset the fall timeout timer
