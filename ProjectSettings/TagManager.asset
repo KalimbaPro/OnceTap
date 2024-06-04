@@ -15,6 +15,7 @@ TagManager:
   - WeaponMesh
   - Floor
   - Strike
+  - PlayerCardsHUD
   layers:
   - Default
   - TransparentFX
