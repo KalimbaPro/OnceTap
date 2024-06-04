@@ -80,6 +80,14 @@ public class DroneMovement : MonoBehaviour
     //{
     //}
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            print("Player collide with strike");
+        }
+    }
+
     private IEnumerator LaunchStrike()
     {
         strikeCylinder.GetComponent<CapsuleCollider>().enabled = true;

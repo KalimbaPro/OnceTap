@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using Unity.Netcode;
 using UnityEngine;
 
 public class RagdollTrigger : MonoBehaviour
 {
+    public Transform hips;
     private enum PlayerState
     {
         Animated,
@@ -18,7 +20,6 @@ public class RagdollTrigger : MonoBehaviour
     void Start()
     {
         _ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
-        Debug.Log(_ragdollRigidbodies.Length.ToString());
         _animator = GetComponentInChildren<Animator>();
         _characterController = GetComponentInChildren<CharacterController>();
         DisableRagdoll();
@@ -36,17 +37,25 @@ public class RagdollTrigger : MonoBehaviour
                 break;
         }
     }
-    void DisableRagdoll()
+
+    void UpdateCharacterRoot()
     {
+        transform.position = hips.position;
+    }
+    public void DisableRagdoll()
+    {
+        UpdateCharacterRoot();
         foreach (var rigidbody in _ragdollRigidbodies)
         {
             rigidbody.isKinematic = true;
         }
         _animator.enabled = true;
         _characterController.enabled = true;
+        _currentState = PlayerState.Animated;
+
     }
 
-    void EnableRagdoll()
+    public void EnableRagdoll()
     {
         foreach (var rigidbody in _ragdollRigidbodies)
         {
@@ -54,8 +63,16 @@ public class RagdollTrigger : MonoBehaviour
         }
         _animator.enabled = false;
         _characterController.enabled = false;
+        _currentState = PlayerState.Ragdoll;
     }
 
+    public void ApplyForce(float force, Vector3 direction, ForceMode forceMode)
+    {
+        foreach (var rigidbody in _ragdollRigidbodies)
+        {
+            rigidbody.AddForce(direction * force, forceMode);
+        }
+    }
     private void AnimatedBehaviour()
     {
         if (Input.GetKeyDown(KeyCode.M))
@@ -66,6 +83,16 @@ public class RagdollTrigger : MonoBehaviour
     }
     private void RagdollBehaviour()
     {
-
     }
+
+
+    public void StartRecoveryTime()
+    {
+        StartCoroutine(DisableRagdollAfterRecoveryTime());
+    }
+    IEnumerator DisableRagdollAfterRecoveryTime()
+        {
+            yield return new WaitForSeconds(GetComponent<PlayerStats>().recoveryTime);
+            DisableRagdoll();
+        }
 }

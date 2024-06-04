@@ -26,26 +26,27 @@ public class Break : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger with " + other.gameObject.name);
         if (other.gameObject.CompareTag("Strike"))
         {
             BreakTheThing();
         }
 
-        if (other.gameObject.CompareTag("Weapon") && other.gameObject.GetComponent<MeleeWeaponStats>().CanBreakThings)
+        if (other.CompareTag("WeaponHitbox"))
         {
-            if (!this.CompareTag("Floor"))
+            if (other.GetComponentInParent<MeleeWeaponStats>().CanBreakThings)
             {
-                BreakTheThing();
+                if (!this.CompareTag("Floor"))
+                {
+                    BreakTheThing();
+                }
             }
-            else if (other.gameObject.GetComponent<MeleeWeaponStats>().CanBreakFloor)
+            if (this.CompareTag("Floor") && other.GetComponentInParent<MeleeWeaponStats>().CanBreakFloor)
                 BreakTheThing();
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Trigger with " + other.gameObject.name);
         if (other.gameObject.CompareTag("Strike")) {
             BreakTheThing();
         }
@@ -53,7 +54,6 @@ public class Break : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        Debug.Log("Collision with " + other.gameObject.name);
         if (other.gameObject.CompareTag("Strike"))
         {
             BreakTheThing();
