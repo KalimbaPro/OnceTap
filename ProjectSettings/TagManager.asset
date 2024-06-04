@@ -17,6 +17,7 @@ TagManager:
   - Strike
   - WeaponHitbox
   - PlayerCardsHUD
+  - PlayerCameraTrack
   layers:
   - Default
   - TransparentFX

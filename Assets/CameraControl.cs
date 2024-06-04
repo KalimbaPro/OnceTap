@@ -18,8 +18,8 @@ public class CameraControl : MonoBehaviour
 
     private void Update()
     {
-        if (GameObject.FindGameObjectsWithTag("Player").Length > 0)
-            _middlePoint = GetAveragePosWithTag("Player");
+        if (GameObject.FindGameObjectsWithTag("PlayerCameraTrack").Length > 0)
+            _middlePoint = GetAveragePosWithTag("PlayerCameraTrack");
         FollowTargets();
     }
 
