@@ -50,13 +50,11 @@ public class PickUpController : MonoBehaviour
             if (weaponHolder.currentWeapon == null)
             {
                 target.GetComponent<WeaponHolder>().currentWeapon = gameObject;
-                gameObject.GetComponent<MeleeWeaponStats>().CanBreakThings = true;
             }
             else
             {
                 Destroy(target.GetComponent<WeaponHolder>().currentWeapon);
                 target.GetComponent<WeaponHolder>().currentWeapon = gameObject;
-                gameObject.GetComponent<MeleeWeaponStats>().CanBreakThings = true;
             }
         }
     }

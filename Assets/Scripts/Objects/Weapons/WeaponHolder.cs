@@ -94,7 +94,6 @@ public class WeaponHolder : MonoBehaviour
             currentWeapon.GetComponent<Rigidbody>().isKinematic = false;
             if (weaponMode == WeaponMode.Melee) {
                 currentWeapon.GetComponent<MeleeWeaponStats>().SetphysicHitBox(true);
-                currentWeapon.GetComponent<MeleeWeaponStats>().CanBreakThings = false;
             }
             currentWeapon.GetComponent<Rigidbody>().AddForce(dropPoint.transform.forward * dropForce, ForceMode.Impulse);
             currentWeapon = null;

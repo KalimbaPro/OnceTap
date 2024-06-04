@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class MeleeWeaponStats : MonoBehaviour
 {
-    public bool CanBreakFloor = false;
-    public bool CanBreakThings = false;
+    public bool CanBreakFloor;
+    public bool CanBreakThings;
     public GameObject hitBox;
     public GameObject physicHitBox;
     public float projectionForce;

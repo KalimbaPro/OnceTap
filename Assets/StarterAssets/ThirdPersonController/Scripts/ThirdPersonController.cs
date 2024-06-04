@@ -391,10 +391,24 @@ namespace StarterAssets
 
         IEnumerator AttackCooldown()
         {
-            yield return new WaitForSeconds(this.attackCooldown);
+            //print("EHHHHHH" + _animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+            yield return new WaitForSeconds(1);
             _canAttack = true;
             DisableWeaponHitBox();
             
+        }
+
+        float GetCurrentAnimationTime(string animName)
+        {
+            AnimationClip[] clips = _animator.runtimeAnimatorController.animationClips;
+            foreach (AnimationClip clip in clips)
+            {
+                if (clip.name == animName)
+                {
+                    return clip.length;
+                }
+            }
+            return 0;
         }
 
         void DisableWeaponHitBox()
