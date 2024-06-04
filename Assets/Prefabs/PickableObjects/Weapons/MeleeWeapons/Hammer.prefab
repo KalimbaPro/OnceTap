@@ -55,7 +55,7 @@ MonoBehaviour:
   CanBreakThings: 1
   hitBox: {fileID: 6073113346455847860}
   physicHitBox: {fileID: 2697651130028009239}
-  projectionForce: 85
+  projectionForce: 75
   weaponType: 0
 --- !u!135 &6217545107034584294
 SphereCollider:
@@ -98,7 +98,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381154865043278472}
   serializedVersion: 4
-  m_Mass: 5
+  m_Mass: 35.05
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -276,8 +276,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.6118754, y: 0.24965474, z: 0.4848633}
-  m_Center: {x: -0.011490744, y: 0.0057841865, z: 0.16296469}
+  m_Size: {x: 0.4781938, y: 0.24965474, z: 0.3024948}
+  m_Center: {x: -0.0008978835, y: 0.005784196, z: 0.07178059}
 --- !u!65 &3856255840076583711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -295,10 +295,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.122241534, y: 0.17418566, z: 0.5519063}
-  m_Center: {x: -0.0042993412, y: -0.003533455, z: -0.3735399}
+  m_Size: {x: 0.113964975, y: 0.17418566, z: 0.5178607}
+  m_Center: {x: -0.0066167177, y: -0.0035334567, z: -0.35651705}
 --- !u!114 &4172057510142845842
 MonoBehaviour:
   m_ObjectHideFlags: 0
