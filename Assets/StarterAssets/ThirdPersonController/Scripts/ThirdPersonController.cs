@@ -123,6 +123,7 @@ namespace StarterAssets
         private CharacterController _controller;
         private StarterAssetsInputs _input;
         private GameObject _mainCamera;
+        private PlayerStats _playerStats;
 
         private const float _threshold = 0.01f;
 
@@ -153,6 +154,7 @@ namespace StarterAssets
 
         private void Start()
         {
+            _playerStats = GetComponent<PlayerStats>();
             //_cameraOriginalRotation = Camera.transform.rotation;
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
 
@@ -381,8 +383,15 @@ namespace StarterAssets
         {
             if (_input.launchDrone)
             {
-                _input.attack = false;
                 _input.launchDrone = false;
+
+                if (!_playerStats.IsStrikeReady)
+                {
+                    _playerStats.IsStrikeReady = true;
+                    return;
+                }
+
+                _input.attack = false;
                 //GetComponent<DroneCamControl>().StartDroneCamera();
                 GetComponent<DroneMovement>().enabled = true;
                 GetComponent<ThirdPersonController>().enabled = false;
@@ -416,7 +425,8 @@ namespace StarterAssets
 
         void DisableWeaponHitBox()
         {
-            weaponHolder.GetMeleeWeaponStats().SetHitBox(false);
+            if (weaponHolder.GetMeleeWeaponStats() != null)
+                weaponHolder.GetMeleeWeaponStats().SetHitBox(false);
         }
         private void JumpAndGravity()
         {
