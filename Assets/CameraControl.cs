@@ -8,7 +8,7 @@ public class CameraControl : MonoBehaviour
     public float zoomSpeed = 2f; // Zoom speed
     public Vector3 offset = Vector3.zero; // Offset from the middle point
 
-    private Vector3 _middlePoint;
+    private Vector3 _middlePoint = Vector3.zero;
     private Camera _camera;
 
     private void Start()
@@ -18,7 +18,8 @@ public class CameraControl : MonoBehaviour
 
     private void Update()
     {
-        _middlePoint = GetAveragePosWithTag("Player");
+        if (GameObject.FindGameObjectsWithTag("Player").Length > 0)
+            _middlePoint = GetAveragePosWithTag("Player");
         FollowTargets();
     }
 

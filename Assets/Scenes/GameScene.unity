@@ -1481,7 +1481,7 @@ MonoBehaviour:
   minZoomDistance: 5
   maxZoomDistance: 15
   zoomSpeed: 2
-  offset: {x: 0, y: 0, z: -20}
+  offset: {x: 0, y: 0, z: -10}
 --- !u!1 &1891236153
 GameObject:
   m_ObjectHideFlags: 0
