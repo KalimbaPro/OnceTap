@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18622ed170a059478825c59c8463b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _doesExpired: 1
 --- !u!54 &-1992975830496728772
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -295,7 +296,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.113964975, y: 0.17418566, z: 0.5178607}
   m_Center: {x: -0.0066167177, y: -0.0035334567, z: -0.35651705}

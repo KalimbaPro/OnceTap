@@ -7,6 +7,8 @@ using UnityEngine;
 public class RagdollTrigger : MonoBehaviour
 {
     public Transform hips;
+
+    private ThirdPersonController third;
     private enum PlayerState
     {
         Animated,
@@ -16,6 +18,11 @@ public class RagdollTrigger : MonoBehaviour
     private PlayerState _currentState = PlayerState.Animated;
     private Animator _animator;
     private CharacterController _characterController;
+
+    private void Awake()
+    {
+        third = GetComponent<ThirdPersonController>();
+    }
 
     void Start()
     {
@@ -51,6 +58,7 @@ public class RagdollTrigger : MonoBehaviour
         }
         _animator.enabled = true;
         _characterController.enabled = true;
+        third.enabled = true;
         _currentState = PlayerState.Animated;
 
     }
@@ -62,6 +70,7 @@ public class RagdollTrigger : MonoBehaviour
             rigidbody.isKinematic = false;
         }
         _animator.enabled = false;
+        third.enabled = false;
         _characterController.enabled = false;
         _currentState = PlayerState.Ragdoll;
     }
