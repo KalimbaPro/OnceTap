@@ -90,6 +90,7 @@ public class DroneMovement : MonoBehaviour
 
     private IEnumerator LaunchStrike()
     {
+        GetComponent<PlayerStats>().IsStrikeReady = false;
         strikeCylinder.GetComponent<CapsuleCollider>().enabled = true;
         orbitalStrikeHUD.GetComponent<DroneHUDCanvas>().StopHUD();
         strikeFeedback.PlayFeedbacks();

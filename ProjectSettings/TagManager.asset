@@ -17,6 +17,7 @@ TagManager:
   - Strike
   - WeaponHitbox
   - PlayerCardsHUD
+  - TrackedByCamera
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 

@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Break : MonoBehaviour
 {
@@ -66,15 +63,12 @@ public class Break : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        //if (player)
-        //{
-        //    Debug.Log(player);
-        //}
     }
 
     public void BreakTheThing()
     {
         GameObject frac = Instantiate(fractured, transform.position, transform.rotation);
+        frac.GetComponent<Debris>().originalElement = gameObject;
         frac.transform.localScale = new Vector3(transform.localScale.x * map.transform.localScale.x,
             transform.localScale.y * map.transform.localScale.y,
             transform.localScale.z * map.transform.localScale.z);
@@ -85,6 +79,6 @@ public class Break : MonoBehaviour
             rb.AddForce(force);
         }
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

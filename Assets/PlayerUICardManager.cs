@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerUICardManager : MonoBehaviour
 {
@@ -33,5 +34,10 @@ public class PlayerUICardManager : MonoBehaviour
         myCard.livesText.text = stats.Lives.ToString();
         myCard.killsText.text = stats.Kills.ToString();
         myCard.scoreText.text = stats.Score.ToString();
+        myCard.StrikeBox.GetComponent<RGBFade>().enabled = stats.IsStrikeReady;
+        if (!stats.IsStrikeReady)
+        {
+            myCard.StrikeBox.GetComponent<Image>().color = Color.gray;
+        }
     }
 }
