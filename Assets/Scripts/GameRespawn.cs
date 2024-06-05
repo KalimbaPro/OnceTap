@@ -10,10 +10,16 @@ public class GameRespawn : MonoBehaviour
 
     private StarterAssets.ThirdPersonController player = null;
     private Scoresystem score;
+    private PlayerStats playerStats = null;
+    private CharacterController characterController = null;
 
     void Start()
     {
+        GameLoop.Instance.GetAllPlayers();
+
         player = GetComponent<ThirdPersonController>();
+        playerStats = GetComponent<PlayerStats>();
+        characterController = GetComponent<CharacterController>();
         if (!isLifeMode)
         {
             score = GameObject.FindGameObjectWithTag("Score").GetComponent<Scoresystem>();
@@ -29,7 +35,13 @@ public class GameRespawn : MonoBehaviour
             else
             {
             }
-            transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+            playerStats.Lives--;
+            if (playerStats.Lives != 0) {
+                characterController.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+            } else {
+                player.IsDead = true;
+                GameLoop.Instance.GetAllPlayers();
+            }
         }
     }
 }

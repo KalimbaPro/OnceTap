@@ -25,6 +25,8 @@ public class WeaponHolder : MonoBehaviour
 
     public WeaponMode weaponMode;
 
+    public bool _canPickup;
+
     void Start()
     {
         currentWeapon = null;
