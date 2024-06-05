@@ -3576,8 +3576,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8049049746879260467}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29434928, y: 0.36654672, z: -0.7772524, w: -0.41818744}
-  m_LocalPosition: {x: 0.092, y: -0.035, z: 0.097}
+  m_LocalRotation: {x: 0.29434937, y: 0.3665468, z: -0.7772523, w: -0.4181875}
+  m_LocalPosition: {x: 0.09200007, y: -0.03500002, z: 0.09699997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3599,6 +3599,7 @@ MonoBehaviour:
   currentWeapon: {fileID: 0}
   dropForce: 100
   dropPoint: {fileID: 2908189647153878113}
+  leftHandpos: {fileID: 4248139799951836907}
   weaponMode: 1
 --- !u!65 &3735270422200183989
 BoxCollider:
@@ -4364,6 +4365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hips: {fileID: 7089698122454373795}
+  weaponHolder: {fileID: 3546285927178232343}
 --- !u!114 &606597113667619023
 MonoBehaviour:
   m_ObjectHideFlags: 0

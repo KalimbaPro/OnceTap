@@ -17,6 +17,7 @@ public class WeaponHolder : MonoBehaviour
     public float dropForce;
 
     public Transform dropPoint;
+    public Transform leftHandpos;
 
     public enum WeaponMode {
         Distance,
@@ -27,12 +28,16 @@ public class WeaponHolder : MonoBehaviour
 
     void Start()
     {
-        currentWeapon = null;
-        pickUpController = null;
+        print("START weapon holder ");
+        //currentWeapon = null;
+        //pickUpController = null;
     }
 
     void Update()
     {
+        //transform.position = leftHandpos.position;
+        //transform.rotation = leftHandpos.rotation;
+
         if (transform.childCount != previousChildCount)
         {
             meleeWeaponStats = GetComponentInChildren<MeleeWeaponStats>();
@@ -45,6 +50,12 @@ public class WeaponHolder : MonoBehaviour
                 weaponMode = WeaponMode.Melee;
             previousChildCount = transform.childCount;
         }
+    }
+
+    public void TeleportWeapon()
+    {
+        this.currentWeapon.transform.position = transform.position;
+        currentWeapon.transform.rotation = transform.rotation;
     }
 
     public WeaponMode GetWeaponMode()

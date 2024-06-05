@@ -12,6 +12,8 @@ public class RagdollTrigger : MonoBehaviour
         Animated,
         Ragdoll
     }
+
+    public WeaponHolder weaponHolder;
     private Rigidbody[] _ragdollRigidbodies;
     private PlayerState _currentState = PlayerState.Animated;
     private Animator _animator;
@@ -83,6 +85,7 @@ public class RagdollTrigger : MonoBehaviour
     }
     private void RagdollBehaviour()
     {
+        weaponHolder.TeleportWeapon();
     }
 
 
