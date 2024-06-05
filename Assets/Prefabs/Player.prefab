@@ -3597,7 +3597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpController: {fileID: 0}
   currentWeapon: {fileID: 0}
-  dropForce: 100
+  dropForce: 12
   dropPoint: {fileID: 2908189647153878113}
   leftHandpos: {fileID: 4248139799951836907}
   weaponMode: 1

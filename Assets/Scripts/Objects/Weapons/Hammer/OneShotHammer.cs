@@ -10,7 +10,7 @@ public class OneShotHammer : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void OnTriggerEnter(Collider other)
