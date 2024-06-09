@@ -16,7 +16,10 @@ public class PlayerUICardManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        hudCardGroup.DeleteMyCard(myCard);
+        if (hudCardGroup != null)
+        {
+            hudCardGroup.DeleteMyCard(myCard);
+        }
     }
 
     // Start is called before the first frame update

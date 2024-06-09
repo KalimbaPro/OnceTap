@@ -2,7 +2,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-#if ENABLE_INPUT_SYSTEM 
+using System.Linq;
+#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
@@ -104,6 +105,7 @@ namespace StarterAssets
         private float _terminalVelocity = 53.0f;
         private bool _canAttack = true;
         public bool InDroneMode = false;
+        public bool InLobbyMode = false;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -180,9 +182,9 @@ namespace StarterAssets
         {
             //if (!IsOwner) return;
 
-            if (_mainCamera == null)
+            if (_mainCamera == null || _mainCamera.activeInHierarchy != true)
             {
-                _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+                _mainCamera = GameObject.FindGameObjectsWithTag("MainCamera").Where(camera => camera.activeInHierarchy == true).First();
             }
 
             //Camera.transform.rotation = _cameraOriginalRotation;
@@ -192,7 +194,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
-            if (!InDroneMode)
+            if (!InDroneMode && !InLobbyMode)
             {
                 Attack();
                 PickUp();

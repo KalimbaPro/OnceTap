@@ -36,7 +36,7 @@ public class MapSelectorGrid : MonoBehaviour
             }
             map.GetComponent<MenuItemSelection>().BorderSetActive(true);
             ActiveMap = map;
-            LobbyScript.Instance.UpdateLobbyMap(ActiveMap.GetComponent<MenuItemSelection>().MenuItem);
+            //LobbyScript.Instance.UpdateLobbyMap(ActiveMap.GetComponent<MenuItemSelection>().MenuItem);
         //}
     }
 }

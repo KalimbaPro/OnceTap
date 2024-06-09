@@ -3600,6 +3600,7 @@ MonoBehaviour:
   dropForce: 12
   dropPoint: {fileID: 2908189647153878113}
   weaponMode: 1
+  _canPickup: 0
 --- !u!65 &3735270422200183989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4057,6 +4058,7 @@ GameObject:
   - component: {fileID: 7766303289383051596}
   - component: {fileID: 606597113667619023}
   - component: {fileID: 7567405006138591409}
+  - component: {fileID: -3696823317747557030}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -4182,6 +4184,8 @@ MonoBehaviour:
   CameraAngleOverride: 0
   LockCameraPosition: 1
   weaponHolder: {fileID: 3546285927178232343}
+  InDroneMode: 0
+  InLobbyMode: 0
 --- !u!114 &3988838175427417495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4218,6 +4222,8 @@ MonoBehaviour:
   attack: 0
   pickup: 0
   drop: 0
+  left: 0
+  right: 0
   launchDrone: 0
   analogMovement: 0
   cursorLocked: 1
@@ -4328,7 +4334,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9133545340053260162}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e60c14c914b53b64cbed192e761d58f2, type: 3}
   m_Name: 
@@ -4389,11 +4395,41 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9133545340053260162}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9465a4596a04a454492d7c4cf0ad5536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3696823317747557030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9133545340053260162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00fc84c5a39c5144c9a808724e752824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mtlBodyList:
+  - {fileID: 2100000, guid: 43714b68324cc2c409d534d9874f2a2b, type: 2}
+  - {fileID: 2100000, guid: ccc543f9ef409d445b0bcb18b56163eb, type: 2}
+  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  mtlArmsList:
+  - {fileID: 2100000, guid: 766fd3ff04aab4745a764d33daac86fa, type: 2}
+  - {fileID: 2100000, guid: ccc543f9ef409d445b0bcb18b56163eb, type: 2}
+  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  mtlLegsList:
+  - {fileID: 2100000, guid: 8b25e99361ac31d4e9ae83c46aee69ea, type: 2}
+  - {fileID: 2100000, guid: ccc543f9ef409d445b0bcb18b56163eb, type: 2}
+  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  skinNames:
+  - Robot
+  - Red
+  - Wireframe
+  mtlSelectedId: 0
+  armature: {fileID: 5470820376870813176}
 --- !u!1001 &798224764574759562
 PrefabInstance:
   m_ObjectHideFlags: 0
