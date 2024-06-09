@@ -346,10 +346,13 @@ namespace StarterAssets
 
         private void Drop()
         {
-            if (_input.drop && weaponHolder.currentWeapon != null)
+            if (_input.drop)
             {
                 _input.drop = false;
-                weaponHolder.Drop();
+                if (weaponHolder.currentWeapon != null)
+                {
+                    weaponHolder.Drop();
+                }
             }
         }
 
