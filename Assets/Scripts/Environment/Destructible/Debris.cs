@@ -17,6 +17,8 @@ public class Debris : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(9f, 11f));
         originalElement.SetActive(true);
+        originalElement.GetComponent<Break>().MMFPlayer.PlayFeedbacks();
+        //yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }
 
