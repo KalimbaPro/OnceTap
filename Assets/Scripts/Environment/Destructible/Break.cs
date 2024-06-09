@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
@@ -9,10 +10,12 @@ public class Break : MonoBehaviour
 
     private GameObject player;
     private GameObject map;
+    public MMF_Player MMFPlayer;
 
     private void Start()
     {
         map = GameObject.FindGameObjectWithTag("Map");
+        MMFPlayer = GetComponent<MMF_Player>();
     }
 
     // Update is called once per frame
