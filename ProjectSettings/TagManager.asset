@@ -18,6 +18,7 @@ TagManager:
   - WeaponHitbox
   - PlayerCardsHUD
   - TrackedByCamera
+  - GameManager
   layers:
   - Default
   - TransparentFX

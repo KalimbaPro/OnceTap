@@ -28,8 +28,8 @@ public class GameModeSelectorGrid : NetworkBehaviour
     {
         if (LobbyScript.Instance != null && LobbyScript.Instance.joinedLobby != null)
         {
-            var newGameMode = GameModes.Find(map => map.GetComponent<MenuItemSelection>().MenuItem == LobbyScript.Instance.joinedLobby.Data["GameMode"].Value);
-            SelectMap(newGameMode.gameObject, false);
+            //var newGameMode = GameModes.Find(map => map.GetComponent<MenuItemSelection>().MenuItem == LobbyScript.Instance.joinedLobby.Data["GameMode"].Value);
+            //SelectMap(newGameMode.gameObject, false);
         }
 
         yield return new WaitForSeconds(1f);
@@ -53,7 +53,7 @@ public class GameModeSelectorGrid : NetworkBehaviour
 
         if (sendToNetwork)
         {
-            LobbyScript.Instance.UpdateLobbyGamemode(ActiveMap.GetComponent<MenuItemSelection>().MenuItem);
+            //LobbyScript.Instance.UpdateLobbyGamemode(ActiveMap.GetComponent<MenuItemSelection>().MenuItem);
         }
     }
 }
