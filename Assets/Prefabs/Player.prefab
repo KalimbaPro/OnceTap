@@ -4059,6 +4059,7 @@ GameObject:
   - component: {fileID: 606597113667619023}
   - component: {fileID: 7567405006138591409}
   - component: {fileID: -3696823317747557030}
+  - component: {fileID: 2468805617826769744}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -4224,6 +4225,10 @@ MonoBehaviour:
   drop: 0
   left: 0
   right: 0
+  up: 0
+  down: 0
+  prev: 0
+  next: 0
   launchDrone: 0
   analogMovement: 0
   cursorLocked: 1
@@ -4430,6 +4435,18 @@ MonoBehaviour:
   - Wireframe
   mtlSelectedId: 0
   armature: {fileID: 5470820376870813176}
+--- !u!114 &2468805617826769744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9133545340053260162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85d1d8540ded9c4cb9ad5405782dc0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &798224764574759562
 PrefabInstance:
   m_ObjectHideFlags: 0
