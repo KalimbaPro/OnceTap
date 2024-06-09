@@ -102,7 +102,7 @@ public class DroneMovement : MonoBehaviour
         _input.launchDrone = false;
         _input.attack = false;
         //GetComponent<DroneCamControl>().StopDroneCamera();
-        GetComponent<ThirdPersonController>().enabled = true;
+        GetComponent<ThirdPersonController>().InDroneMode = false;
         GetComponent<DroneMovement>().enabled = false;
     }
 }
