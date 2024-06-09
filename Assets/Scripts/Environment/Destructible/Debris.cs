@@ -15,14 +15,14 @@ public class Debris : MonoBehaviour
 
     private IEnumerator Respawn()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(Random.Range(9f, 11f));
         originalElement.SetActive(true);
         Destroy(gameObject);
     }
 
     private IEnumerator Disappear()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(Random.Range(4f, 6f));
 
         foreach (MeshFilter filter in GetComponentsInChildren<MeshFilter>())
         {

@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 4463214357699757123}
   - component: {fileID: 3402897623634066995}
   - component: {fileID: 778759757350872548}
+  - component: {fileID: 2578038213508972108}
   m_Layer: 0
   m_Name: Mass
   m_TagString: Weapon
@@ -199,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18622ed170a059478825c59c8463b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _doesExpired: 1
 --- !u!114 &3402897623634066995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +246,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2578038213508972108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5162406644974970864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99db3ec000bff8343bff9a0d9b25b140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  YValue: -10
 --- !u!1001 &7623167199229332008
 PrefabInstance:
   m_ObjectHideFlags: 0
