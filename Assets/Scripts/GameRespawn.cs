@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
+using System.Linq;
+using static MoreMountains.Feedbacks.MMFeedbacks;
 
 public class GameRespawn : MonoBehaviour
 {
@@ -36,8 +38,9 @@ public class GameRespawn : MonoBehaviour
             {
             }
             playerStats.Lives--;
-            if (playerStats.Lives != 0) {
-                characterController.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+            if (playerStats.Lives > 0) {
+                var safeZones = GameObject.FindGameObjectWithTag("Map").GetComponent<MapScript>().SafeZones;
+                characterController.transform.position = safeZones.ElementAt(Random.Range(0, safeZones.Count)).transform.position;
             } else {
                 player.IsDead = true;
                 GameLoop.Instance.GetAllPlayers();
