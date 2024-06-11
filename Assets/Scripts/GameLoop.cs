@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameLoop : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class GameLoop : MonoBehaviour
         if (players.Length == 1) {
             Debug.Log("End Game");
         }
+    }
+
+    public void EndGame(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     // Start is called before the first frame update

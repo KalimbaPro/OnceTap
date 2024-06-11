@@ -14,6 +14,8 @@ public class PlayerStats : MonoBehaviour
     public int Score = 0;
     public bool IsStrikeReady = true;
     public DateTime? DeadAt = null;
+    public GameObject bully = null;
+    public GameObject target = null;
     // Start is called before the first frame update
     void Start()
     {
