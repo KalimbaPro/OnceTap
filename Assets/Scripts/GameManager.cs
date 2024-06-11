@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public bool GameStarted = false;
     public GameObject InstantiatedMap;
 
+    public MenuItemEnum GameMode = MenuItemEnum.LifeMode;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,13 +51,13 @@ public class GameManager : MonoBehaviour
             default: Instantiate(playGroundMap); break;
         }
 
-        switch (gamemodeSelector.ActiveItem.GetComponent<MenuItemSelection>().MenuItem)
+        GameMode = gamemodeSelector.ActiveItem.GetComponent<MenuItemSelection>().MenuItem switch
         {
-            case MenuItemEnum.LifeMode: ; break;
-            case MenuItemEnum.TimeMode: ; break;
-            case MenuItemEnum.ScoreMode: ; break;
-            default: ; break;
-        }
+            MenuItemEnum.LifeMode => MenuItemEnum.LifeMode,
+            MenuItemEnum.KillsMode => MenuItemEnum.KillsMode,
+            MenuItemEnum.ScoreMode => MenuItemEnum.ScoreMode,
+            _ => MenuItemEnum.LifeMode,
+        };
 
         GameStarted = true;
 

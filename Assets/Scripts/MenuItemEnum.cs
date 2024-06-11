@@ -8,6 +8,6 @@ public enum MenuItemEnum
     SecondMap,
     ThirdMap,
     LifeMode,
-    TimeMode,
+    KillsMode,
     ScoreMode
 }
