@@ -35,8 +35,16 @@ public class MeleeWeaponStats : MonoBehaviour
 
     public void SetHitBox(bool setHitbox)
     {
-        foreach(Collider collider in hitBox.GetComponents<Collider> ()) {
-            collider.enabled = setHitbox;
+        if (hitBox == null)
+        {
+            Debug.Log("Error in weapon hitbox");
+        }
+        else
+        {
+            foreach (Collider collider in hitBox.GetComponents<Collider>())
+            {
+                collider.enabled = setHitbox;
+            }
         }
     }
 
