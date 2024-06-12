@@ -4437,7 +4437,7 @@ MonoBehaviour:
   Deaths: 0
   Assists: 0
   Score: 0
-  IsStrikeReady: 1
+  IsStrikeReady: 0
   bully: {fileID: 0}
   target: {fileID: 0}
 --- !u!114 &7567405006138591409

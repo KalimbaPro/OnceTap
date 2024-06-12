@@ -12,7 +12,7 @@ public class PlayerStats : MonoBehaviour
     public int Deaths = 0;
     public int Assists = 0;
     public int Score = 0;
-    public bool IsStrikeReady = true;
+    public bool IsStrikeReady = false;
     public DateTime? DeadAt = null;
     public GameObject bully = null;
     public GameObject target = null;
