@@ -2620,6 +2620,7 @@ MonoBehaviour:
     type: 3}
   GameStarted: 0
   InstantiatedMap: {fileID: 0}
+  GameMode: 3
 --- !u!1 &1535397915
 GameObject:
   m_ObjectHideFlags: 0

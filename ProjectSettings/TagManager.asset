@@ -19,6 +19,7 @@ TagManager:
   - PlayerCardsHUD
   - TrackedByCamera
   - GameManager
+  - ScoreBoardLine
   layers:
   - Default
   - TransparentFX
