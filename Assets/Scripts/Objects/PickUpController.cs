@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 using StarterAssets;
 using Unity.Netcode;
+using System;
 
 public class PickUpController : MonoBehaviour
 {
@@ -53,11 +54,15 @@ public class PickUpController : MonoBehaviour
             if (weaponHolder.currentWeapon == null)
             {
                 target.GetComponent<WeaponHolder>().currentWeapon = gameObject;
+                GetComponent<PlayerOwner>().playerOwner = target.GetComponent<PlayerOwner>().playerOwner;
+                GetComponent<MeleeWeaponStats>().hitBox.GetComponent<PlayerOwner>().playerOwner = target.GetComponent<PlayerOwner>().playerOwner;
             }
             else
             {
                 Destroy(target.GetComponent<WeaponHolder>().currentWeapon);
                 target.GetComponent<WeaponHolder>().currentWeapon = gameObject;
+                GetComponent<PlayerOwner>().playerOwner = target.GetComponent<PlayerOwner>().playerOwner;
+                GetComponent<MeleeWeaponStats>().hitBox.GetComponent<PlayerOwner>().playerOwner = target.GetComponent<PlayerOwner>().playerOwner;
             }
         }
     }

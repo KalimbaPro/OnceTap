@@ -2169,6 +2169,7 @@ GameObject:
   - component: {fileID: 5669686519969815029}
   - component: {fileID: 8987385341759348790}
   - component: {fileID: 4069687793906257836}
+  - component: {fileID: 4822174269786823713}
   m_Layer: 0
   m_Name: Hips
   m_TagString: TrackedByCamera
@@ -2242,6 +2243,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4822174269786823713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890194726443674393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e768bd24fb333784085abad2289183c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOwner: {fileID: 9133545340053260162}
 --- !u!1 &5114195030416141154
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,6 +2988,7 @@ GameObject:
   - component: {fileID: 5060040862127424929}
   - component: {fileID: 4025378927048626455}
   - component: {fileID: 4445140266364623717}
+  - component: {fileID: 2816026916698696468}
   m_Layer: 0
   m_Name: StrikeCylinder
   m_TagString: Strike
@@ -3097,6 +3112,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2816026916698696468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6218661062287610659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e768bd24fb333784085abad2289183c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOwner: {fileID: 9133545340053260162}
 --- !u!1 &6388026764315927786
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,6 +3589,7 @@ GameObject:
   - component: {fileID: 1722249531407494900}
   - component: {fileID: 3546285927178232343}
   - component: {fileID: 3735270422200183989}
+  - component: {fileID: 8633035191669296257}
   m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: WeaponHolder
@@ -3622,6 +3651,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2281471, y: 0.1890736, z: 0.17839783}
   m_Center: {x: 0.0119581595, y: 0.14050366, z: 0.007771179}
+--- !u!114 &8633035191669296257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049049746879260467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e768bd24fb333784085abad2289183c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOwner: {fileID: 9133545340053260162}
 --- !u!1 &8154985231974585848
 GameObject:
   m_ObjectHideFlags: 0
@@ -4060,6 +4102,7 @@ GameObject:
   - component: {fileID: 7567405006138591409}
   - component: {fileID: -3696823317747557030}
   - component: {fileID: 2468805617826769744}
+  - component: {fileID: 7101775389961389960}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -4345,6 +4388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: -10
+  time: 180
 --- !u!114 &1263934120721968898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4394,6 +4438,8 @@ MonoBehaviour:
   Assists: 0
   Score: 0
   IsStrikeReady: 1
+  bully: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &7567405006138591409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4462,6 +4508,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a85d1d8540ded9c4cb9ad5405782dc0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7101775389961389960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9133545340053260162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf71b559e124524d9b50a7ee709b304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &798224764574759562

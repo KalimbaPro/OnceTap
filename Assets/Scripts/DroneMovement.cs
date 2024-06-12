@@ -1,6 +1,7 @@
 using MoreMountains.Feedbacks;
 using StarterAssets;
 using System.Collections;
+using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -79,14 +80,6 @@ public class DroneMovement : MonoBehaviour
     //private void FireStrike()
     //{
     //}
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            print("Player collide with strike");
-        }
-    }
 
     private IEnumerator LaunchStrike()
     {

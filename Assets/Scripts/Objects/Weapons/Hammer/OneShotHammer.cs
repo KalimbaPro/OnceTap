@@ -23,6 +23,8 @@ public class OneShotHammer : MonoBehaviour
 
     void HitPlayer(Collider player)
     {
+        player.gameObject.GetComponent<PlayerStats>().bully = gameObject.GetComponent<PlayerOwner>().playerOwner;
+        gameObject.GetComponent<PlayerOwner>().playerOwner.GetComponent<PlayerStats>().target = player.gameObject;
         RagdollTrigger ragdollTrigger = player.GetComponent<RagdollTrigger>();
         float projectionForce = this.GetComponentInParent<MeleeWeaponStats>().projectionForce;
         ragdollTrigger.EnableRagdoll();
