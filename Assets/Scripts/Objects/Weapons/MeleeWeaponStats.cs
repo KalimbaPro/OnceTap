@@ -28,18 +28,18 @@ public class MeleeWeaponStats : MonoBehaviour
 
     public void SetphysicHitBox(bool setPhysicHitBox)
     {
-        foreach(Collider collider in physicHitBox.GetComponents<Collider> ()) {
-            collider.enabled = setPhysicHitBox;
+        if (physicHitBox != null)
+        {
+            foreach (Collider collider in physicHitBox.GetComponents<Collider>())
+            {
+                collider.enabled = setPhysicHitBox;
+            }
         }
     }
 
     public void SetHitBox(bool setHitbox)
     {
-        if (hitBox == null)
-        {
-            Debug.Log("Error in weapon hitbox");
-        }
-        else
+        if (hitBox != null)
         {
             foreach (Collider collider in hitBox.GetComponents<Collider>())
             {
