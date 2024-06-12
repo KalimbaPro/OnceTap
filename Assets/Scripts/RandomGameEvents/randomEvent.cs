@@ -7,13 +7,30 @@ public abstract class randomEvent : MonoBehaviour
     private triggerRandomEvents eventHandler;
     private float timer = 0f;
     public float eventTime = 30f;
+    public string eventAnnoucementString;
+    private float textTimeToAppear = 2f;
+
+    private void HandleAnnouncementAnimation()
+    {
+        if (timer <= 0.5) {
+            eventHandler.eventAnnouncement.fontSize = timer * 72;
+        }
+    }
+
+    private void DisplayAnnouncement()
+    {
+        eventHandler.eventAnnouncement.text = eventAnnoucementString;
+        eventHandler.eventAnnouncement.CrossFadeAlpha(1, 0.25f, false);
+    }
     
     public void StartEvent()
     {
         this.enabled = true;
-        CustomStartEvent();
         timer = 0f;
         eventHandler = GetComponent<triggerRandomEvents>();
+        eventHandler.eventAnnouncement.fontSize = 0;
+        DisplayAnnouncement();
+        CustomStartEvent();
         eventHandler.eventInProgress = true;
     }
 
@@ -30,7 +47,10 @@ public abstract class randomEvent : MonoBehaviour
     protected void HandleEventTime()
     {
         timer += Time.deltaTime;
+        if (timer >= textTimeToAppear)
+            eventHandler.eventAnnouncement.CrossFadeAlpha(0, 0.25f, false);
         if (timer >= eventTime)
             EndEvent();
+        HandleAnnouncementAnimation();
     }
 }

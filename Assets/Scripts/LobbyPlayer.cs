@@ -52,6 +52,7 @@ public class LobbyPlayer : MonoBehaviour
                 mtlArmsList[mtlSelectedId],
                 mtlLegsList[mtlSelectedId]
             };
+            GetComponent<PlayerStats>().Username = skinNames.ElementAt(mtlSelectedId);
         }
         else
         {

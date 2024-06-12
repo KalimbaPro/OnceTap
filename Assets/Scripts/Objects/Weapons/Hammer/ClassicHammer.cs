@@ -27,8 +27,15 @@ public class ClassicHammer : MonoBehaviour
 
     void HitPlayer(Collider player)
     {
-        player.gameObject.GetComponent<PlayerStats>().bully = gameObject.GetComponent<PlayerOwner>().playerOwner;
-        gameObject.GetComponent<PlayerOwner>().playerOwner.GetComponent<PlayerStats>().target = player.gameObject;
+        if (gameObject.GetComponent<PlayerOwner>() != null)
+        {
+            player.gameObject.GetComponent<PlayerStats>().bully = gameObject.GetComponent<PlayerOwner>()?.playerOwner;
+            gameObject.GetComponent<PlayerOwner>().playerOwner.GetComponent<PlayerStats>().target = player.gameObject;
+        }
+        else
+        {
+            player.gameObject.GetComponent<PlayerStats>().bully = null;
+        }
         RagdollTrigger ragdollTrigger = player.GetComponent<RagdollTrigger>();
         float projectionForce = this.GetComponentInParent<MeleeWeaponStats>().projectionForce;
         ragdollTrigger.EnableRagdoll();

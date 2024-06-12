@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class lightsOutEvent : randomEvent
@@ -26,6 +27,7 @@ public class lightsOutEvent : randomEvent
 
     void Update()
     {
+        lightsToDisable = GameObject.FindObjectsByType<Light>(FindObjectsSortMode.None).ToList();
         HandleEventTime();
     }
 }
