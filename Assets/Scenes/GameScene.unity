@@ -2810,9 +2810,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minZoomDistance: 5
-  maxZoomDistance: 15
+  maxZoomDistance: 40
   zoomSpeed: 2
-  offset: {x: 0, y: 0, z: -10}
+  offset: {x: 0, y: 0, z: -20}
 --- !u!1 &1718223967
 GameObject:
   m_ObjectHideFlags: 0
