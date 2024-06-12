@@ -1056,6 +1056,8 @@ MonoBehaviour:
   Assists: 3
   Score: 125
   IsStrikeReady: 0
+  bully: {fileID: 0}
+  target: {fileID: 0}
 --- !u!4 &300329379
 Transform:
   m_ObjectHideFlags: 0
@@ -1777,6 +1779,8 @@ MonoBehaviour:
   Assists: 1
   Score: 300
   IsStrikeReady: 1
+  bully: {fileID: 0}
+  target: {fileID: 0}
 --- !u!4 &465490261
 Transform:
   m_ObjectHideFlags: 0
@@ -1852,10 +1856,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.50980395}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0, g: 0.41960785, b: 1, a: 0.50980395}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1907,8 +1911,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a9fd44c7daf773c489b86519d261b198, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3865,7 +3869,7 @@ GameObject:
   - component: {fileID: 1192503969}
   - component: {fileID: 1192503973}
   - component: {fileID: 1192503975}
-  - component: {fileID: 1192503974}
+  - component: {fileID: 1192503976}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -3973,26 +3977,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a1a349a4530ff41ba843ea28e53d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1192503974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192503968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &1192503975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4005,9 +3989,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1702720098}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &1192503976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192503968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 60102d8068c722a46b37dc2b6ee249e9,
+    type: 3}
+  m_PointAction: {fileID: 8689058901980062325, guid: 60102d8068c722a46b37dc2b6ee249e9,
+    type: 3}
+  m_MoveAction: {fileID: -2374151500861941719, guid: 60102d8068c722a46b37dc2b6ee249e9,
+    type: 3}
+  m_SubmitAction: {fileID: 3718994247503744906, guid: 60102d8068c722a46b37dc2b6ee249e9,
+    type: 3}
+  m_CancelAction: {fileID: 4563557559105866571, guid: 60102d8068c722a46b37dc2b6ee249e9,
+    type: 3}
+  m_LeftClickAction: {fileID: -1804278979692298909, guid: 60102d8068c722a46b37dc2b6ee249e9,
+    type: 3}
+  m_MiddleClickAction: {fileID: 8805407111467442838, guid: 60102d8068c722a46b37dc2b6ee249e9,
+    type: 3}
+  m_RightClickAction: {fileID: 2113720578828603171, guid: 60102d8068c722a46b37dc2b6ee249e9,
+    type: 3}
+  m_ScrollWheelAction: {fileID: 106413154783225189, guid: 60102d8068c722a46b37dc2b6ee249e9,
+    type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6482699333902748335, guid: 60102d8068c722a46b37dc2b6ee249e9,
+    type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: -6730237305401110684, guid: 60102d8068c722a46b37dc2b6ee249e9,
+    type: 3}
+  m_DeselectOnBackgroundClick: 0
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &1251724209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5635,10 +5660,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.50980395}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0, g: 0.41960785, b: 1, a: 0.50980395}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -5690,8 +5715,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a9fd44c7daf773c489b86519d261b198, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5986,6 +6011,8 @@ MonoBehaviour:
   Assists: 3
   Score: 200
   IsStrikeReady: 1
+  bully: {fileID: 0}
+  target: {fileID: 0}
 --- !u!4 &1790280313
 Transform:
   m_ObjectHideFlags: 0
@@ -6816,6 +6843,8 @@ MonoBehaviour:
   Assists: 2
   Score: 125
   IsStrikeReady: 1
+  bully: {fileID: 0}
+  target: {fileID: 0}
 --- !u!4 &2118035525
 Transform:
   m_ObjectHideFlags: 0
