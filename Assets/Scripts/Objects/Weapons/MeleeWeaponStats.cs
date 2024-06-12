@@ -46,13 +46,6 @@ public class MeleeWeaponStats : MonoBehaviour
                 collider.enabled = setHitbox;
             }
         }
-        else
-        {
-            foreach (Collider collider in hitBox.GetComponents<Collider>())
-            {
-                collider.enabled = setHitbox;
-            }
-        }
     }
 
     // Update is called once per frame
