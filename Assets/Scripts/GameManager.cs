@@ -17,8 +17,22 @@ public class GameManager : MonoBehaviour
 
     public bool GameStarted = false;
     public GameObject InstantiatedMap;
-
     public MenuItemEnum GameMode = MenuItemEnum.LifeMode;
+    public static GameManager Instance { get { return _instance; } }
+
+    private static GameManager _instance;
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -71,5 +85,13 @@ public class GameManager : MonoBehaviour
         //{
         //    players.ElementAt(i).GetComponent<LobbyGameSelector>().SetupPlayer();
         //}
+    }
+
+    public void Reset()
+    {
+        GameStarted = false;
+        InstantiatedMap = null;
+        gameContainer.SetActive(false);
+        lobbyContainer.SetActive(false);
     }
 }

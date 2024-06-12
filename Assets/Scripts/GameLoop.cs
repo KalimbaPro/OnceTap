@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameLoop : MonoBehaviour
 {
@@ -27,6 +28,22 @@ public class GameLoop : MonoBehaviour
         Debug.Log("Number of Players found: " + players.Length);
         if (players.Length == 1) {
             Debug.Log("End Game");
+        }
+    }
+
+    public void EndGame(string sceneName)
+    {
+        DestroyPlayers();
+        players = null;
+        GameManager.Instance.Reset();
+        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+    }
+
+    private void DestroyPlayers()
+    {
+        foreach (var player in players)
+        {
+            Destroy(player);
         }
     }
 

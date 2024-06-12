@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class triggerRandomEvents : MonoBehaviour
 {
     private float nextActionTime = 0.0f;
     public float tickEventTime = 1f;
     public bool eventInProgress = false;
+    public TextMeshProUGUI eventAnnouncement;
     private int totalProbabilities = 0;
     private Dictionary<string, int> eventsProbabilities = new Dictionary<string, int>();
     private randomEvent Event;
@@ -20,6 +22,7 @@ public class triggerRandomEvents : MonoBehaviour
         {
             currentEventNum += entry.Value;
             if (currentEventNum >= randomNum) {
+                Event = GetComponent<rhinoEvent>();
                 if (entry.Key == "TeamMode")
                     Event = GetComponent<teamModeEvent>();
                 if (entry.Key == "LightsOut")
@@ -28,6 +31,8 @@ public class triggerRandomEvents : MonoBehaviour
                     Event = GetComponent<godModeEvent>();
                 if (entry.Key == "Rhino")
                     Event = GetComponent<rhinoEvent>();
+                if (entry.Key == "Drone")
+                    Event = GetComponent<DroneEvent>();
                 Event.StartEvent();
                 return;
             }
@@ -36,13 +41,14 @@ public class triggerRandomEvents : MonoBehaviour
 
     void Start()
     {
-        eventsProbabilities["Nothing"] = 100;
-        eventsProbabilities["TeamMode"] = 75;
-        eventsProbabilities["LightsOut"] = 50;
-        eventsProbabilities["GodMode"] = 10;
-        eventsProbabilities["Rhino"] = 50;
+        eventsProbabilities.Add("Nothing", 100);
+        eventsProbabilities.Add("TeamMode", 75);
+        eventsProbabilities.Add("LightsOut", 50);
+        eventsProbabilities.Add("GodMode", 10);
+        eventsProbabilities.Add("Rhino", 50);
+        eventsProbabilities.Add("Drone", 10);
 
-        foreach(KeyValuePair<string, int> entry in eventsProbabilities)
+        foreach (KeyValuePair<string, int> entry in eventsProbabilities)
         {
             totalProbabilities += entry.Value;
         }
