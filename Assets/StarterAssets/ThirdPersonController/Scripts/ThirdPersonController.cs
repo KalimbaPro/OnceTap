@@ -398,7 +398,6 @@ namespace StarterAssets
 
                 if (!_playerStats.IsStrikeReady)
                 {
-                    _playerStats.IsStrikeReady = true;
                     return;
                 }
 
