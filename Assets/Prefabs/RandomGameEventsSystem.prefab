@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 5703817967613734030}
   - component: {fileID: 6358707940031702664}
   - component: {fileID: 8353342751662044438}
+  - component: {fileID: 5770423470507852534}
   m_Layer: 0
   m_Name: RandomGameEventsSystem
   m_TagString: Untagged
@@ -188,7 +189,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  rhinoPrefab: {fileID: 0}
+  rhinoPrefab: {fileID: 5993831581469590014, guid: d75edf1243b15bca7bb73f4dfd40e3d2,
+    type: 3}
 --- !u!114 &6358707940031702664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +219,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventTime: 30
   eventAnnoucementString: YOU'RE GOD
+--- !u!114 &5770423470507852534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442366156614613541}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bc86f0b93a0c4e82bcc64e100805f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventTime: 30
+  eventAnnoucementString: A drone has appeared!
+  SpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  DronePrefab: {fileID: 1597420446419429933, guid: fc0ddf4bf0853d241881b06f384ad08b,
+    type: 3}
 --- !u!1 &7152469086372833271
 GameObject:
   m_ObjectHideFlags: 0

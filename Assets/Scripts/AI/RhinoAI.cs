@@ -16,6 +16,9 @@ public class RhinoAI : MonoBehaviour
 
     void Update()
     {
-        agent.destination = playerToTarget.transform.position;
+        if (agent != null && playerToTarget != null)
+        {
+            agent.destination = playerToTarget.transform.position;
+        }
     }    
 }

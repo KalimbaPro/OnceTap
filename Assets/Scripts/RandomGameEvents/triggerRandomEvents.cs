@@ -31,6 +31,8 @@ public class triggerRandomEvents : MonoBehaviour
                     Event = GetComponent<godModeEvent>();
                 if (entry.Key == "Rhino")
                     Event = GetComponent<rhinoEvent>();
+                if (entry.Key == "Drone")
+                    Event = GetComponent<DroneEvent>();
                 Event.StartEvent();
                 return;
             }
@@ -39,13 +41,14 @@ public class triggerRandomEvents : MonoBehaviour
 
     void Start()
     {
-        eventsProbabilities["Nothing"] = 100;
-        eventsProbabilities["TeamMode"] = 75;
-        eventsProbabilities["LightsOut"] = 50;
-        eventsProbabilities["GodMode"] = 10;
-        eventsProbabilities["Rhino"] = 50;
+        eventsProbabilities.Add("Nothing", 100);
+        eventsProbabilities.Add("TeamMode", 75);
+        eventsProbabilities.Add("LightsOut", 50);
+        eventsProbabilities.Add("GodMode", 10);
+        eventsProbabilities.Add("Rhino", 50);
+        eventsProbabilities.Add("Drone", 10);
 
-        foreach(KeyValuePair<string, int> entry in eventsProbabilities)
+        foreach (KeyValuePair<string, int> entry in eventsProbabilities)
         {
             totalProbabilities += entry.Value;
         }

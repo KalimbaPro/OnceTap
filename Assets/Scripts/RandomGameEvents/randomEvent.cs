@@ -10,6 +10,11 @@ public abstract class randomEvent : MonoBehaviour
     public string eventAnnoucementString;
     private float textTimeToAppear = 2f;
 
+    private void Awake()
+    {
+        eventHandler = GetComponent<triggerRandomEvents>();
+    }
+
     private void HandleAnnouncementAnimation()
     {
         if (timer <= 0.5) {
@@ -27,7 +32,6 @@ public abstract class randomEvent : MonoBehaviour
     {
         this.enabled = true;
         timer = 0f;
-        eventHandler = GetComponent<triggerRandomEvents>();
         eventHandler.eventAnnouncement.fontSize = 0;
         DisplayAnnouncement();
         CustomStartEvent();
