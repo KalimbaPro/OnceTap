@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class triggerRandomEvents : MonoBehaviour
 {
     private float nextActionTime = 0.0f;
     public float tickEventTime = 1f;
     public bool eventInProgress = false;
+    public TextMeshProUGUI eventAnnouncement;
     private int totalProbabilities = 0;
     private Dictionary<string, int> eventsProbabilities = new Dictionary<string, int>();
     private randomEvent Event;
@@ -20,6 +22,7 @@ public class triggerRandomEvents : MonoBehaviour
         {
             currentEventNum += entry.Value;
             if (currentEventNum >= randomNum) {
+                Event = GetComponent<rhinoEvent>();
                 if (entry.Key == "TeamMode")
                     Event = GetComponent<teamModeEvent>();
                 if (entry.Key == "LightsOut")
