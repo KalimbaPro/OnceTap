@@ -37,7 +37,7 @@ public class GameRespawn : MonoBehaviour
     private IEnumerator StartTimer()
     {
         yield return new WaitForSeconds(time);
-        EndGame("MainMenuScene");
+        EndGame("EndOfTheGame");
     }
 
     void FixedUpdate()
@@ -94,7 +94,7 @@ public class GameRespawn : MonoBehaviour
         {
             player.IsDead = true;
             GetComponent<PlayerStats>().DeadAt = System.DateTime.Now;
-            EndGame("MainMenuScene");
+            EndGame("EndOfTheGame");
         }
     }
 
@@ -108,7 +108,7 @@ public class GameRespawn : MonoBehaviour
             }
             else
             {
-                EndGame("MainMenuScene");
+                EndGame("EndOfTheGame");
             }
         }
     }
