@@ -44,10 +44,21 @@ public class GameRespawn : MonoBehaviour
     {
         if (transform.position.y < threshold && player.IsDead == false)
         {
+            UpdateScores();
             UpdateLife();
             UpdateKills();
-            UpdateScores();
             playerStats.Deaths++;
+            CheckRespawn();    
+        }
+    }
+
+    private void CheckRespawn()
+    {
+        switch (GameManager.Instance.GameMode)
+        {
+            case MenuItemEnum.LifeMode: CheckLives(); break;
+            case MenuItemEnum.KillsMode: CheckKills(); break;
+            default: Respawn(); break;
         }
     }
 
@@ -65,20 +76,16 @@ public class GameRespawn : MonoBehaviour
         if (playerStats.bully)
         {
             playerStats.bully.GetComponent<PlayerStats>().Kills += 1;
-            if (playerStats.bully.GetComponent<PlayerStats>().Kills < 10)
-            {
-                Respawn();
-            }
-            else
-            {
-                EndGame("MainMenuScene");
-            }
         }
     }
 
     private void UpdateLife()
     {
         playerStats.Lives--;
+    }
+
+    private void CheckLives()
+    {
         if (playerStats.Lives > 0)
         {
             Respawn();
@@ -91,8 +98,28 @@ public class GameRespawn : MonoBehaviour
         }
     }
 
+    private void CheckKills()
+    {
+        if (playerStats.bully)
+        {
+            if (playerStats.bully.GetComponent<PlayerStats>().Kills < 10)
+            {
+                Respawn();
+            }
+            else
+            {
+                EndGame("MainMenuScene");
+            }
+        }
+    }
+
     private void Respawn()
     {
+        if (playerStats.bully)
+        {
+            playerStats.bully.GetComponent<PlayerStats>().target = null;
+            playerStats.bully = null;
+        }
         var safeZones = GameObject.FindGameObjectWithTag("Map").GetComponent<MapScript>().SafeZones;
         characterController.transform.position = safeZones.ElementAt(Random.Range(0, safeZones.Count)).transform.position;
     }

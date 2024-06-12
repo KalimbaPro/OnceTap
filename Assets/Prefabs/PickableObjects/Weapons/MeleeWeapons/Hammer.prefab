@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2743095164521399620}
   - component: {fileID: -1992975830496728772}
   - component: {fileID: -3830744717505718540}
-  - component: {fileID: 6329073703775791903}
+  - component: {fileID: 3462196988379051308}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Weapon
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   YValue: -10
---- !u!114 &6329073703775791903
+--- !u!114 &3462196988379051308
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 6807825603454612980}
   - component: {fileID: 3856255840076583711}
   - component: {fileID: 4172057510142845842}
-  - component: {fileID: 3717996248426565638}
+  - component: {fileID: 6552220202812971092}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: WeaponHitbox
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectionOrigin: {fileID: 6821305592864171854}
---- !u!114 &3717996248426565638
+--- !u!114 &6552220202812971092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

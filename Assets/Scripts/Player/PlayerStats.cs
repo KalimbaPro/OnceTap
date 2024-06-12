@@ -16,6 +16,8 @@ public class PlayerStats : MonoBehaviour
     public DateTime? DeadAt = null;
     public GameObject bully = null;
     public GameObject target = null;
+    private bool cooldownStarted = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,17 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target && !cooldownStarted)
+        {
+            cooldownStarted = true;
+            StartCoroutine(TargetCooldown());
+        }
+    }
 
+    private IEnumerator TargetCooldown()
+    {
+        yield return new WaitForSeconds(6);
+        target = null;
+        cooldownStarted = false;
     }
 }

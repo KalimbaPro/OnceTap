@@ -86,4 +86,12 @@ public class GameManager : MonoBehaviour
         //    players.ElementAt(i).GetComponent<LobbyGameSelector>().SetupPlayer();
         //}
     }
+
+    public void Reset()
+    {
+        GameStarted = false;
+        InstantiatedMap = null;
+        gameContainer.SetActive(false);
+        lobbyContainer.SetActive(false);
+    }
 }

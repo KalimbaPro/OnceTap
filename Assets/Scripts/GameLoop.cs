@@ -33,7 +33,18 @@ public class GameLoop : MonoBehaviour
 
     public void EndGame(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        DestroyPlayers();
+        players = null;
+        GameManager.Instance.Reset();
+        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+    }
+
+    private void DestroyPlayers()
+    {
+        foreach (var player in players)
+        {
+            Destroy(player);
+        }
     }
 
     // Start is called before the first frame update
