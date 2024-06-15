@@ -33,17 +33,24 @@ public class GameLoop : MonoBehaviour
 
     public void EndGame(string sceneName)
     {
-        DestroyPlayers();
-        players = null;
+        DisablePlayers();
+        //players = null;
         GameManager.Instance.Reset();
         SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
     }
 
-    private void DestroyPlayers()
+    private void DisablePlayers()
     {
         foreach (var player in players)
         {
-            Destroy(player);
+            MonoBehaviour[] components = player.GetComponents<MonoBehaviour>();
+
+            foreach (MonoBehaviour component in components)
+            {
+                component.enabled = false;
+            }
+
+            player.GetComponent<PlayerStats>().enabled = true;
         }
     }
 

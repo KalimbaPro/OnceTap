@@ -1,4 +1,5 @@
 using StarterAssets;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject playGroundMap3;
 
     public bool GameStarted = false;
+    public DateTime GameStartTime = DateTime.Now;
     public GameObject InstantiatedMap;
     public MenuItemEnum GameMode = MenuItemEnum.LifeMode;
     public static GameManager Instance { get { return _instance; } }
@@ -74,6 +76,7 @@ public class GameManager : MonoBehaviour
         };
 
         GameStarted = true;
+        GameStartTime = DateTime.Now;
 
         foreach (var player in players)
         {
