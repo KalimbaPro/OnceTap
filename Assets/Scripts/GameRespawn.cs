@@ -23,10 +23,10 @@ public class GameRespawn : MonoBehaviour
         player = GetComponent<ThirdPersonController>();
         playerStats = GetComponent<PlayerStats>();
         characterController = GetComponent<CharacterController>();
-        if (GameManager.Instance.GameMode == MenuItemEnum.ScoreMode)
-        {
-            StartCoroutine(StartTimer());
-        }
+        //if (GameManager.Instance.GameMode == MenuItemEnum.ScoreMode)
+        //{
+        //    StartCoroutine(StartTimer());
+        //}
         //isLifeMode = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().GameMode == MenuItemEnum.LifeMode;
         //if (!isLifeMode)
         //{
@@ -34,11 +34,11 @@ public class GameRespawn : MonoBehaviour
         //}
     }
 
-    private IEnumerator StartTimer()
-    {
-        yield return new WaitForSeconds(time);
-        EndGame("MainMenuScene");
-    }
+    //private IEnumerator StartTimer()
+    //{
+    //    yield return new WaitForSeconds(time);
+    //    EndGame("EndOfTheGame");
+    //}
 
     void FixedUpdate()
     {
@@ -94,7 +94,7 @@ public class GameRespawn : MonoBehaviour
         {
             player.IsDead = true;
             GetComponent<PlayerStats>().DeadAt = System.DateTime.Now;
-            EndGame("MainMenuScene");
+            EndGame("EndOfTheGame");
         }
     }
 
@@ -108,8 +108,12 @@ public class GameRespawn : MonoBehaviour
             }
             else
             {
-                EndGame("MainMenuScene");
+                EndGame("EndOfTheGame");
             }
+        }
+        else
+        {
+            Respawn();
         }
     }
 
