@@ -3628,6 +3628,7 @@ MonoBehaviour:
   currentWeapon: {fileID: 0}
   dropForce: 12
   dropPoint: {fileID: 2908189647153878113}
+  firePoint: {fileID: 7374493187049349986}
   weaponMode: 1
   _canPickup: 0
 --- !u!65 &3735270422200183989

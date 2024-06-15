@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using UnityEngine;
 
 public class DistanceWeaponStats : MonoBehaviour
@@ -12,9 +13,9 @@ public class DistanceWeaponStats : MonoBehaviour
     {
     }
 
-    public void SetFirePoint()
+    public void SetFirePoint(Transform firePoint)
     {
-        this.firePoint = GameObject.FindGameObjectWithTag("FirePoint").transform;
+        this.firePoint = firePoint;
     }
 
     public void Fire()

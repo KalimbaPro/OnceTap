@@ -18,7 +18,10 @@ public class WeaponHolder : MonoBehaviour
 
     public Transform dropPoint;
 
-    public enum WeaponMode {
+    public Transform firePoint;
+
+    public enum WeaponMode
+    {
         Distance,
         Melee,
     };
@@ -39,9 +42,10 @@ public class WeaponHolder : MonoBehaviour
         {
             meleeWeaponStats = GetComponentInChildren<MeleeWeaponStats>();
             distanceWeaponStats = GetComponentInChildren<DistanceWeaponStats>();
-            if (distanceWeaponStats != null) {
+            if (distanceWeaponStats != null)
+            {
                 weaponMode = WeaponMode.Distance;
-                distanceWeaponStats.SetFirePoint();
+                distanceWeaponStats.SetFirePoint(firePoint);
             }
             if (meleeWeaponStats != null)
                 weaponMode = WeaponMode.Melee;
@@ -94,14 +98,15 @@ public class WeaponHolder : MonoBehaviour
             currentWeapon.transform.SetParent(null);
             currentWeapon.GetComponent<SphereCollider>().enabled = true;
             currentWeapon.GetComponent<Rigidbody>().isKinematic = false;
-            if (weaponMode == WeaponMode.Melee) {
+            if (weaponMode == WeaponMode.Melee)
+            {
                 currentWeapon.GetComponent<MeleeWeaponStats>().SetphysicHitBox(true);
             }
             currentWeapon.GetComponent<Rigidbody>().AddForce(dropPoint.transform.forward * dropForce, ForceMode.Impulse);
             currentWeapon = null;
             //TODO: distance weapon
             //else
-                //currentWeapon.GetComponent<MeleeWeaponStats>().SetphysicHitBox(true);
+            //currentWeapon.GetComponent<MeleeWeaponStats>().SetphysicHitBox(true);
         }
     }
 }
