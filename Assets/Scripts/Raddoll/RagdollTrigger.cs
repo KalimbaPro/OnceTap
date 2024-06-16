@@ -53,6 +53,7 @@ public class RagdollTrigger : MonoBehaviour
     }
     public void DisableRagdoll()
     {
+        StopCoroutine(DisableRagdollAfterRecoveryTime());
         UpdateCharacterRoot();
         foreach (var rigidbody in _ragdollRigidbodies)
         {
@@ -103,8 +104,8 @@ public class RagdollTrigger : MonoBehaviour
         StartCoroutine(DisableRagdollAfterRecoveryTime());
     }
     IEnumerator DisableRagdollAfterRecoveryTime()
-        {
-            yield return new WaitForSeconds(GetComponent<PlayerStats>().recoveryTime);
-            DisableRagdoll();
-        }
+    {
+        yield return new WaitForSeconds(GetComponent<PlayerStats>().recoveryTime);
+        DisableRagdoll();
+    }
 }
