@@ -15,7 +15,7 @@ using UnityEngine.XR;
 namespace StarterAssets
 {
     [RequireComponent(typeof(CharacterController))]
-#if ENABLE_INPUT_SYSTEM 
+#if ENABLE_INPUT_SYSTEM
     [RequireComponent(typeof(PlayerInput))]
 #endif
     public class ThirdPersonController : MonoBehaviour
@@ -119,7 +119,7 @@ namespace StarterAssets
         private int _animIDMotionSpeed;
         private string _animIDMeleeAttack;
 
-#if ENABLE_INPUT_SYSTEM 
+#if ENABLE_INPUT_SYSTEM
         private PlayerInput _playerInput;
 #endif
         private Animator _animator;
@@ -340,6 +340,7 @@ namespace StarterAssets
                     _canAttack = false;
                     _animator.SetTrigger(_animIDMeleeAttack);
                     weaponHolder.GetMeleeWeaponStats().SetHitBox(true);
+                    weaponHolder.PlayWeaponSound();
                     StartCoroutine(AttackCooldown());
                 }
             }
@@ -374,10 +375,10 @@ namespace StarterAssets
             if (weaponHolder.currentWeapon != null) {
                 if (weaponHolder.GetWeaponMode() == WeaponHolder.WeaponMode.Distance)
                     DistanceAttack();
-                else 
+                else
                     MeleeAttack();
             }
-            
+
         }
 
         private void PickUp()
@@ -415,7 +416,7 @@ namespace StarterAssets
             yield return new WaitForSeconds(1);
             _canAttack = true;
             DisableWeaponHitBox();
-            
+
         }
 
         float GetCurrentAnimationTime(string animName)

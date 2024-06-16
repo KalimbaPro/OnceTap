@@ -104,4 +104,9 @@ public class WeaponHolder : MonoBehaviour
                 //currentWeapon.GetComponent<MeleeWeaponStats>().SetphysicHitBox(true);
         }
     }
+
+    public void PlayWeaponSound()
+    {
+        meleeWeaponStats.PlaySound();
+    }
 }

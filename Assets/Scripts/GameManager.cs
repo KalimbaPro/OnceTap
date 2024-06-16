@@ -60,10 +60,10 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         var players = GameObject.FindGameObjectsWithTag("Player");
-        if (players.Length < 2 )
-        {
-            return;
-        }
+        // if (players.Length < 2 )
+        // {
+        //     return;
+        // }
 
         lobbyContainer.SetActive(false);
         gameContainer.SetActive(true);

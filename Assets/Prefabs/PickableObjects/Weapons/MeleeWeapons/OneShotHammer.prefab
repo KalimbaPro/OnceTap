@@ -41,6 +41,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 33061507991826933, guid: be0e80d6672e453449d48b7338b3dfd7,
         type: 3}
+      propertyPath: weaponSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d511fc959dbc6374d8d70b60118e60fe, type: 3}
+    - target: {fileID: 33061507991826933, guid: be0e80d6672e453449d48b7338b3dfd7,
+        type: 3}
       propertyPath: projectionForce
       value: 400
       objectReference: {fileID: 0}
