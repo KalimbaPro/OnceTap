@@ -1,5 +1,4 @@
 using StarterAssets;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,20 +19,49 @@ public class LobbyPlayer : MonoBehaviour
 
     [SerializeField] private SkinnedMeshRenderer armature;
 
+    //private void Awake()
+    //{
+    //    GetComponent<CharacterController>().enabled = false;
+    //}
+
     // Start is called before the first frame update
     void Start()
     {
         _input = GetComponent<StarterAssetsInputs>();
         GetComponent<ThirdPersonController>().InLobbyMode = true;
 
-        transform.position = new Vector3(0, 100, 0);
-
         // Assign initial materials
         AssignUniqueSkin();
+
+        //StartCoroutine(TPToLobby());
+        var lobby = GameObject.FindGameObjectWithTag("Lobby").GetComponent<LobbyData>();
+        Vector3 spawnPoint = new(
+            Random.Range(lobby.SpawnPointCorner1.position.x, lobby.SpawnPointCorner2.position.x),
+            Random.Range(lobby.SpawnPointCorner1.position.y, lobby.SpawnPointCorner2.position.y),
+            Random.Range(lobby.SpawnPointCorner1.position.z, lobby.SpawnPointCorner2.position.z)
+        );
+
+        GetComponent<CharacterController>().transform.position = spawnPoint;
+        //GetComponent<ThirdPersonController>().enabled = true;
 
         // Bind input actions
         //skinSelectLeft.action.performed += ctx => PreviousSkin();
         //skinSelectRight.action.performed += ctx => NextSkin();
+    }
+
+    private IEnumerator TPToLobby()
+    {
+        yield return new WaitForSeconds(1);
+
+        var lobby = GameObject.FindGameObjectWithTag("Lobby").GetComponent<LobbyData>();
+        Vector3 spawnPoint = new(
+            Random.Range(lobby.SpawnPointCorner1.position.x, lobby.SpawnPointCorner2.position.x),
+            Random.Range(lobby.SpawnPointCorner1.position.y, lobby.SpawnPointCorner2.position.y),
+            Random.Range(lobby.SpawnPointCorner1.position.z, lobby.SpawnPointCorner2.position.z)
+        );
+
+        GetComponent<CharacterController>().transform.position = spawnPoint;
+        GetComponent<CharacterController>().enabled = true;
     }
 
     public string GetSkinName()
