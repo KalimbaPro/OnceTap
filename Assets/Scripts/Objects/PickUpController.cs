@@ -5,15 +5,20 @@ using UnityEngine;
 using StarterAssets;
 using Unity.Netcode;
 using System;
+using System.Diagnostics;
 
 public class PickUpController : MonoBehaviour
 {
     //public ProjectileGun gunScript;
 
     public bool _doesExpired = true;
+
+    private Coroutine _despawnWeaponCoroutine;
+
+    public float _despawnTime;
     private void Start()
     {
-        StartCoroutine(DespawnWeaponRoutine(gameObject, 90f));
+        _despawnWeaponCoroutine = StartCoroutine(DespawnWeaponRoutine(gameObject, _despawnTime));
     }
 
     public void Pickup(GameObject target)
@@ -23,6 +28,7 @@ public class PickUpController : MonoBehaviour
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
             GetComponent<SphereCollider>().enabled = false;
+            StopWeaponDespawn();
             if (target.GetComponent<WeaponHolder>().weaponMode == WeaponHolder.WeaponMode.Melee)
                 GetComponent<MeleeWeaponStats>().SetphysicHitBox(false);
             GetComponent<Rigidbody>().isKinematic = true;
@@ -44,6 +50,25 @@ public class PickUpController : MonoBehaviour
             target.GetComponent<WeaponHolder>().pickUpController = null;
         }
     }
+
+    public void StopWeaponDespawn()
+    {
+        if (_despawnWeaponCoroutine != null)
+        {
+            StopCoroutine(_despawnWeaponCoroutine);
+            _despawnWeaponCoroutine = null;
+        }
+
+    }
+
+    public void RestartWeaponDespawn()
+    {
+        if (_despawnWeaponCoroutine == null)
+        {
+            _despawnWeaponCoroutine = StartCoroutine(DespawnWeaponRoutine(gameObject, _despawnTime));
+        }
+    }
+
 
     private IEnumerator DespawnWeaponRoutine(GameObject weapon, float time)
     {

@@ -91,11 +91,12 @@ public class WeaponHolder : MonoBehaviour
 
     public void Drop()
     {
-        if (currentWeapon)
+        if (currentWeapon != null)
         {
             currentWeapon.transform.SetParent(null);
             currentWeapon.GetComponent<SphereCollider>().enabled = true;
             currentWeapon.GetComponent<Rigidbody>().isKinematic = false;
+            currentWeapon.GetComponent<PickUpController>().RestartWeaponDespawn();
             if (weaponMode == WeaponMode.Melee) {
                 currentWeapon.GetComponent<MeleeWeaponStats>().SetphysicHitBox(true);
             }
