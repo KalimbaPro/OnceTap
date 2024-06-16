@@ -85,7 +85,7 @@ public class WeaponHolder : MonoBehaviour
     }
     public void PickUp()
     {
-        if (pickUpController)
+        if (pickUpController != null)
         {
             pickUpController.Pickup(gameObject);
         }
@@ -93,7 +93,7 @@ public class WeaponHolder : MonoBehaviour
 
     public void Drop()
     {
-        if (currentWeapon)
+        if (currentWeapon != null)
         {
             currentWeapon.transform.SetParent(null);
             currentWeapon.GetComponent<SphereCollider>().enabled = true;
