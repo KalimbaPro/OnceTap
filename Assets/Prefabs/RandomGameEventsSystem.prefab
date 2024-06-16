@@ -32,6 +32,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9204870789450018223}
+  - {fileID: 2183852109239681379}
   m_Father: {fileID: 5529218857670532012}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -167,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e73be2437b02b5acafaae27f65d15d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventTime: 30
+  eventTime: 15
   eventAnnoucementString: Lights out!
   lightsToDisable: []
 --- !u!114 &5703817967613734030
@@ -182,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe6e157a4d90c154bcabf0d41b7ad88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventTime: 30
+  eventTime: 10
   eventAnnoucementString: Watch out for rhinos!
   spawnPoints:
   - {fileID: 0}
@@ -203,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30df53e024b1a4b53908bd657c3528d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventTime: 30
+  eventTime: 20
   eventAnnoucementString: Teaming up!
 --- !u!114 &8353342751662044438
 MonoBehaviour:
@@ -217,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ef8c0c1428ca3869f85fb7e305555c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventTime: 30
+  eventTime: 7
   eventAnnoucementString: YOU'RE GOD
 --- !u!114 &5770423470507852534
 MonoBehaviour:
@@ -243,6 +244,85 @@ MonoBehaviour:
   - {fileID: 0}
   DronePrefab: {fileID: 1597420446419429933, guid: fc0ddf4bf0853d241881b06f384ad08b,
     type: 3}
+--- !u!1 &1865179629181538965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2183852109239681379}
+  - component: {fileID: 3983409285624588388}
+  - component: {fileID: 166084965841254230}
+  m_Layer: 5
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2183852109239681379
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865179629181538965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 489819844753071692}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!222 &3983409285624588388
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865179629181538965}
+  m_CullTransparentMesh: 1
+--- !u!114 &166084965841254230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865179629181538965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9622642, g: 0.80038214, b: 0.041758526, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 3258cbeb41f23b545a323883d7b047b9, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 205
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
 --- !u!1 &7152469086372833271
 GameObject:
   m_ObjectHideFlags: 0

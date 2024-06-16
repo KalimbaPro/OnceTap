@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _doesExpired: 1
+  _despawnTime: 15
 --- !u!54 &-1992975830496728772
 Rigidbody:
   m_ObjectHideFlags: 0

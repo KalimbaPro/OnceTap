@@ -326,6 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _doesExpired: 1
+  _despawnTime: 20
 --- !u!114 &-8249487748795759541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 910065838632942987, guid: 0e7d41f4adc5ab1409fd86679ad984bb,
     type: 3}
-  bulletSpeed: 40
+  bulletSpeed: 20
   firePoint: {fileID: 0}
 --- !u!114 &-4418116963396212020
 MonoBehaviour:

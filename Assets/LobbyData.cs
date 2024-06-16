@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class MapScript : MonoBehaviour
+public class LobbyData : MonoBehaviour
 {
-    public List<Transform> SafeZones = new List<Transform>();
-    public Text timerText;
-    public Transform Boundaries;
+    public Transform SpawnPointCorner1;
+    public Transform SpawnPointCorner2;
 
     // Start is called before the first frame update
     void Start()
