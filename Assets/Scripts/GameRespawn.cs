@@ -9,7 +9,8 @@ public class GameRespawn : MonoBehaviour
 {
     public float threshold;
     public float time = 180;
-    //public bool isLifeMode;
+    public GameObject geometry;
+    public GameObject skeleton;
 
     private StarterAssets.ThirdPersonController player = null;
     private Scoresystem score;
@@ -23,6 +24,8 @@ public class GameRespawn : MonoBehaviour
         player = GetComponent<ThirdPersonController>();
         playerStats = GetComponent<PlayerStats>();
         characterController = GetComponent<CharacterController>();
+        var safeZones = GameObject.FindGameObjectWithTag("Map").GetComponent<MapScript>().SafeZones;
+        characterController.transform.position = safeZones.ElementAt(Random.Range(0, safeZones.Count)).transform.position;
         //if (GameManager.Instance.GameMode == MenuItemEnum.ScoreMode)
         //{
         //    StartCoroutine(StartTimer());
@@ -42,27 +45,31 @@ public class GameRespawn : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (transform.position.y < threshold && player.IsDead == false)
+        if (player.IsDead)
+        {
+            return;
+        }
+
+        if (transform.position.y < threshold)
         {
             UpdateScores();
-            UpdateLife();
+            UpdateLives();
             UpdateKills();
             playerStats.Deaths++;
-            CheckRespawn();    
+            CheckRespawn();
         }
     }
 
-    private void CheckRespawn()
+    public void CheckRespawn()
     {
         switch (GameManager.Instance.GameMode)
         {
             case MenuItemEnum.LifeMode: CheckLives(); break;
-            case MenuItemEnum.KillsMode: CheckKills(); break;
             default: Respawn(); break;
         }
     }
 
-    private void UpdateScores()
+    public void UpdateScores()
     {
         playerStats.Score -= 25;
         if (playerStats.bully)
@@ -71,7 +78,7 @@ public class GameRespawn : MonoBehaviour
         }
     }
 
-    private void UpdateKills()
+    public void UpdateKills()
     {
         if (playerStats.bully)
         {
@@ -79,7 +86,7 @@ public class GameRespawn : MonoBehaviour
         }
     }
 
-    private void UpdateLife()
+    public void UpdateLives()
     {
         playerStats.Lives--;
     }
@@ -92,28 +99,12 @@ public class GameRespawn : MonoBehaviour
         }
         else
         {
+            Respawn();
+            geometry.SetActive(false);
+            skeleton.SetActive(false);
+            gameObject.GetComponent<ThirdPersonController>().enabled = false;
             player.IsDead = true;
             GetComponent<PlayerStats>().DeadAt = System.DateTime.Now;
-            EndGame("EndOfTheGame");
-        }
-    }
-
-    private void CheckKills()
-    {
-        if (playerStats.bully)
-        {
-            if (playerStats.bully.GetComponent<PlayerStats>().Kills < 10)
-            {
-                Respawn();
-            }
-            else
-            {
-                EndGame("EndOfTheGame");
-            }
-        }
-        else
-        {
-            Respawn();
         }
     }
 
@@ -126,10 +117,5 @@ public class GameRespawn : MonoBehaviour
         }
         var safeZones = GameObject.FindGameObjectWithTag("Map").GetComponent<MapScript>().SafeZones;
         characterController.transform.position = safeZones.ElementAt(Random.Range(0, safeZones.Count)).transform.position;
-    }
-
-    private void EndGame(string sceneName)
-    {
-        GameLoop.Instance.EndGame(sceneName);
     }
 }

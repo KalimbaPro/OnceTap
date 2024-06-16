@@ -1084,7 +1084,7 @@ GameObject:
   - component: {fileID: 1078253355774415360}
   m_Layer: 0
   m_Name: wall1 fractured
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1134,6 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab123323e6f91694db3cd80320490472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originalElement: {fileID: 0}
 --- !u!1 &4948212329941769731
 GameObject:
   m_ObjectHideFlags: 0

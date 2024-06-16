@@ -1668,7 +1668,7 @@ Transform:
   m_GameObject: {fileID: 3194413240978507521}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.151, z: 0.744}
+  m_LocalPosition: {x: 0, y: 1.151, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2170,6 +2170,7 @@ GameObject:
   - component: {fileID: 8987385341759348790}
   - component: {fileID: 4069687793906257836}
   - component: {fileID: 4822174269786823713}
+  - component: {fileID: 2405805824223736246}
   m_Layer: 0
   m_Name: Hips
   m_TagString: TrackedByCamera
@@ -2256,6 +2257,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerOwner: {fileID: 9133545340053260162}
+--- !u!114 &2405805824223736246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890194726443674393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853138ec774770f4889998a8a9bdaad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5114195030416141154
 GameObject:
   m_ObjectHideFlags: 0
@@ -3605,8 +3618,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8049049746879260467}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29434928, y: 0.36654672, z: -0.7772524, w: -0.41818744}
-  m_LocalPosition: {x: 0.092, y: -0.035, z: 0.097}
+  m_LocalRotation: {x: 0.29434937, y: 0.3665468, z: -0.7772523, w: -0.4181875}
+  m_LocalPosition: {x: 0.09200007, y: -0.03500002, z: 0.09699997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3628,8 +3641,8 @@ MonoBehaviour:
   currentWeapon: {fileID: 0}
   dropForce: 12
   dropPoint: {fileID: 2908189647153878113}
+  firePoint: {fileID: 7374493187049349986}
   weaponMode: 1
-  _canPickup: 0
 --- !u!65 &3735270422200183989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4390,6 +4403,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threshold: -10
   time: 180
+  geometry: {fileID: 2729123352031271617}
+  skeleton: {fileID: 3239656231352298161}
 --- !u!114 &1263934120721968898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4419,6 +4434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hips: {fileID: 7089698122454373795}
+  weaponHolder: {fileID: 3546285927178232343}
 --- !u!114 &606597113667619023
 MonoBehaviour:
   m_ObjectHideFlags: 0

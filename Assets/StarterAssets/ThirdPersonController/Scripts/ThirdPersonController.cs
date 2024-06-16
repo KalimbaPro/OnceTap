@@ -365,6 +365,7 @@ namespace StarterAssets
             {
                 if (_hasAnimator && _input.attack)
                 {
+                    _animator.SetTrigger("RifleAttack");
                     weaponHolder.GetDistanceWeaponStats().Fire();
                 }
             }
@@ -372,7 +373,8 @@ namespace StarterAssets
         }
         private void Attack()
         {
-            if (weaponHolder.currentWeapon != null) {
+            if (weaponHolder.currentWeapon != null)
+            {
                 if (weaponHolder.GetWeaponMode() == WeaponHolder.WeaponMode.Distance)
                     DistanceAttack();
                 else

@@ -14,6 +14,8 @@ public class RagdollTrigger : MonoBehaviour
         Animated,
         Ragdoll
     }
+
+    public WeaponHolder weaponHolder;
     private Rigidbody[] _ragdollRigidbodies;
     private PlayerState _currentState = PlayerState.Animated;
     private Animator _animator;
@@ -51,6 +53,7 @@ public class RagdollTrigger : MonoBehaviour
     }
     public void DisableRagdoll()
     {
+        StopCoroutine(DisableRagdollAfterRecoveryTime());
         UpdateCharacterRoot();
         foreach (var rigidbody in _ragdollRigidbodies)
         {
@@ -92,6 +95,7 @@ public class RagdollTrigger : MonoBehaviour
     }
     private void RagdollBehaviour()
     {
+        weaponHolder.TeleportWeapon();
     }
 
 
@@ -100,8 +104,8 @@ public class RagdollTrigger : MonoBehaviour
         StartCoroutine(DisableRagdollAfterRecoveryTime());
     }
     IEnumerator DisableRagdollAfterRecoveryTime()
-        {
-            yield return new WaitForSeconds(GetComponent<PlayerStats>().recoveryTime);
-            DisableRagdoll();
-        }
+    {
+        yield return new WaitForSeconds(GetComponent<PlayerStats>().recoveryTime);
+        DisableRagdoll();
+    }
 }

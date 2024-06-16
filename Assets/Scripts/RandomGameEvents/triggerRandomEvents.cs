@@ -41,12 +41,23 @@ public class triggerRandomEvents : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(EventCooldown());
+    }
+
+    private IEnumerator EventCooldown()
+    {
+        yield return new WaitForSeconds(10);
+        StartEventSystem();
+    }
+
+    private void StartEventSystem()
+    {
         eventsProbabilities.Add("Nothing", 100);
-        eventsProbabilities.Add("TeamMode", 75);
-        eventsProbabilities.Add("LightsOut", 50);
-        eventsProbabilities.Add("GodMode", 10);
-        eventsProbabilities.Add("Rhino", 50);
-        eventsProbabilities.Add("Drone", 10);
+        eventsProbabilities.Add("TeamMode", 50);
+        eventsProbabilities.Add("LightsOut", 35);
+        eventsProbabilities.Add("GodMode", 15);
+        eventsProbabilities.Add("Rhino", 15);
+        eventsProbabilities.Add("Drone", 30);
 
         foreach (KeyValuePair<string, int> entry in eventsProbabilities)
         {
