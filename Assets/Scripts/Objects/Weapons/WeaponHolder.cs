@@ -25,16 +25,9 @@ public class WeaponHolder : MonoBehaviour
 
     public WeaponMode weaponMode;
 
-    public bool _canPickup;
-
-    void Start()
-    {
-        currentWeapon = null;
-        pickUpController = null;
-    }
-
     void Update()
     {
+
         if (transform.childCount != previousChildCount)
         {
             meleeWeaponStats = GetComponentInChildren<MeleeWeaponStats>();
@@ -46,6 +39,14 @@ public class WeaponHolder : MonoBehaviour
             if (meleeWeaponStats != null)
                 weaponMode = WeaponMode.Melee;
             previousChildCount = transform.childCount;
+        }
+    }
+
+    public void TeleportWeapon()
+    {
+        if (this.currentWeapon != null) {
+            this.currentWeapon.transform.position = transform.position;
+            currentWeapon.transform.rotation = transform.rotation;
         }
     }
 
@@ -81,7 +82,7 @@ public class WeaponHolder : MonoBehaviour
     }
     public void PickUp()
     {
-        if (pickUpController)
+        if (pickUpController != null)
         {
             pickUpController.Pickup(gameObject);
         }
@@ -89,11 +90,12 @@ public class WeaponHolder : MonoBehaviour
 
     public void Drop()
     {
-        if (currentWeapon)
+        if (currentWeapon != null)
         {
             currentWeapon.transform.SetParent(null);
             currentWeapon.GetComponent<SphereCollider>().enabled = true;
             currentWeapon.GetComponent<Rigidbody>().isKinematic = false;
+            currentWeapon.GetComponent<PickUpController>().RestartWeaponDespawn();
             if (weaponMode == WeaponMode.Melee) {
                 currentWeapon.GetComponent<MeleeWeaponStats>().SetphysicHitBox(true);
             }

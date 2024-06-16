@@ -5,47 +5,30 @@ using UnityEngine;
 using StarterAssets;
 using Unity.Netcode;
 using System;
+using System.Diagnostics;
 
 public class PickUpController : MonoBehaviour
 {
     //public ProjectileGun gunScript;
 
-    private bool _canPickup = false;
     public bool _doesExpired = true;
+
+    private Coroutine _despawnWeaponCoroutine;
+
+    public float _despawnTime;
     private void Start()
     {
-        StartCoroutine(DespawnWeaponRoutine(gameObject, 90f));
-    }
-
-    private void LateUpdate()
-    {
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-
-        if (other.CompareTag("WeaponHolder"))
-        {
-                _canPickup = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("WeaponHolder"))
-        {
-                _canPickup = false;
-        }
+        _despawnWeaponCoroutine = StartCoroutine(DespawnWeaponRoutine(gameObject, _despawnTime));
     }
 
     public void Pickup(GameObject target)
     {
-        if (target.GetComponent<WeaponHolder>().pickUpController) {
-            target.GetComponent<WeaponHolder>().pickUpController = null;
+        if (target.GetComponent<WeaponHolder>().pickUpController != null) {
             transform.SetParent(target.transform);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
             GetComponent<SphereCollider>().enabled = false;
+            StopWeaponDespawn();
             if (target.GetComponent<WeaponHolder>().weaponMode == WeaponHolder.WeaponMode.Melee)
                 GetComponent<MeleeWeaponStats>().SetphysicHitBox(false);
             GetComponent<Rigidbody>().isKinematic = true;
@@ -64,12 +47,28 @@ public class PickUpController : MonoBehaviour
                 GetComponent<PlayerOwner>().playerOwner = target.GetComponent<PlayerOwner>().playerOwner;
                 GetComponent<MeleeWeaponStats>().hitBox.GetComponent<PlayerOwner>().playerOwner = target.GetComponent<PlayerOwner>().playerOwner;
             }
+            target.GetComponent<WeaponHolder>().pickUpController = null;
         }
     }
 
-    public bool GetCanPickup() {
-        return _canPickup;
+    public void StopWeaponDespawn()
+    {
+        if (_despawnWeaponCoroutine != null)
+        {
+            StopCoroutine(_despawnWeaponCoroutine);
+            _despawnWeaponCoroutine = null;
+        }
+
     }
+
+    public void RestartWeaponDespawn()
+    {
+        if (_despawnWeaponCoroutine == null)
+        {
+            _despawnWeaponCoroutine = StartCoroutine(DespawnWeaponRoutine(gameObject, _despawnTime));
+        }
+    }
+
 
     private IEnumerator DespawnWeaponRoutine(GameObject weapon, float time)
     {

@@ -20,6 +20,7 @@ TagManager:
   - TrackedByCamera
   - GameManager
   - ScoreBoardLine
+  - Lobby
   layers:
   - Default
   - TransparentFX

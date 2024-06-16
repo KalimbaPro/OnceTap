@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return _instance; } }
 
     private static GameManager _instance;
+    private PlayerInputManager playerInputManager;
 
     private void Awake()
     {
@@ -39,13 +41,20 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerInputManager = GetComponent<PlayerInputManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameStarted)
+        {
+            playerInputManager.DisableJoining();
+        }
+        else
+        {
+            playerInputManager.EnableJoining();
+        }
     }
 
     public void StartGame()
