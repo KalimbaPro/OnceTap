@@ -111,8 +111,13 @@ public class WeaponHolder : MonoBehaviour
         }
     }
 
-    public void PlayWeaponSound()
+    public void PlayMeleeWeaponSound()
     {
         meleeWeaponStats.PlaySound();
+    }
+
+    public void PlayDistanceWeaponSound()
+    {
+        distanceWeaponStats.PlaySound();
     }
 }

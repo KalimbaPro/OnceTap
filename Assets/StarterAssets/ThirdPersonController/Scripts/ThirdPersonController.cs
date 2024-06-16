@@ -340,7 +340,7 @@ namespace StarterAssets
                     _canAttack = false;
                     _animator.SetTrigger(_animIDMeleeAttack);
                     weaponHolder.GetMeleeWeaponStats().SetHitBox(true);
-                    weaponHolder.PlayWeaponSound();
+                    weaponHolder.PlayMeleeWeaponSound();
                     StartCoroutine(AttackCooldown());
                 }
             }
@@ -367,6 +367,7 @@ namespace StarterAssets
                 {
                     _animator.SetTrigger("RifleAttack");
                     weaponHolder.GetDistanceWeaponStats().Fire();
+                    weaponHolder.PlayDistanceWeaponSound();
                 }
             }
             _input.attack = false;
