@@ -6,13 +6,12 @@ public class rhinoEvent : randomEvent
 {
     public Transform[] spawnPoints;
     public GameObject rhinoPrefab;
-    private GameObject[] rhinoCopies;
+    private List<GameObject> rhinoCopies = new();
 
     protected override void CustomStartEvent()
     {
-        rhinoCopies = new GameObject[spawnPoints.Length];
         for (int i = 0; i < spawnPoints.Length; i+=1) {
-            rhinoCopies[i] = Instantiate(rhinoPrefab, spawnPoints[i].position, Quaternion.identity);
+            rhinoCopies.Add(Instantiate(rhinoPrefab, spawnPoints[i].position, Quaternion.identity));
         }
     }
 
