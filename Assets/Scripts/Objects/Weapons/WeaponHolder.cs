@@ -26,19 +26,8 @@ public class WeaponHolder : MonoBehaviour
 
     public WeaponMode weaponMode;
 
-    public bool _canPickup;
-
-    void Start()
-    {
-        print("START weapon holder ");
-        //currentWeapon = null;
-        //pickUpController = null;
-    }
-
     void Update()
     {
-        //transform.position = leftHandpos.position;
-        //transform.rotation = leftHandpos.rotation;
 
         if (transform.childCount != previousChildCount)
         {
@@ -56,8 +45,10 @@ public class WeaponHolder : MonoBehaviour
 
     public void TeleportWeapon()
     {
-        this.currentWeapon.transform.position = transform.position;
-        currentWeapon.transform.rotation = transform.rotation;
+        if (this.currentWeapon != null) {
+            this.currentWeapon.transform.position = transform.position;
+            currentWeapon.transform.rotation = transform.rotation;
+        }
     }
 
     public WeaponMode GetWeaponMode()
@@ -92,7 +83,7 @@ public class WeaponHolder : MonoBehaviour
     }
     public void PickUp()
     {
-        if (pickUpController)
+        if (pickUpController != null)
         {
             pickUpController.Pickup(gameObject);
         }
