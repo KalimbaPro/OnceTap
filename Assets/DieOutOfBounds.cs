@@ -42,7 +42,7 @@ public class DieOutOfBounds : MonoBehaviour
             {
                 playerOwner.playerOwner.GetComponent<RagdollTrigger>().DisableRagdoll();
                 playerOwner.playerOwner.GetComponent<GameRespawn>().UpdateScores();
-                playerOwner.playerOwner.GetComponent<GameRespawn>().UpdateLife();
+                playerOwner.playerOwner.GetComponent<GameRespawn>().UpdateLives();
                 playerOwner.playerOwner.GetComponent<GameRespawn>().UpdateKills();
                 playerOwner.playerOwner.GetComponent<PlayerStats>().Deaths++;
                 playerOwner.playerOwner.GetComponent<GameRespawn>().CheckRespawn();

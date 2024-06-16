@@ -3000,6 +3000,7 @@ MonoBehaviour:
   - {fileID: 3024261411888257275}
   - {fileID: 8058164838113352332}
   - {fileID: 8985130008772240195}
+  timerText: {fileID: 2943223662564450559}
   Boundaries: {fileID: 7085058556019601617}
 --- !u!1 &8120413720632393923
 GameObject:
@@ -15489,6 +15490,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RandomGameEventsSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 1865179629181538965, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5529218857670532012, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15599,6 +15605,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ea5d72ff1ccf82c82927b8683f02ac, type: 3}
+--- !u!114 &2943223662564450559 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 166084965841254230, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 3068749282802505641}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7362778972288601093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5529218857670532012, guid: e9ea5d72ff1ccf82c82927b8683f02ac,

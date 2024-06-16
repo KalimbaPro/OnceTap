@@ -4402,6 +4402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threshold: -10
   time: 180
+  geometry: {fileID: 2729123352031271617}
+  skeleton: {fileID: 3239656231352298161}
 --- !u!114 &1263934120721968898
 MonoBehaviour:
   m_ObjectHideFlags: 0

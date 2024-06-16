@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class GameLoop : MonoBehaviour
 {
-    private static GameLoop _instance;
     public static GameLoop Instance { get { return _instance; } }
+    
+    private static GameLoop _instance;
+    private bool endGame = false;
     private GameObject[] players;
+    private float timer = 180f;
+    private GameObject map;
 
     private void Awake()
     {
@@ -24,17 +29,11 @@ public class GameLoop : MonoBehaviour
     public void GetAllPlayers()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
-
-        Debug.Log("Number of Players found: " + players.Length);
-        if (players.Length == 1) {
-            Debug.Log("End Game");
-        }
     }
 
     public void EndGame(string sceneName)
     {
         DisablePlayers();
-        //players = null;
         GameManager.Instance.Reset();
         SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
     }
@@ -49,7 +48,9 @@ public class GameLoop : MonoBehaviour
             {
                 component.enabled = false;
             }
-
+            player.GetComponent<GameRespawn>().geometry.SetActive(false);
+            player.GetComponent<GameRespawn>().skeleton.SetActive(false);
+            player.GetComponent<Animator>().enabled = false;
             player.GetComponent<PlayerStats>().enabled = true;
         }
     }
@@ -57,11 +58,69 @@ public class GameLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        map = GameObject.FindGameObjectWithTag("Map");
+        GetAllPlayers();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.GameMode == MenuItemEnum.ScoreMode)
+        {
+            GameManager.Instance.InstantiatedMap.GetComponent<MapScript>().timerText.enabled = true;
+            UpdateTimer();
+        }
+        CheckEndGame();
+    }
 
+    void UpdateTimer()
+    {
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            GameManager.Instance.InstantiatedMap.GetComponent<MapScript>().timerText.text = "Time: " + Mathf.FloorToInt(timer / 60) + ":" + Mathf.FloorToInt(timer % 60);
+        } else
+        {
+            endGame = true;
+        }
+    }
+
+    void CheckEndGame()
+    {
+        switch (GameManager.Instance.GameMode)
+        {
+            case MenuItemEnum.LifeMode: CheckLives(); break;
+            case MenuItemEnum.KillsMode: CheckKills(); break;
+            case MenuItemEnum.ScoreMode: if (endGame == true) EndGame("EndOfTheGame"); break;
+        }
+    }
+
+    void CheckKills()
+    {
+        foreach (var player in players)
+        {
+            if (player.GetComponent<PlayerStats>().Kills >= 10)
+            {
+                EndGame("EndOfTheGame");
+            }
+        }
+    }
+
+    void CheckLives()
+    {
+        var numberOfLoosers = 0;
+
+        foreach (var player in players)
+        {
+            if (player.GetComponent<PlayerStats>().Lives <= 0)
+            {
+                numberOfLoosers++;
+            }
+        }
+
+        if (numberOfLoosers == players.Length - 1)
+        {
+            EndGame("EndOfTheGame");
+        }
     }
 }

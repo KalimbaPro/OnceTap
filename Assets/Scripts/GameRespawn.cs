@@ -9,7 +9,8 @@ public class GameRespawn : MonoBehaviour
 {
     public float threshold;
     public float time = 180;
-    //public bool isLifeMode;
+    public GameObject geometry;
+    public GameObject skeleton;
 
     private StarterAssets.ThirdPersonController player = null;
     private Scoresystem score;
@@ -52,7 +53,7 @@ public class GameRespawn : MonoBehaviour
         if (transform.position.y < threshold)
         {
             UpdateScores();
-            UpdateLife();
+            UpdateLives();
             UpdateKills();
             playerStats.Deaths++;
             CheckRespawn();
@@ -64,7 +65,6 @@ public class GameRespawn : MonoBehaviour
         switch (GameManager.Instance.GameMode)
         {
             case MenuItemEnum.LifeMode: CheckLives(); break;
-            case MenuItemEnum.KillsMode: CheckKills(); break;
             default: Respawn(); break;
         }
     }
@@ -86,7 +86,7 @@ public class GameRespawn : MonoBehaviour
         }
     }
 
-    public void UpdateLife()
+    public void UpdateLives()
     {
         playerStats.Lives--;
     }
@@ -99,28 +99,12 @@ public class GameRespawn : MonoBehaviour
         }
         else
         {
+            Respawn();
+            geometry.SetActive(false);
+            skeleton.SetActive(false);
+            gameObject.GetComponent<ThirdPersonController>().enabled = false;
             player.IsDead = true;
             GetComponent<PlayerStats>().DeadAt = System.DateTime.Now;
-            EndGame("EndOfTheGame");
-        }
-    }
-
-    private void CheckKills()
-    {
-        if (playerStats.bully)
-        {
-            if (playerStats.bully.GetComponent<PlayerStats>().Kills < 10)
-            {
-                Respawn();
-            }
-            else
-            {
-                EndGame("EndOfTheGame");
-            }
-        }
-        else
-        {
-            Respawn();
         }
     }
 
@@ -133,10 +117,5 @@ public class GameRespawn : MonoBehaviour
         }
         var safeZones = GameObject.FindGameObjectWithTag("Map").GetComponent<MapScript>().SafeZones;
         characterController.transform.position = safeZones.ElementAt(Random.Range(0, safeZones.Count)).transform.position;
-    }
-
-    private void EndGame(string sceneName)
-    {
-        GameLoop.Instance.EndGame(sceneName);
     }
 }
