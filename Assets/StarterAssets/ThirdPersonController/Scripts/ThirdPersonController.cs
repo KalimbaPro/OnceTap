@@ -364,6 +364,7 @@ namespace StarterAssets
             {
                 if (_hasAnimator && _input.attack)
                 {
+                    _animator.SetTrigger("RifleAttack");
                     weaponHolder.GetDistanceWeaponStats().Fire();
                 }
             }
@@ -371,13 +372,14 @@ namespace StarterAssets
         }
         private void Attack()
         {
-            if (weaponHolder.currentWeapon != null) {
+            if (weaponHolder.currentWeapon != null)
+            {
                 if (weaponHolder.GetWeaponMode() == WeaponHolder.WeaponMode.Distance)
                     DistanceAttack();
-                else 
+                else
                     MeleeAttack();
             }
-            
+
         }
 
         private void PickUp()
@@ -415,7 +417,7 @@ namespace StarterAssets
             yield return new WaitForSeconds(1);
             _canAttack = true;
             DisableWeaponHitBox();
-            
+
         }
 
         float GetCurrentAnimationTime(string animName)

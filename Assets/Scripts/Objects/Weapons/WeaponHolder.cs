@@ -18,7 +18,10 @@ public class WeaponHolder : MonoBehaviour
 
     public Transform dropPoint;
 
-    public enum WeaponMode {
+    public Transform firePoint;
+
+    public enum WeaponMode
+    {
         Distance,
         Melee,
     };
@@ -32,9 +35,10 @@ public class WeaponHolder : MonoBehaviour
         {
             meleeWeaponStats = GetComponentInChildren<MeleeWeaponStats>();
             distanceWeaponStats = GetComponentInChildren<DistanceWeaponStats>();
-            if (distanceWeaponStats != null) {
+            if (distanceWeaponStats != null)
+            {
                 weaponMode = WeaponMode.Distance;
-                distanceWeaponStats.SetFirePoint();
+                distanceWeaponStats.SetFirePoint(firePoint);
             }
             if (meleeWeaponStats != null)
                 weaponMode = WeaponMode.Melee;
@@ -103,7 +107,7 @@ public class WeaponHolder : MonoBehaviour
             currentWeapon = null;
             //TODO: distance weapon
             //else
-                //currentWeapon.GetComponent<MeleeWeaponStats>().SetphysicHitBox(true);
+            //currentWeapon.GetComponent<MeleeWeaponStats>().SetphysicHitBox(true);
         }
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3239747353250255263}
   m_Layer: 0
   m_Name: wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +49,7 @@ MonoBehaviour:
   fractured: {fileID: 7294759777396100879, guid: 1f7cde0d87e9b774ab60e82b27eb8fa5,
     type: 3}
   breakForce: 250
+  MMFPlayer: {fileID: 0}
 --- !u!65 &3239747353250255263
 BoxCollider:
   m_ObjectHideFlags: 0

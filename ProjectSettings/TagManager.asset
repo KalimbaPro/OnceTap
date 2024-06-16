@@ -21,6 +21,7 @@ TagManager:
   - GameManager
   - ScoreBoardLine
   - Lobby
+  - Wall
   layers:
   - Default
   - TransparentFX
