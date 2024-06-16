@@ -5,6 +5,7 @@ using UnityEngine;
 public class MapScript : MonoBehaviour
 {
     public List<Transform> SafeZones = new List<Transform>();
+    public Transform Boundaries;
 
     // Start is called before the first frame update
     void Start()
