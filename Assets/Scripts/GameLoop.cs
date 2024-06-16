@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameLoop : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class GameLoop : MonoBehaviour
     private bool endGame = false;
     private GameObject[] players;
     private float timer = 180f;
-    private GameObject map;
 
     private void Awake()
     {
@@ -58,7 +58,6 @@ public class GameLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        map = GameObject.FindGameObjectWithTag("Map");
         GetAllPlayers();
     }
 
@@ -67,7 +66,7 @@ public class GameLoop : MonoBehaviour
     {
         if (GameManager.Instance.GameMode == MenuItemEnum.ScoreMode)
         {
-            GameManager.Instance.InstantiatedMap.GetComponent<MapScript>().timerText.enabled = true;
+            GameManager.Instance.InstantiatedMap.GetComponent<MapScript>().timerText.GetComponent<Text>().enabled = true;
             UpdateTimer();
         }
         CheckEndGame();
