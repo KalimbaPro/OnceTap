@@ -17,7 +17,6 @@ public class WeaponHolder : MonoBehaviour
     public float dropForce;
 
     public Transform dropPoint;
-    public Transform leftHandpos;
 
     public enum WeaponMode {
         Distance,
