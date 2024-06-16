@@ -16,11 +16,13 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Player");
             HitPlayer(other);
             Destroy(gameObject);
         }
-        else if (!other.CompareTag("Weapon"))
+        else if (other.CompareTag("Wall"))
         {
+            Debug.Log(other.tag.ToString());
             Destroy(gameObject);
         }
     }

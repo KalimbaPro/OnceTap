@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8026386157534198148}
   - component: {fileID: 2946577729160396853}
   - component: {fileID: 3449758608581265138}
+  - component: {fileID: 6635188152098698488}
   m_Layer: 0
   m_Name: RifleBullet
   m_TagString: Untagged
@@ -180,3 +181,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectionOrigin: {fileID: 6637320565960825755}
   projectionForce: 40
+--- !u!114 &6635188152098698488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910065838632942987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e768bd24fb333784085abad2289183c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOwner: {fileID: 0}

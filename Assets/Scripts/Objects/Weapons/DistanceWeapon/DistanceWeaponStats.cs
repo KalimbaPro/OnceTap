@@ -22,5 +22,6 @@ public class DistanceWeaponStats : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(firePoint.forward * bulletSpeed, ForceMode.Impulse);
+        bullet.GetComponent<PlayerOwner>().playerOwner = gameObject.GetComponent<PlayerOwner>().playerOwner;
     }
 }
