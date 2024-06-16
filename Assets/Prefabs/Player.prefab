@@ -762,7 +762,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0, y: 0.58439016, z: 0.0001142961}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1188,7 +1188,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.16344896, y: 0.38373244, z: -0.04638909}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -1319,7 +1319,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.16344948, y: 0.38372862, z: -0.04638908}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1514,7 +1514,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.0000037103891, y: -0.28508496, z: -0.00000036135316}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1801,7 +1801,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0, y: 0.058229387, z: 0.0012229551}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2026,7 +2026,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.000000074505806, y: 0.28508067, z: 0.000000011175871}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -2169,6 +2169,7 @@ GameObject:
   - component: {fileID: 5669686519969815029}
   - component: {fileID: 8987385341759348790}
   - component: {fileID: 4069687793906257836}
+  - component: {fileID: 4822174269786823713}
   m_Layer: 0
   m_Name: Hips
   m_TagString: TrackedByCamera
@@ -2242,6 +2243,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4822174269786823713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890194726443674393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e768bd24fb333784085abad2289183c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOwner: {fileID: 9133545340053260162}
 --- !u!1 &5114195030416141154
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,7 +2647,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.0000000018626451, y: 0.4133444, z: -2.3283064e-10}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -2927,7 +2941,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.0000004498288, y: -0.41334414, z: 0.000000025844201}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2974,6 +2988,7 @@ GameObject:
   - component: {fileID: 5060040862127424929}
   - component: {fileID: 4025378927048626455}
   - component: {fileID: 4445140266364623717}
+  - component: {fileID: 2816026916698696468}
   m_Layer: 0
   m_Name: StrikeCylinder
   m_TagString: Strike
@@ -3097,6 +3112,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2816026916698696468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6218661062287610659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e768bd24fb333784085abad2289183c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOwner: {fileID: 9133545340053260162}
 --- !u!1 &6388026764315927786
 GameObject:
   m_ObjectHideFlags: 0
@@ -3389,7 +3417,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.08610317, y: -0.053458035, z: -0.011470642}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -3561,6 +3589,7 @@ GameObject:
   - component: {fileID: 1722249531407494900}
   - component: {fileID: 3546285927178232343}
   - component: {fileID: 3735270422200183989}
+  - component: {fileID: 8633035191669296257}
   m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: WeaponHolder
@@ -3601,6 +3630,7 @@ MonoBehaviour:
   dropPoint: {fileID: 2908189647153878113}
   leftHandpos: {fileID: 4248139799951836907}
   weaponMode: 1
+  _canPickup: 0
 --- !u!65 &3735270422200183989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3622,6 +3652,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2281471, y: 0.1890736, z: 0.17839783}
   m_Center: {x: 0.0119581595, y: 0.14050366, z: 0.007771179}
+--- !u!114 &8633035191669296257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049049746879260467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e768bd24fb333784085abad2289183c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOwner: {fileID: 9133545340053260162}
 --- !u!1 &8154985231974585848
 GameObject:
   m_ObjectHideFlags: 0
@@ -3814,7 +3857,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.086103186, y: -0.053458154, z: -0.0114706475}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4058,6 +4101,10 @@ GameObject:
   - component: {fileID: 7766303289383051596}
   - component: {fileID: 606597113667619023}
   - component: {fileID: 7567405006138591409}
+  - component: {fileID: -3696823317747557030}
+  - component: {fileID: 2468805617826769744}
+  - component: {fileID: 7101775389961389960}
+  - component: {fileID: 7512569538081833415}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -4183,6 +4230,8 @@ MonoBehaviour:
   CameraAngleOverride: 0
   LockCameraPosition: 1
   weaponHolder: {fileID: 3546285927178232343}
+  InDroneMode: 0
+  InLobbyMode: 0
 --- !u!114 &3988838175427417495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4219,6 +4268,12 @@ MonoBehaviour:
   attack: 0
   pickup: 0
   drop: 0
+  left: 0
+  right: 0
+  up: 0
+  down: 0
+  prev: 0
+  next: 0
   launchDrone: 0
   analogMovement: 0
   cursorLocked: 1
@@ -4329,13 +4384,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9133545340053260162}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e60c14c914b53b64cbed192e761d58f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: -10
-  isLifeMode: 1
+  time: 180
 --- !u!114 &1263934120721968898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4382,9 +4437,25 @@ MonoBehaviour:
   Username: Username
   Lives: 3
   Kills: 0
+  Deaths: 0
+  Assists: 0
   Score: 0
-  IsStrikeReady: 1
+  IsStrikeReady: 0
+  bully: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &7567405006138591409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9133545340053260162}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9465a4596a04a454492d7c4cf0ad5536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3696823317747557030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4393,7 +4464,77 @@ MonoBehaviour:
   m_GameObject: {fileID: 9133545340053260162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9465a4596a04a454492d7c4cf0ad5536, type: 3}
+  m_Script: {fileID: 11500000, guid: 00fc84c5a39c5144c9a808724e752824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mtlBodyList:
+  - {fileID: 2100000, guid: 43714b68324cc2c409d534d9874f2a2b, type: 2}
+  - {fileID: 2100000, guid: 959bef68856013d4da4cbe9176c989c0, type: 2}
+  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -876546973899608171, guid: 3ac96fe03624a6e49953ad3337af10d3, type: 3}
+  - {fileID: 7159369417392969216, guid: 3944eaaf70beffa4097d8c293604125e, type: 2}
+  - {fileID: 2100000, guid: bd1c2dd792532d244b1f1fbfd5ebce2f, type: 2}
+  - {fileID: 8964545449385876224, guid: 4d92c846f624fab43b1ded532a977929, type: 3}
+  mtlArmsList:
+  - {fileID: 2100000, guid: 766fd3ff04aab4745a764d33daac86fa, type: 2}
+  - {fileID: 2100000, guid: 959bef68856013d4da4cbe9176c989c0, type: 2}
+  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -876546973899608171, guid: 3ac96fe03624a6e49953ad3337af10d3, type: 3}
+  - {fileID: 7159369417392969216, guid: 3944eaaf70beffa4097d8c293604125e, type: 2}
+  - {fileID: 2100000, guid: bd1c2dd792532d244b1f1fbfd5ebce2f, type: 2}
+  - {fileID: 8964545449385876224, guid: 4d92c846f624fab43b1ded532a977929, type: 3}
+  mtlLegsList:
+  - {fileID: 2100000, guid: 8b25e99361ac31d4e9ae83c46aee69ea, type: 2}
+  - {fileID: 2100000, guid: 959bef68856013d4da4cbe9176c989c0, type: 2}
+  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -876546973899608171, guid: 3ac96fe03624a6e49953ad3337af10d3, type: 3}
+  - {fileID: 7159369417392969216, guid: 3944eaaf70beffa4097d8c293604125e, type: 2}
+  - {fileID: 2100000, guid: bd1c2dd792532d244b1f1fbfd5ebce2f, type: 2}
+  - {fileID: 8964545449385876224, guid: 4d92c846f624fab43b1ded532a977929, type: 3}
+  skinNames:
+  - Robot
+  - Red
+  - Wireframe
+  - Water
+  - Font
+  - Blue
+  - Rock
+  mtlSelectedId: 0
+  armature: {fileID: 5470820376870813176}
+--- !u!114 &2468805617826769744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9133545340053260162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85d1d8540ded9c4cb9ad5405782dc0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7101775389961389960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9133545340053260162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf71b559e124524d9b50a7ee709b304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7512569538081833415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9133545340053260162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3d0487e64364742ac3debcbf073199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &798224764574759562

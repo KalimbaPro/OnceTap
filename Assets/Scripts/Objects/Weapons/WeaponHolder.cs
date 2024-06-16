@@ -26,6 +26,8 @@ public class WeaponHolder : MonoBehaviour
 
     public WeaponMode weaponMode;
 
+    public bool _canPickup;
+
     void Start()
     {
         print("START weapon holder ");

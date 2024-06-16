@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7133514084716447427}
   - component: {fileID: 3250635700194113143}
   - component: {fileID: 3787733371324821659}
+  - component: {fileID: 5418306653675430878}
+  - component: {fileID: 1511812498650932340}
   m_Layer: 0
   m_Name: LongSword
   m_TagString: Weapon
@@ -55,6 +57,7 @@ MonoBehaviour:
   CanBreakThings: 0
   hitBox: {fileID: 1689529195524426077}
   physicHitBox: {fileID: 7372254301155696115}
+  projectionForce: 0
   weaponType: 1
 --- !u!135 &8927387841348633471
 SphereCollider:
@@ -116,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18622ed170a059478825c59c8463b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _doesExpired: 1
 --- !u!65 &3787733371324821659
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -137,6 +141,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &5418306653675430878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381154865043278472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99db3ec000bff8343bff9a0d9b25b140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  YValue: -10
+--- !u!114 &1511812498650932340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381154865043278472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e768bd24fb333784085abad2289183c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOwner: {fileID: 0}
 --- !u!1 &1689529195524426077
 GameObject:
   m_ObjectHideFlags: 0

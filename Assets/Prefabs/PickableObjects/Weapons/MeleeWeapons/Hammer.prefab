@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6217545107034584294}
   - component: {fileID: 2743095164521399620}
   - component: {fileID: -1992975830496728772}
+  - component: {fileID: -3830744717505718540}
+  - component: {fileID: 3462196988379051308}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Weapon
@@ -90,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18622ed170a059478825c59c8463b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _doesExpired: 1
 --- !u!54 &-1992975830496728772
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -117,6 +120,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3830744717505718540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381154865043278472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99db3ec000bff8343bff9a0d9b25b140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  YValue: -10
+--- !u!114 &3462196988379051308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381154865043278472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e768bd24fb333784085abad2289183c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOwner: {fileID: 0}
 --- !u!1 &2697651130028009239
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +264,7 @@ GameObject:
   - component: {fileID: 6807825603454612980}
   - component: {fileID: 3856255840076583711}
   - component: {fileID: 4172057510142845842}
+  - component: {fileID: 6552220202812971092}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: WeaponHitbox
@@ -295,7 +325,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.113964975, y: 0.17418566, z: 0.5178607}
   m_Center: {x: -0.0066167177, y: -0.0035334567, z: -0.35651705}
@@ -312,6 +342,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectionOrigin: {fileID: 6821305592864171854}
+--- !u!114 &6552220202812971092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6073113346455847860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e768bd24fb333784085abad2289183c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOwner: {fileID: 0}
 --- !u!1001 &492342602241842339
 PrefabInstance:
   m_ObjectHideFlags: 0

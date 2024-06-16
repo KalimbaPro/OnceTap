@@ -15,8 +15,14 @@ namespace StarterAssets
 		public bool attack;
 		public bool pickup;
 		public bool drop;
+		public bool left;
+		public bool right;
+		public bool up;
+		public bool down;
+        public bool prev;
+        public bool next;
 
-		public bool launchDrone;
+        public bool launchDrone;
 
         [Header("Movement Settings")]
 		public bool analogMovement;
@@ -77,10 +83,34 @@ namespace StarterAssets
 		{
 			LaunchDroneInput(value.isPressed);
 		}
+		public void OnLeft(InputValue value)
+		{
+			LeftInput(value.isPressed);
+        }
+        public void OnRight(InputValue value)
+        {
+            RightInput(value.isPressed);
+        }
+        public void OnUp(InputValue value)
+        {
+            UpInput(value.isPressed);
+        }
+        public void OnDown(InputValue value)
+        {
+            DownInput(value.isPressed);
+        }
+        public void OnPrev(InputValue value)
+        {
+            PrevInput(value.isPressed);
+        }
+        public void OnNext(InputValue value)
+        {
+            NextInput(value.isPressed);
+        }
 #endif
 
 
-		public void MoveInput(Vector2 newMoveDirection)
+        public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
 		} 
@@ -119,7 +149,37 @@ namespace StarterAssets
 			launchDrone = newLaunchDroneInput;
 		}
 
-		private void OnApplicationFocus(bool hasFocus)
+		public void LeftInput(bool newLeftInput)
+		{
+			left = newLeftInput;
+		}
+
+        public void RightInput(bool newRightInput)
+        {
+            right = newRightInput;
+        }
+
+        public void UpInput(bool newUpInput)
+        {
+            up = newUpInput;
+        }
+
+        public void DownInput(bool newDownInput)
+        {
+            down = newDownInput;
+        }
+
+        public void PrevInput(bool newPrevInput)
+        {
+            prev = newPrevInput;
+        }
+
+        public void NextInput(bool newNextInput)
+        {
+            next = newNextInput;
+        }
+
+        private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);
 		}

@@ -6,7 +6,7 @@ public class MenuItemSelection : MonoBehaviour
 {
     //public GameObject Grid;
     public GameObject Border;
-    public string MenuItem;
+    public MenuItemEnum MenuItem;
 
     // Start is called before the first frame update
     void Start()

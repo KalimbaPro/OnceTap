@@ -28,15 +28,23 @@ public class MeleeWeaponStats : MonoBehaviour
 
     public void SetphysicHitBox(bool setPhysicHitBox)
     {
-        foreach(Collider collider in physicHitBox.GetComponents<Collider> ()) {
-            collider.enabled = setPhysicHitBox;
+        if (physicHitBox != null)
+        {
+            foreach (Collider collider in physicHitBox.GetComponents<Collider>())
+            {
+                collider.enabled = setPhysicHitBox;
+            }
         }
     }
 
     public void SetHitBox(bool setHitbox)
     {
-        foreach(Collider collider in hitBox.GetComponents<Collider> ()) {
-            collider.enabled = setHitbox;
+        if (hitBox != null)
+        {
+            foreach (Collider collider in hitBox.GetComponents<Collider>())
+            {
+                collider.enabled = setHitbox;
+            }
         }
     }
 

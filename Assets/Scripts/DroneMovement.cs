@@ -1,6 +1,7 @@
 using MoreMountains.Feedbacks;
 using StarterAssets;
 using System.Collections;
+using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -80,14 +81,6 @@ public class DroneMovement : MonoBehaviour
     //{
     //}
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            print("Player collide with strike");
-        }
-    }
-
     private IEnumerator LaunchStrike()
     {
         GetComponent<PlayerStats>().IsStrikeReady = false;
@@ -102,7 +95,7 @@ public class DroneMovement : MonoBehaviour
         _input.launchDrone = false;
         _input.attack = false;
         //GetComponent<DroneCamControl>().StopDroneCamera();
-        GetComponent<ThirdPersonController>().enabled = true;
+        GetComponent<ThirdPersonController>().InDroneMode = false;
         GetComponent<DroneMovement>().enabled = false;
     }
 }

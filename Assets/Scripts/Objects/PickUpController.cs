@@ -4,14 +4,17 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 using StarterAssets;
 using Unity.Netcode;
+using System;
 
 public class PickUpController : MonoBehaviour
 {
     //public ProjectileGun gunScript;
 
     private bool _canPickup = false;
+    public bool _doesExpired = true;
     private void Start()
     {
+        StartCoroutine(DespawnWeaponRoutine(gameObject, 90f));
     }
 
     private void LateUpdate()
@@ -47,16 +50,33 @@ public class PickUpController : MonoBehaviour
                 GetComponent<MeleeWeaponStats>().SetphysicHitBox(false);
             GetComponent<Rigidbody>().isKinematic = true;
             WeaponHolder weaponHolder = target.GetComponent<WeaponHolder>();
+            // _doesExpired = false;
             if (weaponHolder.currentWeapon == null)
             {
                 target.GetComponent<WeaponHolder>().currentWeapon = gameObject;
+                GetComponent<PlayerOwner>().playerOwner = target.GetComponent<PlayerOwner>().playerOwner;
+                GetComponent<MeleeWeaponStats>().hitBox.GetComponent<PlayerOwner>().playerOwner = target.GetComponent<PlayerOwner>().playerOwner;
             }
             else
             {
                 Destroy(target.GetComponent<WeaponHolder>().currentWeapon);
                 target.GetComponent<WeaponHolder>().currentWeapon = gameObject;
+                GetComponent<PlayerOwner>().playerOwner = target.GetComponent<PlayerOwner>().playerOwner;
+                GetComponent<MeleeWeaponStats>().hitBox.GetComponent<PlayerOwner>().playerOwner = target.GetComponent<PlayerOwner>().playerOwner;
             }
         }
     }
 
+    public bool GetCanPickup() {
+        return _canPickup;
+    }
+
+    private IEnumerator DespawnWeaponRoutine(GameObject weapon, float time)
+    {
+        yield return new WaitForSeconds(time);
+        if (weapon != null)
+        {
+            Destroy(weapon);
+        }
+    }
 }
