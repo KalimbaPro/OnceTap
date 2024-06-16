@@ -51,7 +51,7 @@ public class PickUpController : MonoBehaviour
             {
                 GetComponent<MeleeWeaponStats>().SetphysicHitBox(false);
             }
-            else
+            else if (GetComponent<DistanceWeaponStats>() != null)
                 GetComponent<DistanceWeaponStats>().SetFirePoint(target.GetComponent<WeaponHolder>().firePoint);
             GetComponent<Rigidbody>().isKinematic = true;
             WeaponHolder weaponHolder = target.GetComponent<WeaponHolder>();
@@ -62,7 +62,7 @@ public class PickUpController : MonoBehaviour
                 GetComponent<PlayerOwner>().playerOwner = target.GetComponent<PlayerOwner>().playerOwner;
                 if (GetComponent<MeleeWeaponStats>() != null)
                     GetComponent<MeleeWeaponStats>().hitBox.GetComponent<PlayerOwner>().playerOwner = target.GetComponent<PlayerOwner>().playerOwner;
-                else
+                else if (GetComponent<DistanceWeaponStats>() != null)
                     GetComponent<DistanceWeaponStats>().GetComponent<PlayerOwner>().playerOwner = target.GetComponent<PlayerOwner>().playerOwner;
             }
             else
