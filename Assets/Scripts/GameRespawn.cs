@@ -86,7 +86,7 @@ public class GameRespawn : MonoBehaviour
         }
     }
 
-    private void UpdateLives()
+    public void UpdateLives()
     {
         playerStats.Lives--;
     }

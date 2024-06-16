@@ -24,8 +24,6 @@ public class GameLoop : MonoBehaviour
         {
             _instance = this;
         }
-
-        map = GameObject.FindGameObjectWithTag("Map");
     }
 
     public void GetAllPlayers()
@@ -60,6 +58,7 @@ public class GameLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        map = GameObject.FindGameObjectWithTag("Map");
         GetAllPlayers();
     }
 
@@ -68,8 +67,8 @@ public class GameLoop : MonoBehaviour
     {
         if (GameManager.Instance.GameMode == MenuItemEnum.ScoreMode)
         {
-            map.GetComponent<MapScript>().timerText.enabled = true;
-            UpdateTimer();   
+            GameManager.Instance.InstantiatedMap.GetComponent<MapScript>().timerText.enabled = true;
+            UpdateTimer();
         }
         CheckEndGame();
     }
@@ -79,7 +78,7 @@ public class GameLoop : MonoBehaviour
         if (timer > 0)
         {
             timer -= Time.deltaTime;
-            map.GetComponent<MapScript>().timerText.text = "Time: " + Mathf.FloorToInt(timer / 60) + ":" + Mathf.FloorToInt(timer % 60);
+            GameManager.Instance.InstantiatedMap.GetComponent<MapScript>().timerText.text = "Time: " + Mathf.FloorToInt(timer / 60) + ":" + Mathf.FloorToInt(timer % 60);
         } else
         {
             endGame = true;
