@@ -11,11 +11,15 @@ public class Break : MonoBehaviour
     private GameObject player;
     private GameObject map;
     public MMF_Player MMFPlayer;
+    public AudioSource audioSource;
+    public AudioClip breakClip;
+    public AudioClip popClip;
 
     private void Start()
     {
         map = GameObject.FindGameObjectWithTag("Map");
         MMFPlayer = GetComponent<MMF_Player>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

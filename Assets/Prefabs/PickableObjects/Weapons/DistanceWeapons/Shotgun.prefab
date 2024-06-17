@@ -356,6 +356,7 @@ MonoBehaviour:
     type: 3}
   bulletSpeed: 20
   firePoint: {fileID: 0}
+  weaponSound: {fileID: 8300000, guid: 7c4a02453dfa85c42a408407b3809663, type: 3}
 --- !u!114 &6689619888610543817
 MonoBehaviour:
   m_ObjectHideFlags: 0

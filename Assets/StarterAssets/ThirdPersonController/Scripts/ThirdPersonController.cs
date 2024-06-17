@@ -15,7 +15,7 @@ using UnityEngine.XR;
 namespace StarterAssets
 {
     [RequireComponent(typeof(CharacterController))]
-#if ENABLE_INPUT_SYSTEM 
+#if ENABLE_INPUT_SYSTEM
     [RequireComponent(typeof(PlayerInput))]
 #endif
     public class ThirdPersonController : MonoBehaviour
@@ -119,7 +119,7 @@ namespace StarterAssets
         private int _animIDMotionSpeed;
         private string _animIDMeleeAttack;
 
-#if ENABLE_INPUT_SYSTEM 
+#if ENABLE_INPUT_SYSTEM
         private PlayerInput _playerInput;
 #endif
         private Animator _animator;
@@ -340,6 +340,7 @@ namespace StarterAssets
                     _canAttack = false;
                     _animator.SetTrigger(_animIDMeleeAttack);
                     weaponHolder.GetMeleeWeaponStats().SetHitBox(true);
+                    weaponHolder.PlayMeleeWeaponSound();
                     StartCoroutine(AttackCooldown());
                 }
             }
@@ -366,6 +367,7 @@ namespace StarterAssets
                 {
                     _animator.SetTrigger("RifleAttack");
                     weaponHolder.GetDistanceWeaponStats().Fire();
+                    weaponHolder.PlayDistanceWeaponSound();
                 }
             }
             _input.attack = false;

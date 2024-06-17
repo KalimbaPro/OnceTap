@@ -19,11 +19,25 @@ public class MeleeWeaponStats : MonoBehaviour
     };
 
     public MeleeWeapons weaponType;
+
+    private AudioSource audioSource;
+    public AudioClip weaponSound;
+
     // Start is called before the first frame update
     void Start()
     {
         SetphysicHitBox(true);
         SetHitBox(false);
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        // Assign the audio clip to the AudioSource
+        audioSource.clip = weaponSound;
+        audioSource.playOnAwake = false;
     }
 
     public void SetphysicHitBox(bool setPhysicHitBox)
@@ -51,6 +65,14 @@ public class MeleeWeaponStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void PlaySound()
+    {
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
 }

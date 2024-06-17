@@ -235,6 +235,7 @@ MonoBehaviour:
   physicHitBox: {fileID: 4029206055591775074}
   projectionForce: 0
   weaponType: 2
+  weaponSound: {fileID: 8300000, guid: d511fc959dbc6374d8d70b60118e60fe, type: 3}
 --- !u!54 &778759757350872548
 Rigidbody:
   m_ObjectHideFlags: 0
