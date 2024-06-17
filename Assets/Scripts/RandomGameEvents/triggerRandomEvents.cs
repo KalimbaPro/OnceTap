@@ -22,7 +22,7 @@ public class triggerRandomEvents : MonoBehaviour
         {
             currentEventNum += entry.Value;
             if (currentEventNum >= randomNum) {
-                Event = GetComponent<rhinoEvent>();
+                Event = GetComponent<DroneEvent>();
                 if (entry.Key == "TeamMode")
                     Event = GetComponent<teamModeEvent>();
                 if (entry.Key == "LightsOut")
@@ -52,12 +52,12 @@ public class triggerRandomEvents : MonoBehaviour
 
     private void StartEventSystem()
     {
-        eventsProbabilities.Add("Nothing", 100);
-        eventsProbabilities.Add("TeamMode", 50);
-        eventsProbabilities.Add("LightsOut", 35);
-        eventsProbabilities.Add("GodMode", 15);
-        eventsProbabilities.Add("Rhino", 15);
-        eventsProbabilities.Add("Drone", 30);
+        eventsProbabilities.Add("Drone", 20);
+        eventsProbabilities.Add("LightsOut", 15);
+        eventsProbabilities.Add("Rhino", 10);
+        eventsProbabilities.Add("Nothing", 5);
+        //eventsProbabilities.Add("TeamMode", 50);
+        //eventsProbabilities.Add("GodMode", 15);
 
         foreach (KeyValuePair<string, int> entry in eventsProbabilities)
         {

@@ -1984,9 +1984,7 @@ MonoBehaviour:
   - {fileID: 381154865043278472, guid: be0e80d6672e453449d48b7338b3dfd7, type: 3}
   - {fileID: 5162406644974970864, guid: de2ddf8a41d23af45abee1c9bcd3002c, type: 3}
   - {fileID: 8973234082590756557, guid: b3768f30b5fe6634bad1ab29cf7c7a77, type: 3}
-  - {fileID: 4311248730837266121, guid: c20daf91d2bce304c85fec03f5fafd3b, type: 3}
-  - {fileID: 4205521026231025682, guid: f7a69565ab2ff984789da792b0969f4b, type: 3}
-  spawnChances: 32000000320000002d000000140000002800000023000000
+  spawnChances: 32000000320000002d00000014000000
   spawnAreaMin: {x: 22, y: 0, z: -33}
   spawnAreaMax: {x: -16.5, y: 0, z: 27}
   numberOfWeaponsToSpawn: 10
