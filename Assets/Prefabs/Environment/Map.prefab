@@ -15605,6 +15605,16 @@ PrefabInstance:
       propertyPath: SpawnPoints.Array.data[6]
       value: 
       objectReference: {fileID: 906638869972333034}
+    - target: {fileID: 6358707940031702664, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: eventAnnoucementString
+      value: ' '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8353342751662044438, guid: e9ea5d72ff1ccf82c82927b8683f02ac,
+        type: 3}
+      propertyPath: eventAnnoucementString
+      value: ' '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
