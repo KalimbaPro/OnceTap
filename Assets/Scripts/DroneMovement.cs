@@ -40,6 +40,7 @@ public class DroneMovement : MonoBehaviour
     {
         stopping = false;
         strikeCylinder.GetComponent<MeshRenderer>().enabled = true;
+        strikeCylinder.GetComponent<AudioSource>().enabled = true;
         strikeCylinder.transform.position = transform.position;
         orbitalStrikeHUD.GetComponent<DroneHUDCanvas>().StartHUD();
     }
@@ -87,6 +88,8 @@ public class DroneMovement : MonoBehaviour
         strikeCylinder.GetComponent<CapsuleCollider>().enabled = true;
         orbitalStrikeHUD.GetComponent<DroneHUDCanvas>().StopHUD();
         strikeFeedback.PlayFeedbacks();
+        strikeCylinder.GetComponent<AudioSource>().enabled = false;
+        GetComponent<AudioSource>().Play();
 
         yield return new WaitForSeconds(1);
 
