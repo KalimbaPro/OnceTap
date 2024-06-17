@@ -30,7 +30,11 @@ public class OneShotHammer : MonoBehaviour
         ragdollTrigger.EnableRagdoll();
         ragdollTrigger.ApplyForce(projectionForce, projectionOrigin.transform.right, ForceMode.Impulse);
         ragdollTrigger.StartRecoveryTime();
-        GetComponentInParent<WeaponHolder>().Drop();
+        var holder = GetComponentInParent<WeaponHolder>();
+        if (holder != null)
+        {
+            holder.Drop();
+        }
         Destroy(transform.parent.gameObject, 0.5f);
     }
 
