@@ -70,6 +70,9 @@ public class MeleeWeaponStats : MonoBehaviour
 
     public void PlaySound()
     {
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
 }
